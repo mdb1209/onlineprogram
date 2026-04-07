@@ -1,0 +1,3855 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Culture Fit | Strength & Weight Loss Program</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=Bebas+Neue&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --black: #0a0a0a;
+    --black-2: #111111;
+    --black-3: #1a1a1a;
+    --white: #ffffff;
+    --white-muted: #c8c8c8;
+    --blue: #1a52e0;
+    --blue-light: #3a6ef5;
+    --blue-glow: rgba(26,82,224,0.15);
+    --border: rgba(255,255,255,0.08);
+    --border-blue: rgba(26,82,224,0.4);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--black);
+    color: var(--white);
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    background: rgba(10,10,10,0.9);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    text-decoration: none;
+  }
+
+  .nav-logo img { width: 40px; height: 40px; object-fit: contain; }
+
+  .nav-brand {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.4rem;
+    letter-spacing: 0.08em;
+    color: var(--white);
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    color: var(--white-muted);
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--white); }
+
+  .nav-cta {
+    background: var(--blue);
+    color: var(--white) !important;
+    padding: 0.5rem 1.25rem;
+    border-radius: 4px;
+    transition: background 0.2s !important;
+  }
+
+  .nav-cta:hover { background: var(--blue-light) !important; color: var(--white) !important; }
+
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 4px;
+  }
+
+  .hamburger span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--white);
+    transition: all 0.3s;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 8rem 2rem 4rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 60% 50% at 50% 60%, var(--blue-glow), transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero-logo {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 2rem;
+    object-fit: contain;
+  }
+
+  .hero h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(3rem, 10vw, 7rem);
+    letter-spacing: 0.04em;
+    line-height: 1;
+    margin-bottom: 1.25rem;
+  }
+
+  .hero h1 span { color: var(--blue); }
+
+  .hero p {
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+    color: var(--white-muted);
+    max-width: 560px;
+    margin: 0 auto 2.5rem;
+    font-weight: 300;
+  }
+
+  .hero-btns {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    background: var(--blue);
+    color: var(--white);
+    padding: 0.875rem 2rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.875rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    transition: background 0.2s, transform 0.2s;
+  }
+
+  .btn-primary:hover { background: var(--blue-light); transform: translateY(-1px); }
+
+  .btn-outline {
+    border: 1px solid var(--border);
+    color: var(--white);
+    padding: 0.875rem 2rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.875rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+
+  .btn-outline:hover { border-color: var(--white-muted); transform: translateY(-1px); }
+
+  .hero-stats {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    margin: 0 auto 2rem;
+  }
+
+  .hero-stat { text-align: center; }
+
+  .hero-stat-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2rem;
+    color: var(--blue);
+    line-height: 1;
+    display: block;
+  }
+
+  .hero-stat-label {
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--white-muted);
+  }
+
+  .hero-stat-divider {
+    width: 1px;
+    height: 36px;
+    background: var(--border);
+  }
+
+  .hero-fine {
+    font-size: 0.75rem !important;
+    color: rgba(200,200,200,0.45) !important;
+    margin-top: 1rem !important;
+    margin-bottom: 0 !important;
+  }
+
+  /* ── MARQUEE ── */
+  .marquee-strip {
+    width: 100%;
+    background: var(--blue);
+    overflow: hidden;
+    padding: 0.7rem 0;
+    position: relative;
+  }
+
+  .marquee-track {
+    display: flex;
+    width: max-content;
+    animation: marqueeScroll 28s linear infinite;
+  }
+
+  .marquee-track:hover { animation-play-state: paused; }
+
+  @keyframes marqueeScroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  .marquee-item {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0 2.5rem;
+    white-space: nowrap;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--white);
+  }
+
+  .marquee-dot {
+    width: 4px;
+    height: 4px;
+    background: rgba(255,255,255,0.5);
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  /* ── SECTIONS ── */
+  section { padding: 6rem 2rem; }
+
+  .container { max-width: 1100px; margin: 0 auto; }
+
+  .section-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--blue);
+    margin-bottom: 0.75rem;
+  }
+
+  .section-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(2.2rem, 6vw, 3.5rem);
+    letter-spacing: 0.04em;
+    line-height: 1.05;
+    margin-bottom: 1rem;
+  }
+
+  .section-sub {
+    color: var(--white-muted);
+    font-size: 1rem;
+    font-weight: 300;
+    max-width: 560px;
+  }
+
+  .divider {
+    width: 48px;
+    height: 2px;
+    background: var(--blue);
+    margin: 1.25rem 0 3rem;
+  }
+
+  /* ── PRICING ── */
+  #pricing { background: var(--black); }
+
+  .pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+
+  .pricing-card {
+    background: var(--black-2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 2.5rem 2rem;
+    position: relative;
+    transition: border-color 0.3s, transform 0.3s;
+  }
+
+  .pricing-card:hover {
+    border-color: var(--border-blue);
+    transform: translateY(-4px);
+  }
+
+  .pricing-card.featured {
+    border-color: var(--blue);
+    background: linear-gradient(160deg, #0f1a35 0%, var(--black-2) 100%);
+  }
+
+  .badge {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--blue);
+    color: var(--white);
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 0.3rem 1rem;
+    border-radius: 20px;
+    white-space: nowrap;
+  }
+
+  .pricing-tier {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--white-muted);
+    margin-bottom: 1rem;
+  }
+
+  .pricing-price {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 3.5rem;
+    letter-spacing: 0.02em;
+    line-height: 1;
+    margin-bottom: 0.25rem;
+  }
+
+  .pricing-price sup {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 300;
+    vertical-align: super;
+  }
+
+  .pricing-period {
+    font-size: 0.8rem;
+    color: var(--white-muted);
+    margin-bottom: 1.75rem;
+  }
+
+  .pricing-features {
+    list-style: none;
+    margin-bottom: 2rem;
+  }
+
+  .pricing-features li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 0.6rem 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.9rem;
+    color: var(--white-muted);
+  }
+
+  .pricing-features li:last-child { border-bottom: none; }
+
+  .check {
+    color: var(--blue);
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .pricing-btn {
+    display: block;
+    text-align: center;
+    padding: 0.875rem;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.2s;
+    border: none;
+    width: 100%;
+  }
+
+  .pricing-btn-primary {
+    background: var(--blue);
+    color: var(--white);
+  }
+
+  .pricing-btn-primary:hover { background: var(--blue-light); }
+
+  .pricing-btn-outline {
+    background: transparent;
+    color: var(--white);
+    border: 1px solid var(--border);
+  }
+
+  .pricing-btn-outline:hover { border-color: var(--white-muted); }
+
+  /* ── WEEK AT A GLANCE ── */
+  #program { background: var(--black-3); }
+
+  .week-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1rem;
+    margin-top: 3rem;
+  }
+
+  .day-pill {
+    background: var(--black-2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.25rem 1rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.25s;
+  }
+
+  .day-pill:hover, .day-pill.active {
+    border-color: var(--blue);
+    background: linear-gradient(160deg, #0f1a35, var(--black-2));
+  }
+
+  .day-pill.cardio-day { border-color: rgba(255,255,255,0.15); }
+  .day-pill.cardio-day:hover, .day-pill.cardio-day.active {
+    border-color: var(--white-muted);
+    background: var(--black-2);
+  }
+
+  .day-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.5rem;
+    color: var(--blue);
+    line-height: 1;
+  }
+
+  .day-pill.cardio-day .day-num { color: var(--white-muted); }
+
+  .day-name {
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-top: 0.3rem;
+    color: var(--white);
+  }
+
+  .day-type {
+    font-size: 0.65rem;
+    color: var(--white-muted);
+    margin-top: 0.2rem;
+  }
+
+  /* ── WORKOUT DETAIL ── */
+  .workout-panel {
+    display: none;
+    margin-top: 2rem;
+    animation: fadeUp 0.35s ease;
+  }
+
+  .workout-panel.active { display: block; }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .workout-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .workout-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2rem;
+    letter-spacing: 0.04em;
+  }
+
+  .workout-title span { color: var(--blue); }
+
+  .toggle-group {
+    display: flex;
+    gap: 0;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .toggle-btn {
+    padding: 0.5rem 1.25rem;
+    background: transparent;
+    color: var(--white-muted);
+    border: none;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .toggle-btn.active {
+    background: var(--blue);
+    color: var(--white);
+  }
+
+  .exercise-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .exercise-table thead tr {
+    border-bottom: 1px solid var(--border-blue);
+  }
+
+  .exercise-table th {
+    text-align: left;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--blue);
+    padding: 0.75rem 0.5rem;
+  }
+
+  .exercise-table td {
+    padding: 0.875rem 0.5rem;
+    font-size: 0.9rem;
+    border-bottom: 1px solid var(--border);
+    color: var(--white-muted);
+    vertical-align: top;
+  }
+
+  .exercise-table td:first-child { color: var(--white); font-weight: 500; }
+
+  .exercise-table tbody tr:last-child td { border-bottom: none; }
+
+  .exercise-table tbody tr:hover td { background: rgba(26,82,224,0.04); }
+
+  .superset-badge {
+    display: inline-block;
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    background: var(--blue-glow);
+    color: var(--blue-light);
+    border: 1px solid var(--border-blue);
+    padding: 0.1rem 0.4rem;
+    border-radius: 3px;
+    margin-left: 0.5rem;
+    vertical-align: middle;
+  }
+
+  .note-box {
+    background: var(--black-2);
+    border-left: 3px solid var(--blue);
+    border-radius: 0 4px 4px 0;
+    padding: 1rem 1.25rem;
+    margin-top: 1.5rem;
+    font-size: 0.85rem;
+    color: var(--white-muted);
+  }
+
+  .note-box strong { color: var(--white); }
+
+  /* ── CARDIO ── */
+  .cardio-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .cardio-option-btn {
+    background: var(--black-2);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 1.25rem 1.5rem;
+    cursor: pointer;
+    text-align: left;
+    color: var(--white);
+    transition: all 0.25s;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .cardio-option-btn:hover, .cardio-option-btn.active {
+    border-color: var(--blue);
+    background: linear-gradient(135deg, #0f1a35, var(--black-2));
+  }
+
+  .cardio-icon { font-size: 1.75rem; flex-shrink: 0; }
+
+  .cardio-option-name {
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 0.2rem;
+  }
+
+  .cardio-option-sub { font-size: 0.75rem; color: var(--white-muted); }
+
+  .cardio-detail { display: none; animation: fadeUp 0.35s ease; }
+  .cardio-detail.active { display: block; }
+
+  .interval-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .interval-table th {
+    text-align: left;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--blue);
+    padding: 0.75rem 0.5rem;
+    border-bottom: 1px solid var(--border-blue);
+  }
+
+  .interval-table td {
+    padding: 0.75rem 0.5rem;
+    font-size: 0.875rem;
+    border-bottom: 1px solid var(--border);
+    color: var(--white-muted);
+  }
+
+  .interval-table td:first-child { color: var(--white); font-weight: 500; }
+
+  /* ── MACRO CALCULATOR ── */
+  #macros { background: var(--black); }
+
+  .macro-wrap {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+  }
+
+  .macro-form-group {
+    margin-bottom: 1.25rem;
+  }
+
+  .macro-label {
+    display: block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--white-muted);
+    margin-bottom: 0.5rem;
+  }
+
+  .macro-input {
+    width: 100%;
+    background: var(--black-2);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    color: var(--white);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    padding: 0.75rem 1rem;
+    transition: border-color 0.2s;
+    appearance: none;
+    -webkit-appearance: none;
+  }
+
+  .macro-input:focus {
+    outline: none;
+    border-color: var(--blue);
+  }
+
+  .macro-input option { background: var(--black-2); }
+
+  .gender-toggle {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .gender-btn {
+    padding: 0.75rem;
+    background: transparent;
+    color: var(--white-muted);
+    border: none;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .gender-btn.active { background: var(--blue); color: var(--white); }
+
+  .calc-btn {
+    width: 100%;
+    background: var(--blue);
+    color: var(--white);
+    border: none;
+    border-radius: 4px;
+    padding: 0.9rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.2s;
+    margin-top: 0.5rem;
+  }
+
+  .calc-btn:hover { background: var(--blue-light); }
+
+  .macro-results {
+    background: var(--black-2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 2rem;
+    min-height: 320px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .results-placeholder {
+    text-align: center;
+    color: var(--white-muted);
+  }
+
+  .results-placeholder .big-icon { font-size: 3rem; margin-bottom: 1rem; opacity: 0.4; }
+  .results-placeholder p { font-size: 0.85rem; }
+
+  .results-content { display: none; }
+  .results-content.active { display: block; animation: fadeUp 0.4s ease; }
+
+  .results-cal {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .results-cal-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 4rem;
+    color: var(--blue);
+    line-height: 1;
+  }
+
+  .results-cal-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--white-muted);
+    margin-top: 0.25rem;
+  }
+
+  .results-cal-sub {
+    font-size: 0.8rem;
+    color: var(--white-muted);
+    margin-top: 0.5rem;
+  }
+
+  .macro-bars { display: flex; flex-direction: column; gap: 1.25rem; }
+
+  .macro-bar-row {}
+
+  .macro-bar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 0.4rem;
+  }
+
+  .macro-bar-name {
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .macro-bar-val {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.2rem;
+    color: var(--white);
+  }
+
+  .macro-bar-val span {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 400;
+    color: var(--white-muted);
+    margin-left: 0.25rem;
+  }
+
+  .bar-track {
+    height: 4px;
+    background: var(--border);
+    border-radius: 2px;
+    overflow: hidden;
+  }
+
+  .bar-fill {
+    height: 100%;
+    border-radius: 2px;
+    transition: width 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    width: 0;
+  }
+
+  .bar-protein .bar-fill { background: var(--blue); }
+  .bar-carbs .bar-fill { background: #ffffff; }
+  .bar-fat .bar-fill { background: var(--white-muted); }
+
+  /* ── MEALS ── */
+  #meals { background: var(--black-3); }
+
+  .meal-nav {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-top: 2.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .meal-day-btn {
+    background: var(--black-2);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    color: var(--white-muted);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .meal-day-btn:hover, .meal-day-btn.active {
+    background: var(--blue);
+    border-color: var(--blue);
+    color: var(--white);
+  }
+
+  .meal-day-panel { display: none; animation: fadeUp 0.35s ease; }
+  .meal-day-panel.active { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; }
+
+  .meal-card {
+    background: var(--black-2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.5rem;
+  }
+
+  .meal-time {
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--blue);
+    margin-bottom: 0.5rem;
+  }
+
+  .meal-name {
+    font-weight: 600;
+    font-size: 1rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .meal-items { list-style: none; }
+
+  .meal-items li {
+    font-size: 0.85rem;
+    color: var(--white-muted);
+    padding: 0.3rem 0;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .meal-items li:last-child { border-bottom: none; }
+
+  .meal-macro-tag {
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: var(--blue-light);
+    white-space: nowrap;
+    margin-left: 0.5rem;
+  }
+
+  /* ── GROCERY ── */
+  #grocery { background: var(--black); }
+
+  .grocery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+
+  .grocery-category {
+    background: var(--black-2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.5rem;
+  }
+
+  .grocery-cat-title {
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--blue);
+    margin-bottom: 1rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--border-blue);
+  }
+
+  .grocery-list { list-style: none; }
+
+  .grocery-list li {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.45rem 0;
+    font-size: 0.875rem;
+    color: var(--white-muted);
+    cursor: pointer;
+    transition: color 0.15s;
+  }
+
+  .grocery-list li:hover { color: var(--white); }
+
+  .grocery-check {
+    width: 16px;
+    height: 16px;
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    flex-shrink: 0;
+    transition: all 0.15s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.6rem;
+    color: transparent;
+  }
+
+  .grocery-list li.checked .grocery-check {
+    background: var(--blue);
+    border-color: var(--blue);
+    color: var(--white);
+  }
+
+  .grocery-list li.checked span { text-decoration: line-through; opacity: 0.5; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--black-2);
+    border-top: 1px solid var(--border);
+    padding: 3rem 2rem;
+    text-align: center;
+  }
+
+  footer img.footer-logo { width: 64px; height: 64px; object-fit: contain; margin: 0 auto 1rem; display: block; }
+
+  .footer-brand {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.5rem;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.5rem;
+  }
+
+  footer p {
+    color: var(--white-muted);
+    font-size: 0.8rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .footer-links {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    list-style: none;
+    margin-bottom: 2rem;
+  }
+
+  .footer-links a {
+    color: var(--white-muted);
+    text-decoration: none;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+
+  .footer-links a:hover { color: var(--white); }
+
+  .footer-copy {
+    font-size: 0.7rem;
+    color: rgba(200,200,200,0.4);
+  }
+
+  /* ── RESPONSIVE ── */
+  /* ── ADD-ON BAR ── */
+  .addon-bar {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    margin-top: 2rem;
+    background: linear-gradient(135deg, #0f1a35, var(--black-2));
+    border: 1px solid var(--border-blue);
+    border-radius: 8px;
+    padding: 1.25rem 1.75rem;
+    flex-wrap: wrap;
+  }
+
+  .addon-icon {
+    font-size: 1.5rem;
+    width: 44px;
+    height: 44px;
+    background: var(--blue);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-weight: 700;
+  }
+
+  .addon-content { flex: 1; min-width: 200px; }
+
+  .addon-title {
+    font-weight: 700;
+    font-size: 0.95rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .addon-desc { font-size: 0.82rem; color: var(--white-muted); }
+
+  .addon-btn {
+    background: transparent;
+    border: 1px solid var(--blue);
+    color: var(--blue);
+    padding: 0.6rem 1.25rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.2s;
+    white-space: nowrap;
+  }
+
+  .addon-btn:hover { background: var(--blue); color: var(--white); }
+
+  /* ── QUIZ ── */
+  #quiz { background: var(--black-3); }
+
+  .quiz-steps { position: relative; }
+
+  .quiz-step { display: none; animation: fadeUp 0.35s ease; }
+  .quiz-step.active { display: block; }
+
+  .quiz-progress {
+    display: flex;
+    gap: 0.4rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .quiz-dot {
+    height: 3px;
+    flex: 1;
+    background: var(--border);
+    border-radius: 2px;
+    transition: background 0.3s;
+  }
+
+  .quiz-dot.done { background: var(--blue); }
+
+  .quiz-question {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(1.4rem, 4vw, 2rem);
+    letter-spacing: 0.04em;
+    margin-bottom: 0.5rem;
+  }
+
+  .quiz-sub { font-size: 0.85rem; color: var(--white-muted); margin-bottom: 2rem; }
+
+  .quiz-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .quiz-option {
+    background: var(--black-2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.25rem 1rem;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.2s;
+  }
+
+  .quiz-option:hover { border-color: var(--blue); }
+
+  .quiz-option.selected {
+    border-color: var(--blue);
+    background: linear-gradient(160deg, #0f1a35, var(--black-2));
+  }
+
+  .quiz-option-icon { font-size: 1.75rem; margin-bottom: 0.5rem; }
+
+  .quiz-option-label {
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .quiz-option-sub { font-size: 0.75rem; color: var(--white-muted); }
+
+  .quiz-input {
+    width: 100%;
+    max-width: 480px;
+    background: var(--black-2);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    color: var(--white);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    padding: 0.75rem 1rem;
+    margin-bottom: 1.25rem;
+    transition: border-color 0.2s;
+    display: block;
+  }
+
+  .quiz-input:focus { outline: none; border-color: var(--blue); }
+
+  .quiz-nav {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .quiz-btn-next {
+    background: var(--blue);
+    color: var(--white);
+    border: none;
+    border-radius: 4px;
+    padding: 0.75rem 2rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+
+  .quiz-btn-next:hover { background: var(--blue-light); }
+
+  .quiz-btn-back {
+    background: transparent;
+    color: var(--white-muted);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 0.75rem 1.25rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .quiz-btn-back:hover { border-color: var(--white-muted); color: var(--white); }
+
+  .quiz-result {
+    display: none;
+    animation: fadeUp 0.4s ease;
+  }
+
+  .quiz-result.active { display: block; }
+
+  .quiz-result-card {
+    background: linear-gradient(160deg, #0f1a35, var(--black-2));
+    border: 1px solid var(--blue);
+    border-radius: 12px;
+    padding: 2.5rem;
+    text-align: center;
+    max-width: 560px;
+    margin: 0 auto;
+  }
+
+  .quiz-result-badge {
+    display: inline-block;
+    background: var(--blue);
+    color: var(--white);
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 0.3rem 1rem;
+    border-radius: 20px;
+    margin-bottom: 1.25rem;
+  }
+
+  .quiz-result-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.2rem;
+    letter-spacing: 0.04em;
+    margin-bottom: 0.75rem;
+  }
+
+  .quiz-result-desc { color: var(--white-muted); font-size: 0.9rem; margin-bottom: 2rem; line-height: 1.7; }
+
+  /* ── HABIT TRACKER ── */
+  #tracker { background: var(--black); }
+
+  .tracker-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 1rem;
+  }
+
+  .tracker-panel {
+    background: var(--black-2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.75rem;
+  }
+
+  .tracker-panel-title {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--blue);
+    margin-bottom: 1.25rem;
+  }
+
+  .habit-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--border);
+    gap: 1rem;
+  }
+
+  .habit-row:last-child { border-bottom: none; }
+
+  .habit-info { display: flex; align-items: center; gap: 0.75rem; flex: 1; }
+
+  .habit-icon { font-size: 1.25rem; flex-shrink: 0; }
+
+  .habit-name { font-weight: 600; font-size: 0.9rem; }
+
+  .habit-target { font-size: 0.75rem; color: var(--white-muted); margin-top: 0.1rem; }
+
+  .habit-controls { display: flex; align-items: center; gap: 0.5rem; }
+
+  .habit-input {
+    width: 70px;
+    background: var(--black-3);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    color: var(--white);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    padding: 0.4rem 0.6rem;
+    text-align: center;
+    transition: border-color 0.2s;
+  }
+
+  .habit-input:focus { outline: none; border-color: var(--blue); }
+
+  .habit-unit { font-size: 0.75rem; color: var(--white-muted); min-width: 28px; }
+
+  .habit-check-btn {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 2px solid var(--border);
+    background: transparent;
+    color: transparent;
+    cursor: pointer;
+    font-size: 0.8rem;
+    font-weight: 700;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .habit-check-btn.done {
+    background: var(--blue);
+    border-color: var(--blue);
+    color: var(--white);
+  }
+
+  /* Streak Panel */
+  .streak-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .streak-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 3.5rem;
+    color: var(--blue);
+    line-height: 1;
+  }
+
+  .streak-flame { font-size: 2rem; }
+
+  .streak-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--white-muted);
+    margin-top: 0.2rem;
+  }
+
+  .streak-badges {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .streak-badge-row {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.85rem;
+  }
+
+  .streak-badge-icon { font-size: 1.1rem; }
+
+  .streak-badge-name { flex: 1; font-weight: 500; }
+
+  .streak-badge-status {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.2rem 0.6rem;
+    border-radius: 12px;
+  }
+
+  .streak-badge-status.earned {
+    background: rgba(26,82,224,0.2);
+    color: var(--blue-light);
+    border: 1px solid var(--border-blue);
+  }
+
+  .streak-badge-status.locked {
+    background: var(--black-3);
+    color: rgba(200,200,200,0.3);
+    border: 1px solid var(--border);
+  }
+
+  /* Weekly Score */
+  .score-display {
+    text-align: center;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 1.25rem;
+  }
+
+  .score-ring {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 0.75rem;
+  }
+
+  .score-ring svg { transform: rotate(-90deg); }
+
+  .score-ring-num {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.8rem;
+    color: var(--blue);
+  }
+
+  .score-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--white-muted);
+  }
+
+  .score-breakdown { display: flex; flex-direction: column; gap: 0.6rem; }
+
+  .score-bar-row {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.8rem;
+  }
+
+  .score-bar-label { width: 80px; color: var(--white-muted); flex-shrink: 0; }
+
+  .score-bar-track {
+    flex: 1;
+    height: 6px;
+    background: var(--border);
+    border-radius: 3px;
+    overflow: hidden;
+  }
+
+  .score-bar-fill {
+    height: 100%;
+    background: var(--blue);
+    border-radius: 3px;
+    transition: width 0.8s cubic-bezier(0.16,1,0.3,1);
+  }
+
+  .score-bar-pct { width: 36px; text-align: right; font-weight: 600; font-size: 0.78rem; }
+
+  /* Week calendar dots */
+  .week-dots {
+    display: flex;
+    gap: 0.4rem;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+
+  .week-dot-cell { display: flex; flex-direction: column; align-items: center; gap: 0.3rem; }
+
+  .week-dot {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: 2px solid var(--border);
+    background: transparent;
+    transition: all 0.2s;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.55rem;
+    font-weight: 700;
+    color: transparent;
+  }
+
+  .week-dot.complete { background: var(--blue); border-color: var(--blue); color: var(--white); }
+  .week-dot.partial { background: rgba(26,82,224,0.3); border-color: var(--border-blue); color: var(--blue-light); }
+
+  .week-dot-label { font-size: 0.6rem; color: var(--white-muted); letter-spacing: 0.05em; }
+
+  /* ── PROGRESS DASHBOARD ── */
+  #progress { background: var(--black-3); }
+
+  .progress-tabs {
+    display: flex;
+    gap: 0;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    overflow: hidden;
+    width: fit-content;
+    margin-bottom: 2.5rem;
+    flex-wrap: wrap;
+  }
+
+  .progress-tab {
+    padding: 0.6rem 1.25rem;
+    background: transparent;
+    color: var(--white-muted);
+    border: none;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.2s;
+    border-right: 1px solid var(--border);
+  }
+
+  .progress-tab:last-child { border-right: none; }
+  .progress-tab.active { background: var(--blue); color: var(--white); }
+
+  .progress-panel { display: none; animation: fadeUp 0.35s ease; }
+  .progress-panel.active { display: block; }
+
+  /* Weight/Measurement Log */
+  .measurement-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .measurement-card {
+    background: var(--black-2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.25rem 1rem;
+    text-align: center;
+  }
+
+  .measurement-label {
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--white-muted);
+    margin-bottom: 0.5rem;
+  }
+
+  .measurement-val {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.8rem;
+    color: var(--white);
+    line-height: 1;
+  }
+
+  .measurement-delta {
+    font-size: 0.75rem;
+    margin-top: 0.3rem;
+    font-weight: 600;
+  }
+
+  .delta-down { color: #4ade80; }
+  .delta-up { color: #f87171; }
+  .delta-neutral { color: var(--white-muted); }
+
+  .measurement-input-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+  }
+
+  .meas-field label {
+    display: block;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--white-muted);
+    margin-bottom: 0.35rem;
+  }
+
+  .meas-field input {
+    width: 100%;
+    background: var(--black-2);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    color: var(--white);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    padding: 0.6rem 0.75rem;
+    transition: border-color 0.2s;
+  }
+
+  .meas-field input:focus { outline: none; border-color: var(--blue); }
+
+  /* Photo upload */
+  .photo-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .photo-slot {
+    aspect-ratio: 3/4;
+    background: var(--black-2);
+    border: 2px dashed var(--border);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    transition: border-color 0.2s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .photo-slot:hover { border-color: var(--blue); }
+
+  .photo-slot input[type="file"] {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    cursor: pointer;
+  }
+
+  .photo-slot-icon { font-size: 1.5rem; opacity: 0.4; }
+
+  .photo-slot-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--white-muted);
+  }
+
+  .photo-slot img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: none;
+  }
+
+  /* Strength Log */
+  .strength-log-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1.5rem;
+  }
+
+  .strength-log-table th {
+    text-align: left;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--blue);
+    padding: 0.75rem 0.5rem;
+    border-bottom: 1px solid var(--border-blue);
+  }
+
+  .strength-log-table td {
+    padding: 0.75rem 0.5rem;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.875rem;
+    color: var(--white-muted);
+  }
+
+  .strength-log-table td:first-child { color: var(--white); font-weight: 500; }
+
+  .pr-badge {
+    display: inline-block;
+    background: rgba(255,200,0,0.15);
+    color: #fbbf24;
+    border: 1px solid rgba(255,200,0,0.3);
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.1rem 0.4rem;
+    border-radius: 3px;
+    margin-left: 0.4rem;
+  }
+
+  .strength-input-row {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr auto;
+    gap: 0.5rem;
+    align-items: end;
+    margin-bottom: 0.5rem;
+  }
+
+  .strength-input-row input, .strength-input-row select {
+    width: 100%;
+    background: var(--black-2);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    color: var(--white);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    padding: 0.55rem 0.65rem;
+    transition: border-color 0.2s;
+  }
+
+  .strength-input-row input:focus,
+  .strength-input-row select:focus { outline: none; border-color: var(--blue); }
+
+  .strength-input-row input option,
+  .strength-input-row select option { background: var(--black-2); }
+
+  .strength-add-btn {
+    background: var(--blue);
+    color: var(--white);
+    border: none;
+    border-radius: 4px;
+    padding: 0.55rem 1rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s;
+    white-space: nowrap;
+  }
+
+  .strength-add-btn:hover { background: var(--blue-light); }
+
+  /* Weekly Check-in */
+  .checkin-form { max-width: 640px; }
+
+  .checkin-row {
+    margin-bottom: 1.5rem;
+  }
+
+  .checkin-label {
+    display: block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--white-muted);
+    margin-bottom: 0.6rem;
+  }
+
+  .checkin-input {
+    width: 100%;
+    background: var(--black-2);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    color: var(--white);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    padding: 0.7rem 1rem;
+    transition: border-color 0.2s;
+  }
+
+  .checkin-input:focus { outline: none; border-color: var(--blue); }
+
+  .checkin-textarea {
+    width: 100%;
+    background: var(--black-2);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    color: var(--white);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    padding: 0.7rem 1rem;
+    resize: vertical;
+    min-height: 80px;
+    transition: border-color 0.2s;
+  }
+
+  .checkin-textarea:focus { outline: none; border-color: var(--blue); }
+
+  .rating-scale {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .rating-btn {
+    flex: 1;
+    padding: 0.6rem 0;
+    background: var(--black-2);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    color: var(--white-muted);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-align: center;
+  }
+
+  .rating-btn:hover, .rating-btn.selected { background: var(--blue); border-color: var(--blue); color: var(--white); }
+
+  .save-btn {
+    background: var(--blue);
+    color: var(--white);
+    border: none;
+    border-radius: 4px;
+    padding: 0.9rem 2.5rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.2s;
+    margin-top: 0.5rem;
+  }
+
+  .save-btn:hover { background: var(--blue-light); }
+
+  .save-confirm {
+    display: none;
+    color: #4ade80;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-top: 0.75rem;
+  }
+
+  @media (max-width: 768px) {
+    .nav-links { display: none; }
+    .nav-links.open {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      top: 100%;
+      left: 0; right: 0;
+      background: rgba(10,10,10,0.98);
+      backdrop-filter: blur(16px);
+      padding: 1.5rem 2rem;
+      border-bottom: 1px solid var(--border);
+      gap: 1.25rem;
+    }
+    .hamburger { display: flex; }
+    .week-grid { grid-template-columns: repeat(3, 1fr); gap: 0.75rem; }
+    .macro-wrap { grid-template-columns: 1fr; gap: 2rem; }
+    .macro-results { order: -1; min-height: auto; }
+    section { padding: 4rem 1.25rem; }
+    .tracker-grid { grid-template-columns: 1fr; }
+    .progress-tabs { width: 100%; }
+    .progress-tab { flex: 1; text-align: center; }
+    .strength-input-row { grid-template-columns: 1fr 1fr; }
+    .photo-grid { grid-template-columns: repeat(3, 1fr); }
+    .quiz-options { grid-template-columns: 1fr 1fr; }
+    .hero-stats { gap: 1rem; }
+  }
+
+  @media (max-width: 480px) {
+    .week-grid { grid-template-columns: repeat(2, 1fr); }
+    .pricing-grid { grid-template-columns: 1fr; }
+    .tracker-grid { grid-template-columns: 1fr; }
+    .photo-grid { grid-template-columns: 1fr 1fr; }
+    .strength-input-row { grid-template-columns: 1fr 1fr; }
+    .rating-scale { flex-wrap: wrap; }
+    .measurement-input-row { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a href="#" class="nav-logo">
+    <img src="Logo.jpg" alt="Culture Fit Logo">
+    <span class="nav-brand">Culture Fit</span>
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#pricing">Pricing</a></li>
+    <li><a href="#program">Program</a></li>
+    <li><a href="#macros">Macros</a></li>
+    <li><a href="#tracker">Tracker</a></li>
+    <li><a href="#progress">Progress</a></li>
+    <li><a href="#quiz" class="nav-cta">Get Started</a></li>
+  </ul>
+  <div class="hamburger" id="hamburger" onclick="toggleNav()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div>
+    <img src="Logo.jpg" alt="Culture Fit" class="hero-logo">
+    <h1>TRANSFORM YOUR<br><span>BODY & LIFE</span></h1>
+    <p>Real coaching. Real results. A science-backed 5-day program built around <em>your</em> goals — fat loss, recomposition, or strength. Start today and never guess what to do next.</p>
+    <div class="hero-stats">
+      <div class="hero-stat"><span class="hero-stat-num">5</span><span class="hero-stat-label">Day Split</span></div>
+      <div class="hero-stat-divider"></div>
+      <div class="hero-stat"><span class="hero-stat-num">3</span><span class="hero-stat-label">Plans Available</span></div>
+      <div class="hero-stat-divider"></div>
+      <div class="hero-stat"><span class="hero-stat-num">100%</span><span class="hero-stat-label">Personalized</span></div>
+    </div>
+    <div class="hero-btns">
+      <a href="#quiz" class="btn-primary">Start Your Transformation &rarr;</a>
+      <a href="#pricing" class="btn-outline">View Plans</a>
+    </div>
+    <p class="hero-fine">No contracts. Cancel anytime. Results in 4 weeks or your money back.</p>
+  </div>
+</section>
+
+<!-- MARQUEE STRIP -->
+<div class="marquee-strip">
+  <div class="marquee-track">
+    <!-- First set -->
+    <div class="marquee-item"><span>&#128293;</span> Lose Fat. Build Muscle. Get Stronger.</div>
+    <div class="marquee-dot"></div>
+    <div class="marquee-item"><span>&#9889;</span> 5-Day Science-Backed Training Split</div>
+    <div class="marquee-dot"></div>
+    <div class="marquee-item"><span>&#127947;</span> Gym &amp; Home Workouts Included</div>
+    <div class="marquee-dot"></div>
+    <div class="marquee-item"><span>&#127789;</span> Custom Macros + Full Meal Plan</div>
+    <div class="marquee-dot"></div>
+    <div class="marquee-item"><span>&#128200;</span> Real-Time Progress Tracking</div>
+    <div class="marquee-dot"></div>
+    <div class="marquee-item"><span>&#127942;</span> Streak System + Weekly Compliance Score</div>
+    <div class="marquee-dot"></div>
+    <div class="marquee-item"><span>&#128172;</span> 1-on-1 Coaching &amp; Weekly Check-Ins</div>
+    <div class="marquee-dot"></div>
+    <div class="marquee-item"><span>&#128081;</span> Elite Hybrid: In-Person + Online Coaching</div>
+    <div class="marquee-dot"></div>
+    <div class="marquee-item"><span>&#127775;</span> Clients Average -12 lbs in 8 Weeks</div>
+    <div class="marquee-dot"></div>
+    <div class="marquee-item"><span>&#9989;</span> Results in 4 Weeks — Guaranteed</div>
+    <div class="marquee-dot"></div>
+    <!-- Duplicate for seamless loop -->
+    <div class="marquee-item"><span>&#128293;</span> Lose Fat. Build Muscle. Get Stronger.</div>
+    <div class="marquee-dot"></div>
+    <div class="marquee-item"><span>&#9889;</span> 5-Day Science-Backed Training Split</div>
+    <div class="marquee-dot"></div>
+    <div class="marquee-item"><span>&#127947;</span> Gym &amp; Home Workouts Included</div>
+    <div class="marquee-dot"></div>
+    <div class="marquee-item"><span>&#127789;</span> Custom Macros + Full Meal Plan</div>
+    <div class="marquee-dot"></div>
+    <div class="marquee-item"><span>&#128200;</span> Real-Time Progress Tracking</div>
+    <div class="marquee-dot"></div>
+    <div class="marquee-item"><span>&#127942;</span> Streak System + Weekly Compliance Score</div>
+    <div class="marquee-dot"></div>
+    <div class="marquee-item"><span>&#128172;</span> 1-on-1 Coaching &amp; Weekly Check-Ins</div>
+    <div class="marquee-dot"></div>
+    <div class="marquee-item"><span>&#128081;</span> Elite Hybrid: In-Person + Online Coaching</div>
+    <div class="marquee-dot"></div>
+    <div class="marquee-item"><span>&#127775;</span> Clients Average -12 lbs in 8 Weeks</div>
+    <div class="marquee-dot"></div>
+    <div class="marquee-item"><span>&#9989;</span> Results in 4 Weeks — Guaranteed</div>
+    <div class="marquee-dot"></div>
+  </div>
+</div>
+
+<!-- PRICING -->
+<section id="pricing">
+  <div class="container">
+    <div class="section-label">Investment</div>
+    <h2 class="section-title">Choose Your Path</h2>
+    <p class="section-sub">Every tier includes the full program. Upgrade for accountability and in-person coaching.</p>
+    <div class="divider"></div>
+
+    <div class="pricing-grid">
+
+      <!-- Self-Guided -->
+      <div class="pricing-card">
+        <div class="pricing-tier">Self-Guided Transformation</div>
+        <div class="pricing-price"><sup>$</sup>39</div>
+        <div class="pricing-period">per month</div>
+        <ul class="pricing-features">
+          <li><span class="check">&#10003;</span> Full 5-day workout program</li>
+          <li><span class="check">&#10003;</span> Home gym &amp; gym-friendly workouts</li>
+          <li><span class="check">&#10003;</span> Built-in macro calculator</li>
+          <li><span class="check">&#10003;</span> Weekly meal plan + grocery list</li>
+          <li><span class="check">&#10003;</span> 60-min cardio day guides</li>
+          <li><span class="check">&#10003;</span> Daily habit tracker + streaks</li>
+          <li><span class="check">&#10003;</span> Cancel anytime</li>
+        </ul>
+        <button class="pricing-btn pricing-btn-outline" onclick="document.getElementById('quiz').scrollIntoView({behavior:'smooth'})">Get Started</button>
+      </div>
+
+      <!-- Coached -->
+      <div class="pricing-card featured">
+        <div class="badge">&#11088; Best Seller</div>
+        <div class="pricing-tier">Coached Transformation</div>
+        <div class="pricing-price"><sup>$</sup>99</div>
+        <div class="pricing-period">per month</div>
+        <ul class="pricing-features">
+          <li><span class="check">&#10003;</span> Everything in Self-Guided</li>
+          <li><span class="check">&#10003;</span> 1-on-1 accountability coaching</li>
+          <li><span class="check">&#10003;</span> Weekly check-ins &amp; progress reviews</li>
+          <li><span class="check">&#10003;</span> Customized nutrition adjustments</li>
+          <li><span class="check">&#10003;</span> Direct coach messaging</li>
+          <li><span class="check">&#10003;</span> Priority response within 24 hrs</li>
+          <li><span class="check">&#10003;</span> Progress dashboard access</li>
+        </ul>
+        <button class="pricing-btn pricing-btn-primary" onclick="document.getElementById('quiz').scrollIntoView({behavior:'smooth'})">Get Started</button>
+      </div>
+
+      <!-- Elite Hybrid -->
+      <div class="pricing-card">
+        <div class="pricing-tier">Elite Hybrid Coaching</div>
+        <div class="pricing-price"><sup>$</sup>149</div>
+        <div class="pricing-period">per month</div>
+        <ul class="pricing-features">
+          <li><span class="check">&#10003;</span> Everything in Coached Transformation</li>
+          <li><span class="check">&#10003;</span> 4 in-person training sessions/mo</li>
+          <li><span class="check">&#10003;</span> Form coaching &amp; technique work</li>
+          <li><span class="check">&#10003;</span> Personalized program adjustments</li>
+          <li><span class="check">&#10003;</span> Body composition tracking</li>
+          <li><span class="check">&#10003;</span> Highest level of support</li>
+          <li><span class="check">&#10003;</span> Add-on sessions available ($65/session)</li>
+        </ul>
+        <button class="pricing-btn pricing-btn-outline" onclick="document.getElementById('quiz').scrollIntoView({behavior:'smooth'})">Get Started</button>
+      </div>
+
+    </div>
+
+    <!-- ADD-ONS -->
+    <div class="addon-bar">
+      <div class="addon-icon">&#43;</div>
+      <div class="addon-content">
+        <div class="addon-title">Elite Add-On: Extra In-Person Sessions</div>
+        <div class="addon-desc">Already on the Elite Hybrid plan? Book additional 1-on-1 training sessions with your coach at <strong>$65 per session</strong>. Available exclusively for Elite members.</div>
+      </div>
+      <button class="addon-btn" onclick="document.getElementById('quiz').scrollIntoView({behavior:'smooth'})">Add to Elite Plan</button>
+    </div>
+
+  </div>
+</section>
+
+<!-- PROGRAM -->
+<section id="program">
+  <div class="container">
+    <div class="section-label">Training Split</div>
+    <h2 class="section-title">Your 5-Day Program</h2>
+    <p class="section-sub">3 strength days + 2 cardio days. Select a day below to view workouts.</p>
+    <div class="divider"></div>
+
+    <div class="week-grid">
+      <div class="day-pill active" onclick="showDay('upper')">
+        <div class="day-num">01</div>
+        <div class="day-name">Upper</div>
+        <div class="day-type">Strength</div>
+      </div>
+      <div class="day-pill" onclick="showDay('lower')">
+        <div class="day-num">02</div>
+        <div class="day-name">Lower</div>
+        <div class="day-type">Strength</div>
+      </div>
+      <div class="day-pill cardio-day" onclick="showDay('cardio1')">
+        <div class="day-num">03</div>
+        <div class="day-name">Cardio</div>
+        <div class="day-type">60 Min</div>
+      </div>
+      <div class="day-pill" onclick="showDay('full')">
+        <div class="day-num">04</div>
+        <div class="day-name">Full Body</div>
+        <div class="day-type">Strength</div>
+      </div>
+      <div class="day-pill cardio-day" onclick="showDay('cardio2')">
+        <div class="day-num">05</div>
+        <div class="day-name">Cardio</div>
+        <div class="day-type">60 Min</div>
+      </div>
+    </div>
+
+    <!-- UPPER BODY -->
+    <div class="workout-panel active" id="day-upper">
+      <div class="workout-header">
+        <div>
+          <div class="workout-title">Day 01 — <span>Upper Body</span></div>
+          <div style="color:var(--white-muted);font-size:0.85rem;margin-top:0.25rem;">Focus: Chest · Back · Shoulders · Arms &nbsp;|&nbsp; ~55–65 min</div>
+        </div>
+        <div class="toggle-group">
+          <button class="toggle-btn active" onclick="toggleEnv(this,'upper','gym')">Gym</button>
+          <button class="toggle-btn" onclick="toggleEnv(this,'upper','home')">Home</button>
+        </div>
+      </div>
+
+      <div id="upper-gym">
+        <table class="exercise-table">
+          <thead><tr>
+            <th style="width:35%">Exercise</th>
+            <th>Sets</th>
+            <th>Reps</th>
+            <th>Rest</th>
+            <th>Notes</th>
+          </tr></thead>
+          <tbody>
+            <tr><td>Barbell Bench Press</td><td>4</td><td>8–10</td><td>90s</td><td>Control the descent</td></tr>
+            <tr><td>Bent-Over Barbell Row</td><td>4</td><td>8–10</td><td>90s</td><td>Chest nearly parallel</td></tr>
+            <tr><td>Dumbbell Shoulder Press</td><td>3</td><td>10–12</td><td>75s</td><td>Full ROM</td></tr>
+            <tr><td>Lat Pulldown</td><td>3</td><td>10–12</td><td>75s</td><td>Squeeze at bottom</td></tr>
+            <tr><td>Cable Lateral Raise <span class="superset-badge">A1</span></td><td>3</td><td>15</td><td>–</td><td>Superset with A2</td></tr>
+            <tr><td>Face Pulls <span class="superset-badge">A2</span></td><td>3</td><td>15</td><td>60s</td><td>Rear delt focus</td></tr>
+            <tr><td>EZ-Bar Curl <span class="superset-badge">B1</span></td><td>3</td><td>12</td><td>–</td><td>Superset with B2</td></tr>
+            <tr><td>Tricep Pushdown <span class="superset-badge">B2</span></td><td>3</td><td>12</td><td>60s</td><td>Full extension</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div id="upper-home" style="display:none">
+        <table class="exercise-table">
+          <thead><tr>
+            <th style="width:35%">Exercise</th>
+            <th>Sets</th>
+            <th>Reps</th>
+            <th>Rest</th>
+            <th>Notes</th>
+          </tr></thead>
+          <tbody>
+            <tr><td>Push-Ups (weighted or banded)</td><td>4</td><td>12–15</td><td>75s</td><td>Chest to floor</td></tr>
+            <tr><td>DB or Resistance Band Row</td><td>4</td><td>10–12</td><td>75s</td><td>Squeeze at top</td></tr>
+            <tr><td>Pike Push-Ups</td><td>3</td><td>10–12</td><td>60s</td><td>Hips high, head through</td></tr>
+            <tr><td>Pull-Ups / Band-Assisted</td><td>3</td><td>8–10</td><td>90s</td><td>Full dead hang start</td></tr>
+            <tr><td>Band Lateral Raise <span class="superset-badge">A1</span></td><td>3</td><td>15</td><td>–</td><td>Superset with A2</td></tr>
+            <tr><td>Band Face Pull <span class="superset-badge">A2</span></td><td>3</td><td>15</td><td>60s</td><td>Anchor at face height</td></tr>
+            <tr><td>DB Hammer Curl <span class="superset-badge">B1</span></td><td>3</td><td>12</td><td>–</td><td>Superset with B2</td></tr>
+            <tr><td>Diamond Push-Ups <span class="superset-badge">B2</span></td><td>3</td><td>12</td><td>60s</td><td>Elbows close</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="note-box"><strong>Warm-up:</strong> 5 min light cardio + arm circles, band pull-aparts, and 1 warm-up set per compound movement at 50% working weight.</div>
+    </div>
+
+    <!-- LOWER BODY -->
+    <div class="workout-panel" id="day-lower">
+      <div class="workout-header">
+        <div>
+          <div class="workout-title">Day 02 — <span>Lower Body</span></div>
+          <div style="color:var(--white-muted);font-size:0.85rem;margin-top:0.25rem;">Focus: Quads · Hamstrings · Glutes · Calves &nbsp;|&nbsp; ~55–65 min</div>
+        </div>
+        <div class="toggle-group">
+          <button class="toggle-btn active" onclick="toggleEnv(this,'lower','gym')">Gym</button>
+          <button class="toggle-btn" onclick="toggleEnv(this,'lower','home')">Home</button>
+        </div>
+      </div>
+
+      <div id="lower-gym">
+        <table class="exercise-table">
+          <thead><tr>
+            <th style="width:35%">Exercise</th><th>Sets</th><th>Reps</th><th>Rest</th><th>Notes</th>
+          </tr></thead>
+          <tbody>
+            <tr><td>Barbell Back Squat</td><td>4</td><td>6–8</td><td>2 min</td><td>Depth below parallel</td></tr>
+            <tr><td>Romanian Deadlift</td><td>4</td><td>8–10</td><td>90s</td><td>Hip hinge, slight knee bend</td></tr>
+            <tr><td>Leg Press</td><td>3</td><td>10–12</td><td>90s</td><td>Feet shoulder-width</td></tr>
+            <tr><td>Walking Lunges</td><td>3</td><td>12 each</td><td>75s</td><td>Dumbbells or bodyweight</td></tr>
+            <tr><td>Leg Curl (Seated/Lying) <span class="superset-badge">A1</span></td><td>3</td><td>12–15</td><td>–</td><td>Superset with A2</td></tr>
+            <tr><td>Leg Extension <span class="superset-badge">A2</span></td><td>3</td><td>12–15</td><td>60s</td><td>Full extension, hold 1s</td></tr>
+            <tr><td>Standing Calf Raise</td><td>4</td><td>15–20</td><td>45s</td><td>Full stretch at bottom</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div id="lower-home" style="display:none">
+        <table class="exercise-table">
+          <thead><tr>
+            <th style="width:35%">Exercise</th><th>Sets</th><th>Reps</th><th>Rest</th><th>Notes</th>
+          </tr></thead>
+          <tbody>
+            <tr><td>Goblet Squat (DB or KB)</td><td>4</td><td>12–15</td><td>90s</td><td>Elbows inside knees at bottom</td></tr>
+            <tr><td>Single-Leg Romanian Deadlift</td><td>4</td><td>10 each</td><td>90s</td><td>DB in opposite hand</td></tr>
+            <tr><td>Bulgarian Split Squat</td><td>3</td><td>10–12 each</td><td>90s</td><td>Rear foot elevated</td></tr>
+            <tr><td>Glute Bridge or Hip Thrust</td><td>4</td><td>15</td><td>60s</td><td>Squeeze glutes at top</td></tr>
+            <tr><td>Reverse Lunge <span class="superset-badge">A1</span></td><td>3</td><td>12 each</td><td>–</td><td>Superset with A2</td></tr>
+            <tr><td>Lateral Band Walk <span class="superset-badge">A2</span></td><td>3</td><td>15 each way</td><td>60s</td><td>Mini band above knees</td></tr>
+            <tr><td>Calf Raise (step or flat)</td><td>4</td><td>20</td><td>45s</td><td>Pause at top and bottom</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="note-box"><strong>Warm-up:</strong> 5 min walk or light bike + hip circles, bodyweight squats (2×15), and leg swings. 1 warm-up set per compound at 50% working weight.</div>
+    </div>
+
+    <!-- CARDIO 1 -->
+    <div class="workout-panel" id="day-cardio1">
+      <div class="workout-title" style="margin-bottom:1.5rem;">Day 03 — <span style="color:var(--white-muted)">Cardio</span> (60 Min)</div>
+      <p style="color:var(--white-muted);margin-bottom:2rem;font-size:0.9rem;">Choose your cardio format. All options target 60 minutes at moderate-to-high intensity.</p>
+
+      <div class="cardio-options">
+        <button class="cardio-option-btn active" onclick="showCardio1('treadmill', this)">
+          <span class="cardio-icon">&#127939;</span>
+          <div><div class="cardio-option-name">Treadmill Intervals</div><div class="cardio-option-sub">Run · Walk · Sprint</div></div>
+        </button>
+        <button class="cardio-option-btn" onclick="showCardio1('stairmaster', this)">
+          <span class="cardio-icon">&#128070;</span>
+          <div><div class="cardio-option-name">StairMaster</div><div class="cardio-option-sub">Steady-State Climb</div></div>
+        </button>
+        <button class="cardio-option-btn" onclick="showCardio1('circuit', this)">
+          <span class="cardio-icon">&#9889;</span>
+          <div><div class="cardio-option-name">Cardio Circuit</div><div class="cardio-option-sub">No equipment needed</div></div>
+        </button>
+      </div>
+
+      <div class="cardio-detail active" id="c1-treadmill">
+        <table class="interval-table">
+          <thead><tr><th>Segment</th><th>Duration</th><th>Effort</th><th>Pace/Setting</th></tr></thead>
+          <tbody>
+            <tr><td>Warm-Up Walk</td><td>5 min</td><td>Easy</td><td>3.0–3.5 mph / 0% incline</td></tr>
+            <tr><td>Jog</td><td>10 min</td><td>Moderate</td><td>5.0–6.0 mph</td></tr>
+            <tr><td>Run Interval ×6</td><td>1 min on / 1 min walk</td><td>Hard / Easy</td><td>7.0–8.5 mph / 3.0 mph</td></tr>
+            <tr><td>Incline Walk</td><td>15 min</td><td>Moderate</td><td>3.0 mph / 8–12% incline</td></tr>
+            <tr><td>Cool-Down Walk</td><td>5 min</td><td>Easy</td><td>2.5–3.0 mph / 0%</td></tr>
+          </tbody>
+        </table>
+        <div class="note-box" style="margin-top:1.5rem;"><strong>Target heart rate:</strong> 70–85% max HR during intervals. Max HR ≈ 220 − your age. Stay at 60–70% during recovery walks.</div>
+      </div>
+
+      <div class="cardio-detail" id="c1-stairmaster">
+        <table class="interval-table">
+          <thead><tr><th>Segment</th><th>Duration</th><th>Level</th><th>Notes</th></tr></thead>
+          <tbody>
+            <tr><td>Warm-Up</td><td>5 min</td><td>4–5</td><td>Easy pace, no rails</td></tr>
+            <tr><td>Steady Climb</td><td>20 min</td><td>7–9</td><td>Hands-free, upright posture</td></tr>
+            <tr><td>Speed Burst ×5</td><td>1 min on / 2 min steady</td><td>13–16 / 7</td><td>Go hard, then settle</td></tr>
+            <tr><td>Steady Finish</td><td>10 min</td><td>8</td><td>Maintain form</td></tr>
+            <tr><td>Cool-Down</td><td>5 min</td><td>3–4</td><td>Slow, stretch calves</td></tr>
+          </tbody>
+        </table>
+        <div class="note-box" style="margin-top:1.5rem;"><strong>Pro tip:</strong> Avoid leaning on the rails. Use a slight forward lean from the hips to engage glutes and core.</div>
+      </div>
+
+      <div class="cardio-detail" id="c1-circuit">
+        <p style="color:var(--white-muted);font-size:0.85rem;margin-bottom:1rem;">Complete 4 rounds. Rest 90 seconds between rounds. Each round takes ~12–14 min.</p>
+        <table class="interval-table">
+          <thead><tr><th>Exercise</th><th>Duration</th><th>Notes</th></tr></thead>
+          <tbody>
+            <tr><td>Jump Rope (or high knees)</td><td>60 sec</td><td>Fast pace</td></tr>
+            <tr><td>Burpees</td><td>45 sec</td><td>Full extension at top</td></tr>
+            <tr><td>Mountain Climbers</td><td>45 sec</td><td>Hips level</td></tr>
+            <tr><td>Box Jumps / Jump Squats</td><td>45 sec</td><td>Soft landing</td></tr>
+            <tr><td>Plank Hold</td><td>30 sec</td><td>Active core</td></tr>
+            <tr><td>Jumping Jacks</td><td>45 sec</td><td>Active recovery</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- FULL BODY -->
+    <div class="workout-panel" id="day-full">
+      <div class="workout-header">
+        <div>
+          <div class="workout-title">Day 04 — <span>Full Body</span></div>
+          <div style="color:var(--white-muted);font-size:0.85rem;margin-top:0.25rem;">Focus: Compound movements · Total body stimulus &nbsp;|&nbsp; ~60 min</div>
+        </div>
+        <div class="toggle-group">
+          <button class="toggle-btn active" onclick="toggleEnv(this,'full','gym')">Gym</button>
+          <button class="toggle-btn" onclick="toggleEnv(this,'full','home')">Home</button>
+        </div>
+      </div>
+
+      <div id="full-gym">
+        <table class="exercise-table">
+          <thead><tr>
+            <th style="width:35%">Exercise</th><th>Sets</th><th>Reps</th><th>Rest</th><th>Notes</th>
+          </tr></thead>
+          <tbody>
+            <tr><td>Deadlift</td><td>4</td><td>5</td><td>2.5 min</td><td>Braced core, hip hinge</td></tr>
+            <tr><td>Incline DB Press</td><td>3</td><td>10</td><td>90s</td><td>Slight incline, controlled</td></tr>
+            <tr><td>DB Goblet Squat</td><td>3</td><td>12</td><td>90s</td><td>Slow descent (3s)</td></tr>
+            <tr><td>Cable Row (wide grip)</td><td>3</td><td>12</td><td>75s</td><td>Elbows flare out</td></tr>
+            <tr><td>Arnold Press <span class="superset-badge">A1</span></td><td>3</td><td>10</td><td>–</td><td>Superset with A2</td></tr>
+            <tr><td>DB RDL <span class="superset-badge">A2</span></td><td>3</td><td>12</td><td>75s</td><td>Keep bar close</td></tr>
+            <tr><td>Plank to Push-Up</td><td>3</td><td>10</td><td>60s</td><td>Core stays braced</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div id="full-home" style="display:none">
+        <table class="exercise-table">
+          <thead><tr>
+            <th style="width:35%">Exercise</th><th>Sets</th><th>Reps</th><th>Rest</th><th>Notes</th>
+          </tr></thead>
+          <tbody>
+            <tr><td>DB Deadlift or KB Swing</td><td>4</td><td>10–12</td><td>90s</td><td>Strong hip drive</td></tr>
+            <tr><td>Push-Up Variation</td><td>3</td><td>12–15</td><td>75s</td><td>Archer, wide, or decline</td></tr>
+            <tr><td>DB Goblet Squat</td><td>3</td><td>15</td><td>75s</td><td>Pause at bottom</td></tr>
+            <tr><td>Band or DB Row</td><td>3</td><td>12</td><td>75s</td><td>Elbow past hip</td></tr>
+            <tr><td>DB Overhead Press <span class="superset-badge">A1</span></td><td>3</td><td>10</td><td>–</td><td>Superset with A2</td></tr>
+            <tr><td>Single-Leg Deadlift <span class="superset-badge">A2</span></td><td>3</td><td>10 each</td><td>75s</td><td>Controlled balance</td></tr>
+            <tr><td>Renegade Row</td><td>3</td><td>8 each side</td><td>60s</td><td>Core tight, no rotation</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="note-box"><strong>Warm-up:</strong> 5 min row or bike + hip circles, thoracic rotations, and light deadlift warm-up sets. Take your time on the deadlift build-up.</div>
+    </div>
+
+    <!-- CARDIO 2 -->
+    <div class="workout-panel" id="day-cardio2">
+      <div class="workout-title" style="margin-bottom:1.5rem;">Day 05 — <span style="color:var(--white-muted)">Cardio</span> (60 Min)</div>
+      <p style="color:var(--white-muted);margin-bottom:2rem;font-size:0.9rem;">End-of-week cardio. Choose a format that feels good — or push hard for a strong finish.</p>
+
+      <div class="cardio-options">
+        <button class="cardio-option-btn active" onclick="showCardio2('cycle', this)">
+          <span class="cardio-icon">&#128690;</span>
+          <div><div class="cardio-option-name">Cycle / Spin</div><div class="cardio-option-sub">HIIT on the Bike</div></div>
+        </button>
+        <button class="cardio-option-btn" onclick="showCardio2('class', this)">
+          <span class="cardio-icon">&#127936;</span>
+          <div><div class="cardio-option-name">Cardio Class</div><div class="cardio-option-sub">Zumba · HIIT · Kickbox</div></div>
+        </button>
+        <button class="cardio-option-btn" onclick="showCardio2('outdoor', this)">
+          <span class="cardio-icon">&#127774;</span>
+          <div><div class="cardio-option-name">Outdoor Run</div><div class="cardio-option-sub">Tempo or Easy Run</div></div>
+        </button>
+      </div>
+
+      <div class="cardio-detail active" id="c2-cycle">
+        <p style="color:var(--white-muted);font-size:0.85rem;margin-bottom:1rem;">Adjust resistance so hard intervals feel like 8–9/10 effort. Recovery should be 5–6/10.</p>
+        <table class="interval-table">
+          <thead><tr><th>Segment</th><th>Duration</th><th>Resistance</th><th>RPM / Effort</th></tr></thead>
+          <tbody>
+            <tr><td>Warm-Up</td><td>8 min</td><td>Light</td><td>80–90 RPM / easy</td></tr>
+            <tr><td>Build Interval ×3</td><td>3 min up / 2 min recover</td><td>Medium → High</td><td>90+ RPM → 70 RPM</td></tr>
+            <tr><td>Standing Climb</td><td>5 min</td><td>Heavy</td><td>60–70 RPM, out of saddle</td></tr>
+            <tr><td>Sprint Interval ×4</td><td>30s sprint / 90s easy</td><td>Medium</td><td>Max RPM / comfortable</td></tr>
+            <tr><td>Steady State</td><td>10 min</td><td>Moderate</td><td>80 RPM</td></tr>
+            <tr><td>Cool-Down</td><td>5 min</td><td>Light</td><td>Easy spin, low resistance</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="cardio-detail" id="c2-class">
+        <div class="note-box">
+          <strong>Recommended Class Formats:</strong> Any 45–60 min structured cardio class counts. Examples include HIIT, kickboxing, Zumba, dance cardio, barre cardio, or bootcamp.<br><br>
+          <strong>Goal:</strong> Stay in the moderate-to-high intensity zone for the majority of the class. Aim for at least 400–600 calories burned based on your size and effort level.<br><br>
+          <strong>Tip:</strong> If your gym doesn't offer classes, follow a free YouTube session — search "45 minute HIIT cardio" for options that need zero equipment.
+        </div>
+      </div>
+
+      <div class="cardio-detail" id="c2-outdoor">
+        <table class="interval-table">
+          <thead><tr><th>Option</th><th>Duration</th><th>Structure</th><th>Pace</th></tr></thead>
+          <tbody>
+            <tr><td>Easy / Recovery Run</td><td>60 min</td><td>Continuous</td><td>Conversational — can speak in full sentences</td></tr>
+            <tr><td>Tempo Run</td><td>60 min total</td><td>10 min easy → 35 min tempo → 15 min easy</td><td>Comfortably hard — 7/10 effort</td></tr>
+            <tr><td>Fartlek Run</td><td>60 min</td><td>Unstructured surges</td><td>Pick landmarks — sprint to that tree, recover, repeat</td></tr>
+          </tbody>
+        </table>
+        <div class="note-box" style="margin-top:1.5rem;"><strong>Week-end tip:</strong> This is your last workout of the week — pick the format that energizes you. Easy run = active recovery. Tempo = push your fitness. Either is a win.</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- MACRO CALCULATOR -->
+<section id="macros">
+  <div class="container">
+    <div class="section-label">Nutrition</div>
+    <h2 class="section-title">Macro Calculator</h2>
+    <p class="section-sub">Get your personalized daily targets for calories, protein, carbs, and fat based on your body and goals.</p>
+    <div class="divider"></div>
+
+    <div class="macro-wrap">
+      <!-- FORM -->
+      <div>
+        <div class="macro-form-group">
+          <label class="macro-label">Gender</label>
+          <div class="gender-toggle">
+            <button class="gender-btn active" id="btn-male" onclick="setGender('male')">Male</button>
+            <button class="gender-btn" id="btn-female" onclick="setGender('female')">Female</button>
+          </div>
+        </div>
+
+        <div class="macro-form-group">
+          <label class="macro-label">Age</label>
+          <input type="number" class="macro-input" id="m-age" placeholder="e.g. 30" min="15" max="80">
+        </div>
+
+        <div class="macro-form-group">
+          <label class="macro-label">Height</label>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;">
+            <input type="number" class="macro-input" id="m-feet" placeholder="Feet" min="4" max="7">
+            <input type="number" class="macro-input" id="m-inches" placeholder="Inches" min="0" max="11">
+          </div>
+        </div>
+
+        <div class="macro-form-group">
+          <label class="macro-label">Weight (lbs)</label>
+          <input type="number" class="macro-input" id="m-weight" placeholder="e.g. 175" min="80" max="500">
+        </div>
+
+        <div class="macro-form-group">
+          <label class="macro-label">Activity Level</label>
+          <select class="macro-input" id="m-activity">
+            <option value="1.2">Sedentary (desk job, little exercise)</option>
+            <option value="1.375">Lightly Active (1–3 days/week)</option>
+            <option value="1.55" selected>Moderately Active (3–5 days/week)</option>
+            <option value="1.725">Very Active (6–7 days/week)</option>
+            <option value="1.9">Extremely Active (2x/day training)</option>
+          </select>
+        </div>
+
+        <div class="macro-form-group">
+          <label class="macro-label">Goal</label>
+          <select class="macro-input" id="m-goal">
+            <option value="-500">Aggressive Weight Loss (−500 cal/day)</option>
+            <option value="-300" selected>Moderate Weight Loss (−300 cal/day)</option>
+            <option value="-150">Slow Cut (−150 cal/day)</option>
+            <option value="0">Maintain Weight</option>
+            <option value="250">Lean Bulk (+250 cal/day)</option>
+          </select>
+        </div>
+
+        <button class="calc-btn" onclick="calculateMacros()">Calculate My Macros</button>
+      </div>
+
+      <!-- RESULTS -->
+      <div class="macro-results" id="macroResults">
+        <div class="results-placeholder" id="resultsPlaceholder">
+          <div class="big-icon">&#9881;</div>
+          <p>Fill in your details and hit <strong style="color:var(--white)">Calculate</strong> to see your personalized macro targets.</p>
+        </div>
+        <div class="results-content" id="resultsContent">
+          <div class="results-cal">
+            <div class="results-cal-num" id="r-calories">—</div>
+            <div class="results-cal-label">Daily Calories</div>
+            <div class="results-cal-sub" id="r-tdee-note"></div>
+          </div>
+          <div class="macro-bars">
+            <div class="macro-bar-row bar-protein">
+              <div class="macro-bar-header">
+                <span class="macro-bar-name" style="color:var(--blue)">Protein</span>
+                <span class="macro-bar-val" id="r-protein">—<span>g / day</span></span>
+              </div>
+              <div class="bar-track"><div class="bar-fill" id="bar-protein"></div></div>
+            </div>
+            <div class="macro-bar-row bar-carbs">
+              <div class="macro-bar-header">
+                <span class="macro-bar-name" style="color:var(--white)">Carbs</span>
+                <span class="macro-bar-val" id="r-carbs">—<span>g / day</span></span>
+              </div>
+              <div class="bar-track"><div class="bar-fill" id="bar-carbs"></div></div>
+            </div>
+            <div class="macro-bar-row bar-fat">
+              <div class="macro-bar-header">
+                <span class="macro-bar-name" style="color:var(--white-muted)">Fat</span>
+                <span class="macro-bar-val" id="r-fat">—<span>g / day</span></span>
+              </div>
+              <div class="bar-track"><div class="bar-fill" id="bar-fat"></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MEAL PLAN -->
+<section id="meals">
+  <div class="container">
+    <div class="section-label">Nutrition</div>
+    <h2 class="section-title">Sample Weekly Meal Plan</h2>
+    <p class="section-sub">High-protein, balanced meals aligned with your training split. Portions scale to your macro targets.</p>
+    <div class="divider"></div>
+
+    <div class="meal-nav">
+      <button class="meal-day-btn active" onclick="showMealDay('m1', this)">Mon</button>
+      <button class="meal-day-btn" onclick="showMealDay('m2', this)">Tue</button>
+      <button class="meal-day-btn" onclick="showMealDay('m3', this)">Wed</button>
+      <button class="meal-day-btn" onclick="showMealDay('m4', this)">Thu</button>
+      <button class="meal-day-btn" onclick="showMealDay('m5', this)">Fri</button>
+      <button class="meal-day-btn" onclick="showMealDay('m6', this)">Sat</button>
+      <button class="meal-day-btn" onclick="showMealDay('m7', this)">Sun</button>
+    </div>
+
+    <!-- MON -->
+    <div class="meal-day-panel active" id="meal-m1">
+      <div class="meal-card">
+        <div class="meal-time">Breakfast · 7–8 AM</div>
+        <div class="meal-name">Egg White Veggie Scramble</div>
+        <ul class="meal-items">
+          <li>5 egg whites + 1 whole egg<span class="meal-macro-tag">30g P</span></li>
+          <li>Spinach, peppers, onion<span class="meal-macro-tag">5g C</span></li>
+          <li>1 slice whole grain toast<span class="meal-macro-tag">15g C</span></li>
+          <li>½ avocado<span class="meal-macro-tag">10g F</span></li>
+        </ul>
+      </div>
+      <div class="meal-card">
+        <div class="meal-time">Lunch · 12–1 PM</div>
+        <div class="meal-name">Grilled Chicken Power Bowl</div>
+        <ul class="meal-items">
+          <li>6 oz grilled chicken breast<span class="meal-macro-tag">42g P</span></li>
+          <li>¾ cup brown rice<span class="meal-macro-tag">40g C</span></li>
+          <li>Roasted broccoli + zucchini<span class="meal-macro-tag">12g C</span></li>
+          <li>2 tbsp olive oil drizzle<span class="meal-macro-tag">28g F</span></li>
+        </ul>
+      </div>
+      <div class="meal-card">
+        <div class="meal-time">Pre-Workout Snack · 3:30 PM</div>
+        <div class="meal-name">Rice Cakes + Protein</div>
+        <ul class="meal-items">
+          <li>1 scoop whey protein shake<span class="meal-macro-tag">25g P</span></li>
+          <li>2 rice cakes with almond butter<span class="meal-macro-tag">30g C · 8g F</span></li>
+        </ul>
+      </div>
+      <div class="meal-card">
+        <div class="meal-time">Dinner · 7 PM</div>
+        <div class="meal-name">Salmon + Sweet Potato</div>
+        <ul class="meal-items">
+          <li>6 oz baked salmon<span class="meal-macro-tag">34g P · 14g F</span></li>
+          <li>1 medium sweet potato<span class="meal-macro-tag">35g C</span></li>
+          <li>Steamed asparagus<span class="meal-macro-tag">6g C</span></li>
+          <li>Lemon + herbs seasoning<span class="meal-macro-tag">0</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- TUE -->
+    <div class="meal-day-panel" id="meal-m2">
+      <div class="meal-card">
+        <div class="meal-time">Breakfast · 7–8 AM</div>
+        <div class="meal-name">Greek Yogurt Parfait</div>
+        <ul class="meal-items">
+          <li>1.5 cups 0% Greek yogurt<span class="meal-macro-tag">25g P</span></li>
+          <li>½ cup blueberries + strawberries<span class="meal-macro-tag">15g C</span></li>
+          <li>¼ cup granola<span class="meal-macro-tag">22g C</span></li>
+          <li>1 tbsp chia seeds<span class="meal-macro-tag">4g F</span></li>
+        </ul>
+      </div>
+      <div class="meal-card">
+        <div class="meal-time">Lunch · 12–1 PM</div>
+        <div class="meal-name">Turkey Wrap</div>
+        <ul class="meal-items">
+          <li>6 oz lean ground turkey or sliced turkey<span class="meal-macro-tag">38g P</span></li>
+          <li>Whole wheat wrap<span class="meal-macro-tag">30g C</span></li>
+          <li>Romaine, tomato, mustard<span class="meal-macro-tag">4g C</span></li>
+          <li>¼ avocado<span class="meal-macro-tag">5g F</span></li>
+        </ul>
+      </div>
+      <div class="meal-card">
+        <div class="meal-time">Snack · 3:30 PM</div>
+        <div class="meal-name">Cottage Cheese + Fruit</div>
+        <ul class="meal-items">
+          <li>1 cup low-fat cottage cheese<span class="meal-macro-tag">28g P</span></li>
+          <li>1 cup pineapple chunks<span class="meal-macro-tag">22g C</span></li>
+        </ul>
+      </div>
+      <div class="meal-card">
+        <div class="meal-time">Dinner · 7 PM</div>
+        <div class="meal-name">Lean Ground Beef Stir Fry</div>
+        <ul class="meal-items">
+          <li>6 oz lean ground beef (93/7)<span class="meal-macro-tag">38g P · 10g F</span></li>
+          <li>Mixed stir-fry veggies<span class="meal-macro-tag">15g C</span></li>
+          <li>½ cup jasmine rice<span class="meal-macro-tag">35g C</span></li>
+          <li>Low-sodium soy sauce + ginger<span class="meal-macro-tag">2g C</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- WED — Cardio Day: slightly lower carbs -->
+    <div class="meal-day-panel" id="meal-m3">
+      <div class="meal-card">
+        <div class="meal-time">Breakfast · 7–8 AM</div>
+        <div class="meal-name">Protein Oatmeal</div>
+        <ul class="meal-items">
+          <li>1 cup rolled oats (cooked)<span class="meal-macro-tag">30g C</span></li>
+          <li>1 scoop vanilla protein<span class="meal-macro-tag">25g P</span></li>
+          <li>½ banana + cinnamon<span class="meal-macro-tag">15g C</span></li>
+          <li>1 tbsp peanut butter<span class="meal-macro-tag">8g F</span></li>
+        </ul>
+      </div>
+      <div class="meal-card">
+        <div class="meal-time">Lunch · 12–1 PM</div>
+        <div class="meal-name">Tuna Salad Lettuce Wraps</div>
+        <ul class="meal-items">
+          <li>2 cans albacore tuna (drained)<span class="meal-macro-tag">40g P</span></li>
+          <li>1 tbsp light mayo + celery<span class="meal-macro-tag">5g F</span></li>
+          <li>Romaine lettuce cups<span class="meal-macro-tag">3g C</span></li>
+          <li>Cherry tomatoes + cucumber<span class="meal-macro-tag">8g C</span></li>
+        </ul>
+      </div>
+      <div class="meal-card">
+        <div class="meal-time">Pre-Cardio Snack · 3:30 PM</div>
+        <div class="meal-name">Apple + Protein Shake</div>
+        <ul class="meal-items">
+          <li>1 medium apple<span class="meal-macro-tag">25g C</span></li>
+          <li>1 scoop whey protein + water<span class="meal-macro-tag">25g P</span></li>
+        </ul>
+      </div>
+      <div class="meal-card">
+        <div class="meal-time">Dinner · 7 PM</div>
+        <div class="meal-name">Sheet Pan Chicken Thighs</div>
+        <ul class="meal-items">
+          <li>6 oz boneless skinless thighs<span class="meal-macro-tag">36g P · 10g F</span></li>
+          <li>Roasted Brussels sprouts<span class="meal-macro-tag">10g C</span></li>
+          <li>½ cup quinoa<span class="meal-macro-tag">30g C · 4g P</span></li>
+          <li>Olive oil + garlic seasoning<span class="meal-macro-tag">10g F</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- THU -->
+    <div class="meal-day-panel" id="meal-m4">
+      <div class="meal-card">
+        <div class="meal-time">Breakfast · 7–8 AM</div>
+        <div class="meal-name">High-Protein Pancakes</div>
+        <ul class="meal-items">
+          <li>½ cup oat flour + 2 eggs + 1 scoop protein<span class="meal-macro-tag">38g P · 30g C</span></li>
+          <li>½ cup mixed berries<span class="meal-macro-tag">12g C</span></li>
+          <li>Sugar-free syrup<span class="meal-macro-tag">0</span></li>
+        </ul>
+      </div>
+      <div class="meal-card">
+        <div class="meal-time">Lunch · 12–1 PM</div>
+        <div class="meal-name">Burrito Bowl</div>
+        <ul class="meal-items">
+          <li>6 oz grilled chicken or shrimp<span class="meal-macro-tag">38g P</span></li>
+          <li>½ cup black beans<span class="meal-macro-tag">20g C · 8g P</span></li>
+          <li>½ cup white rice + salsa<span class="meal-macro-tag">35g C</span></li>
+          <li>¼ avocado + lime<span class="meal-macro-tag">5g F</span></li>
+        </ul>
+      </div>
+      <div class="meal-card">
+        <div class="meal-time">Snack · 3:30 PM</div>
+        <div class="meal-name">Hard Boiled Eggs + Veggies</div>
+        <ul class="meal-items">
+          <li>3 hard boiled eggs<span class="meal-macro-tag">18g P · 10g F</span></li>
+          <li>Sliced bell peppers + hummus<span class="meal-macro-tag">15g C · 4g P</span></li>
+        </ul>
+      </div>
+      <div class="meal-card">
+        <div class="meal-time">Dinner · 7 PM</div>
+        <div class="meal-name">Baked Cod + Roasted Veggies</div>
+        <ul class="meal-items">
+          <li>8 oz cod fillet<span class="meal-macro-tag">42g P · 2g F</span></li>
+          <li>Roasted green beans + tomatoes<span class="meal-macro-tag">10g C</span></li>
+          <li>½ cup lentils<span class="meal-macro-tag">20g C · 9g P</span></li>
+          <li>Olive oil + paprika<span class="meal-macro-tag">10g F</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- FRI — Cardio Day -->
+    <div class="meal-day-panel" id="meal-m5">
+      <div class="meal-card">
+        <div class="meal-time">Breakfast · 7–8 AM</div>
+        <div class="meal-name">Smoothie Bowl</div>
+        <ul class="meal-items">
+          <li>1 scoop protein + 1 frozen banana + 1 cup frozen mango<span class="meal-macro-tag">28g P · 50g C</span></li>
+          <li>Toppings: granola, hemp seeds<span class="meal-macro-tag">20g C · 5g F</span></li>
+        </ul>
+      </div>
+      <div class="meal-card">
+        <div class="meal-time">Lunch · 12–1 PM</div>
+        <div class="meal-name">Asian Chicken Salad</div>
+        <ul class="meal-items">
+          <li>6 oz shredded rotisserie chicken<span class="meal-macro-tag">38g P</span></li>
+          <li>Napa cabbage, edamame, mandarins<span class="meal-macro-tag">20g C</span></li>
+          <li>Sesame ginger dressing (2 tbsp)<span class="meal-macro-tag">8g F</span></li>
+          <li>Wonton strips (small handful)<span class="meal-macro-tag">12g C</span></li>
+        </ul>
+      </div>
+      <div class="meal-card">
+        <div class="meal-time">Snack · 3:30 PM</div>
+        <div class="meal-name">Pre-Cardio Fuel</div>
+        <ul class="meal-items">
+          <li>Banana + 2 tbsp almond butter<span class="meal-macro-tag">27g C · 8g F</span></li>
+          <li>Black coffee or pre-workout<span class="meal-macro-tag">0</span></li>
+        </ul>
+      </div>
+      <div class="meal-card">
+        <div class="meal-time">Dinner · 7 PM</div>
+        <div class="meal-name">Shrimp + Zucchini Pasta</div>
+        <ul class="meal-items">
+          <li>6 oz shrimp<span class="meal-macro-tag">28g P · 2g F</span></li>
+          <li>2 cups zucchini noodles + ½ cup chickpea pasta<span class="meal-macro-tag">30g C · 8g P</span></li>
+          <li>Olive oil, garlic, cherry tomatoes<span class="meal-macro-tag">12g F · 10g C</span></li>
+          <li>Fresh basil + lemon zest<span class="meal-macro-tag">0</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- SAT — Flexible/Refeed -->
+    <div class="meal-day-panel" id="meal-m6">
+      <div class="meal-card">
+        <div class="meal-time">Breakfast · 8–9 AM</div>
+        <div class="meal-name">Weekend Egg Bake</div>
+        <ul class="meal-items">
+          <li>3 whole eggs + 3 whites<span class="meal-macro-tag">30g P · 10g F</span></li>
+          <li>Turkey sausage crumbles<span class="meal-macro-tag">14g P</span></li>
+          <li>Peppers, mushrooms, feta<span class="meal-macro-tag">8g C · 4g F</span></li>
+          <li>1 slice sourdough<span class="meal-macro-tag">20g C</span></li>
+        </ul>
+      </div>
+      <div class="meal-card">
+        <div class="meal-time">Lunch · 1 PM</div>
+        <div class="meal-name">Flexible Meal</div>
+        <ul class="meal-items">
+          <li>Choose a meal out or home-cooked<span class="meal-macro-tag">—</span></li>
+          <li>Aim for a lean protein source<span class="meal-macro-tag">30–40g P</span></li>
+          <li>Include veggies and whole carbs<span class="meal-macro-tag">vary</span></li>
+          <li>Enjoy — one flexible meal won't break progress<span class="meal-macro-tag">&#10003;</span></li>
+        </ul>
+      </div>
+      <div class="meal-card">
+        <div class="meal-time">Snack · 4 PM</div>
+        <div class="meal-name">Protein Bar or Shake</div>
+        <ul class="meal-items">
+          <li>High-quality protein bar (20g+ P)<span class="meal-macro-tag">20–25g P</span></li>
+          <li>OR protein shake + handful of nuts<span class="meal-macro-tag">25g P · 10g F</span></li>
+        </ul>
+      </div>
+      <div class="meal-card">
+        <div class="meal-time">Dinner · 6:30 PM</div>
+        <div class="meal-name">NY Strip + Baked Potato</div>
+        <ul class="meal-items">
+          <li>6 oz lean sirloin or NY strip<span class="meal-macro-tag">42g P · 12g F</span></li>
+          <li>1 medium baked potato<span class="meal-macro-tag">45g C</span></li>
+          <li>Sour cream (2 tbsp) + chives<span class="meal-macro-tag">4g F</span></li>
+          <li>Side salad with vinaigrette<span class="meal-macro-tag">8g C</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- SUN — Meal Prep Day -->
+    <div class="meal-day-panel" id="meal-m7">
+      <div class="meal-card">
+        <div class="meal-time">Breakfast · 8–9 AM</div>
+        <div class="meal-name">Avocado Toast + Eggs</div>
+        <ul class="meal-items">
+          <li>2 slices whole grain toast<span class="meal-macro-tag">30g C</span></li>
+          <li>1 whole avocado<span class="meal-macro-tag">20g F</span></li>
+          <li>2 poached eggs<span class="meal-macro-tag">12g P · 10g F</span></li>
+          <li>Everything bagel seasoning + red pepper flakes<span class="meal-macro-tag">0</span></li>
+        </ul>
+      </div>
+      <div class="meal-card">
+        <div class="meal-time">Lunch · 1 PM</div>
+        <div class="meal-name">Meal Prep Chicken + Rice</div>
+        <ul class="meal-items">
+          <li>6 oz baked chicken breast<span class="meal-macro-tag">42g P</span></li>
+          <li>¾ cup brown rice<span class="meal-macro-tag">40g C</span></li>
+          <li>Steamed broccoli + carrots<span class="meal-macro-tag">14g C</span></li>
+          <li>Hot sauce or low-cal sauce<span class="meal-macro-tag">0</span></li>
+        </ul>
+      </div>
+      <div class="meal-card">
+        <div class="meal-time">Snack · 4 PM</div>
+        <div class="meal-name">Edamame + Almonds</div>
+        <ul class="meal-items">
+          <li>1 cup shelled edamame<span class="meal-macro-tag">17g P · 14g C</span></li>
+          <li>Small handful almonds (20 nuts)<span class="meal-macro-tag">6g P · 14g F</span></li>
+        </ul>
+      </div>
+      <div class="meal-card">
+        <div class="meal-time">Dinner · 6:30 PM</div>
+        <div class="meal-name">Sunday Turkey Meatballs</div>
+        <ul class="meal-items">
+          <li>5 turkey meatballs (lean)<span class="meal-macro-tag">35g P · 8g F</span></li>
+          <li>Zucchini noodles or whole wheat pasta<span class="meal-macro-tag">35g C</span></li>
+          <li>Marinara sauce (½ cup)<span class="meal-macro-tag">12g C</span></li>
+          <li>Parmesan (2 tbsp)<span class="meal-macro-tag">4g P · 4g F</span></li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- GROCERY LIST -->
+<section id="grocery">
+  <div class="container">
+    <div class="section-label">Nutrition</div>
+    <h2 class="section-title">Weekly Grocery List</h2>
+    <p class="section-sub">Everything you need for the full week. Tap items to check them off as you shop.</p>
+    <div class="divider"></div>
+
+    <div class="grocery-grid">
+      <div class="grocery-category">
+        <div class="grocery-cat-title">&#129385; Proteins</div>
+        <ul class="grocery-list" id="g-proteins">
+          <li onclick="toggleGrocery(this)"><div class="grocery-check">&#10003;</div><span>Chicken breast (3–4 lbs)</span></li>
+          <li onclick="toggleGrocery(this)"><div class="grocery-check">&#10003;</div><span>Lean ground turkey (1 lb)</span></li>
+          <li onclick="toggleGrocery(this)"><div class="grocery-check">&#10003;</div><span>Salmon fillets (1.5 lbs)</span></li>
+          <li onclick="toggleGrocery(this)"><div class="grocery-check">&#10003;</div><span>Shrimp, frozen (1 lb)</span></li>
+          <li onclick="toggleGrocery(this)"><div class="grocery-check">&#10003;</div><span>Cod or white fish (1.5 lbs)</span></li>
+          <li onclick="toggleGrocery(this)"><div class="grocery-check">&#10003;</div><span>Lean ground beef 93/7 (1 lb)</span></li>
+          <li onclick="toggleGrocery(this)"><div class="grocery-check">&#10003;</div><span>Sirloin steak (1 lb)</span></li>
+          <li onclick="toggleGrocery(this)"><div class="grocery-check">&#10003;</div><span>Eggs (18-count)</span></li>
+          <li onclick="toggleGrocery(this)"><div class="grocery-check">&#10003;</div><span>Egg whites (carton)</span></li>
+          <li onclick="toggleGrocery(this)"><div class="grocery-check">&#10003;</div><span>Albacore tuna, canned (4 cans)</span></li>
+          <li onclick="toggleGrocery(this)"><div class="grocery-check">&#10003;</div><span>Turkey sausage links</span></li>
+          <li onclick="toggleGrocery(this)"><div class="grocery-check">&#10003;</div><span>Whey protein powder</span></li>
+          <li onclick="toggleGrocery(this)"><div class="grocery-check">&#10003;</div><span>Protein bars (4–6)</span></li>
+        </ul>
+      </div>
+
+      <div class="grocery-category">
+        <div class="grocery-cat-title">&#127973; Dairy &amp; Alternatives</div>
+        <ul class="grocery-list">
+          <li onclick="toggleGrocery(this)"><div class="grocery-check">&#10003;</div><span>Greek yogurt 0% (32 oz)</span></li>
+          <li onclick="toggleGrocery(this)"><div class="grocery-check">&#10003;</div><span>Cottage cheese, low-fat (16 oz)</span></li>
+          <li onclick="toggleGrocery(this)"><div class="grocery-check">&#10003;</div><span>Parmesan cheese (small block)</span></li>
+          <li onclick="toggleGrocery(this)"><div class="grocery-check">&#10003;</div><span>Feta cheese (small crumble)</span></li>
+          <li onclick="toggleGrocery(this)"><div class="grocery-check">&#10003;</div><span>Sour cream (light, small)</span></li>
+          <li onclick="toggleGrocery(this)"><div class="grocery-check">&#10003;</div><span>Almond milk or oat milk (64 oz)</span></li>
+        </ul>
+      </div>
+
+      <div class="grocery-category">
+        <div class="grocery-cat-title">&#127807; Carbs &amp; Grains</div>
+        <ul class="grocery-list">
+          <li onclick="toggleGrocery(this)"><div class="grocery-check">&#10003;</div><span>Brown rice (2 lb bag)</span></li>
+          <li onclick="toggleGrocery(this)"><div class="grocery-check">&#10003;</div><span>White rice or jasmine rice</span></li>
+          <li onclick="toggleGrocery(this)"><div class="grocery-check">&#10003;</div><span>Quinoa (1 lb)</span></li>
+          <li onclick="toggleGrocery(this)"><div class="grocery-check">&#10003;</div><span>Rolled oats (large canister)</span></li>
+          <li onclick="toggleGrocery(this)"><div class="grocery-check">&#10003;</div><span>Whole grain bread (loaf)</span></li>
+          <li onclick="toggleGrocery(this)"><div class="grocery-check">&#10003;</div><span>Whole wheat tortilla wraps (6-pack)</span></li>
+          <li onclick="toggleGrocery(this)"><div class="grocery-check">&#10003;</div><span>Chickpea pasta or lentil pasta</span></li>
+          <li onclick="toggleGrocery(this)"><div class="grocery-check">&#10003;</div><span>Rice cakes (plain or lightly salted)</span></li>
+          <li onclick="toggleGrocery(this)"><div class="grocery-check">&#10003;</div><span>Granola (low-sugar, 1 bag)</span></li>
+          <li onclick="toggleGrocery(this)"><div class="grocery-check">&#10003;</div><span>Sweet potatoes (4 medium)</span></li>
+          <li onclick="toggleGrocery(this)"><div class="grocery-check">&#10003;</div><span>Baked potatoes (2 russet)</span></li>
+          <li onclick="toggleGrocery(this)"><div class="grocery-check">&#10003;</div><span>Black beans, canned (2 cans)</span></li>
+          <li onclick="toggleGrocery(this)"><div class="grocery-check">&#10003;</div><span>Lentils, canned or dry</span></li>
+          <li onclick="toggleGrocery(this)"><div class="grocery-check">&#10003;</div><span>Oat flour (1 lb)</span></li>
+        </ul>
+      </div>
+
+      <div class="grocery-category">
+        <div class="grocery-cat-title">&#129381; Fruits &amp; Vegetables</div>
+        <ul class="grocery-list">
+          <li onclick="toggleGrocery(this)"><div class="grocery-check">&#10003;</div><span>Spinach (large bag)</span></li>
+          <li onclick="toggleGrocery(this)"><div class="grocery-check">&#10003;</div><span>Romaine lettuce (head or bag)</span></li>
+          <li onclick="toggleGrocery(this)"><div class="grocery-check">&#10003;</div><span>Napa cabbage (small head)</span></li>
+          <li onclick="toggleGrocery(this)"><div class="grocery-check">&#10003;</div><span>Broccoli (2 crowns or bag)</span></li>
+          <li onclick="toggleGrocery(this)"><div class="grocery-check">&#10003;</div><span>Zucchini (4 medium)</span></li>
+          <li onclick="toggleGrocery(this)"><div class="grocery-check">&#10003;</div><span>Brussels sprouts (12 oz bag)</span></li>
+          <li onclick="toggleGrocery(this)"><div class="grocery-check">&#10003;</div><span>Green beans (1 lb)</span></li>
+          <li onclick="toggleGrocery(this)"><div class="grocery-check">&#10003;</div><span>Asparagus (1 bunch)</span></li>
+          <li onclick="toggleGrocery(this)"><div class="grocery-check">&#10003;</div><span>Bell peppers, mixed (4)</span></li>
+          <li onclick="toggleGrocery(this)"><div class="grocery-check">&#10003;</div><span>Cherry tomatoes (pint)</span></li>
+          <li onclick="toggleGrocery(this)"><div class="grocery-check">&#10003;</div><span>Mushrooms (8 oz)</span></li>
+          <li onclick="toggleGrocery(this)"><div class="grocery-check">&#10003;</div><span>Cucumber (2)</span></li>
+          <li onclick="toggleGrocery(this)"><div class="grocery-check">&#10003;</div><span>Celery (bunch)</span></li>
+          <li onclick="toggleGrocery(this)"><div class="grocery-check">&#10003;</div><span>Onions + garlic</span></li>
+          <li onclick="toggleGrocery(this)"><div class="grocery-check">&#10003;</div><span>Bananas (6)</span></li>
+          <li onclick="toggleGrocery(this)"><div class="grocery-check">&#10003;</div><span>Apples (4–6)</span></li>
+          <li onclick="toggleGrocery(this)"><div class="grocery-check">&#10003;</div><span>Blueberries + strawberries (fresh or frozen)</span></li>
+          <li onclick="toggleGrocery(this)"><div class="grocery-check">&#10003;</div><span>Frozen mango chunks (bag)</span></li>
+          <li onclick="toggleGrocery(this)"><div class="grocery-check">&#10003;</div><span>Avocados (4)</span></li>
+          <li onclick="toggleGrocery(this)"><div class="grocery-check">&#10003;</div><span>Mandarin oranges (small bag)</span></li>
+          <li onclick="toggleGrocery(this)"><div class="grocery-check">&#10003;</div><span>Pineapple chunks (fresh or canned)</span></li>
+          <li onclick="toggleGrocery(this)"><div class="grocery-check">&#10003;</div><span>Lemons (4)</span></li>
+        </ul>
+      </div>
+
+      <div class="grocery-category">
+        <div class="grocery-cat-title">&#129380; Fats &amp; Condiments</div>
+        <ul class="grocery-list">
+          <li onclick="toggleGrocery(this)"><div class="grocery-check">&#10003;</div><span>Olive oil (16 oz)</span></li>
+          <li onclick="toggleGrocery(this)"><div class="grocery-check">&#10003;</div><span>Almond butter (natural)</span></li>
+          <li onclick="toggleGrocery(this)"><div class="grocery-check">&#10003;</div><span>Peanut butter (natural)</span></li>
+          <li onclick="toggleGrocery(this)"><div class="grocery-check">&#10003;</div><span>Almonds (raw, 8 oz)</span></li>
+          <li onclick="toggleGrocery(this)"><div class="grocery-check">&#10003;</div><span>Hemp seeds + chia seeds</span></li>
+          <li onclick="toggleGrocery(this)"><div class="grocery-check">&#10003;</div><span>Low-sodium soy sauce</span></li>
+          <li onclick="toggleGrocery(this)"><div class="grocery-check">&#10003;</div><span>Marinara sauce (jar, low-sugar)</span></li>
+          <li onclick="toggleGrocery(this)"><div class="grocery-check">&#10003;</div><span>Hummus (small container)</span></li>
+          <li onclick="toggleGrocery(this)"><div class="grocery-check">&#10003;</div><span>Salsa (jar)</span></li>
+          <li onclick="toggleGrocery(this)"><div class="grocery-check">&#10003;</div><span>Light mayo</span></li>
+          <li onclick="toggleGrocery(this)"><div class="grocery-check">&#10003;</div><span>Sesame ginger dressing</span></li>
+          <li onclick="toggleGrocery(this)"><div class="grocery-check">&#10003;</div><span>Hot sauce</span></li>
+          <li onclick="toggleGrocery(this)"><div class="grocery-check">&#10003;</div><span>Mustard</span></li>
+          <li onclick="toggleGrocery(this)"><div class="grocery-check">&#10003;</div><span>Sugar-free syrup</span></li>
+        </ul>
+      </div>
+
+      <div class="grocery-category">
+        <div class="grocery-cat-title">&#129522; Freezer &amp; Pantry</div>
+        <ul class="grocery-list">
+          <li onclick="toggleGrocery(this)"><div class="grocery-check">&#10003;</div><span>Frozen edamame (shelled, 12 oz)</span></li>
+          <li onclick="toggleGrocery(this)"><div class="grocery-check">&#10003;</div><span>Frozen mixed veggies (stir fry bag)</span></li>
+          <li onclick="toggleGrocery(this)"><div class="grocery-check">&#10003;</div><span>Frozen banana (pre-sliced)</span></li>
+          <li onclick="toggleGrocery(this)"><div class="grocery-check">&#10003;</div><span>Everything bagel seasoning</span></li>
+          <li onclick="toggleGrocery(this)"><div class="grocery-check">&#10003;</div><span>Paprika, cumin, Italian herbs</span></li>
+          <li onclick="toggleGrocery(this)"><div class="grocery-check">&#10003;</div><span>Red pepper flakes</span></li>
+          <li onclick="toggleGrocery(this)"><div class="grocery-check">&#10003;</div><span>Cinnamon</span></li>
+          <li onclick="toggleGrocery(this)"><div class="grocery-check">&#10003;</div><span>Low-sodium chicken broth</span></li>
+          <li onclick="toggleGrocery(this)"><div class="grocery-check">&#10003;</div><span>Fresh ginger or ginger paste</span></li>
+          <li onclick="toggleGrocery(this)"><div class="grocery-check">&#10003;</div><span>Fresh basil</span></li>
+          <li onclick="toggleGrocery(this)"><div class="grocery-check">&#10003;</div><span>Chives (fresh or dried)</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ONBOARDING QUIZ -->
+<section id="quiz">
+  <div class="container">
+    <div class="section-label">Get Started</div>
+    <h2 class="section-title">Find Your Perfect Plan</h2>
+    <p class="section-sub">Answer 4 quick questions and we'll match you to the right program and tier.</p>
+    <div class="divider"></div>
+
+    <div class="quiz-steps" id="quizSteps">
+      <div class="quiz-progress" id="quizProgress">
+        <div class="quiz-dot done" id="qdot-0"></div>
+        <div class="quiz-dot" id="qdot-1"></div>
+        <div class="quiz-dot" id="qdot-2"></div>
+        <div class="quiz-dot" id="qdot-3"></div>
+      </div>
+
+      <!-- Step 1: Goal -->
+      <div class="quiz-step active" id="qstep-0">
+        <div class="quiz-question">What's your primary goal?</div>
+        <div class="quiz-sub">Choose the one that matters most right now.</div>
+        <div class="quiz-options">
+          <div class="quiz-option" onclick="selectQuizOption(this, 0, 'fat-loss')">
+            <div class="quiz-option-icon">&#128293;</div>
+            <div class="quiz-option-label">Fat Loss</div>
+            <div class="quiz-option-sub">Burn fat, get lean</div>
+          </div>
+          <div class="quiz-option" onclick="selectQuizOption(this, 0, 'recomposition')">
+            <div class="quiz-option-icon">&#9878;&#65039;</div>
+            <div class="quiz-option-label">Recomposition</div>
+            <div class="quiz-option-sub">Lose fat + build muscle</div>
+          </div>
+          <div class="quiz-option" onclick="selectQuizOption(this, 0, 'strength')">
+            <div class="quiz-option-icon">&#127947;</div>
+            <div class="quiz-option-label">Strength</div>
+            <div class="quiz-option-sub">Get stronger, build muscle</div>
+          </div>
+        </div>
+        <div class="quiz-nav">
+          <button class="quiz-btn-next" onclick="quizNext(0)">Next &rarr;</button>
+        </div>
+      </div>
+
+      <!-- Step 2: Experience -->
+      <div class="quiz-step" id="qstep-1">
+        <div class="quiz-question">What's your experience level?</div>
+        <div class="quiz-sub">Be honest — this helps us calibrate your program intensity.</div>
+        <div class="quiz-options">
+          <div class="quiz-option" onclick="selectQuizOption(this, 1, 'beginner')">
+            <div class="quiz-option-icon">&#127793;</div>
+            <div class="quiz-option-label">Beginner</div>
+            <div class="quiz-option-sub">Under 1 year training</div>
+          </div>
+          <div class="quiz-option" onclick="selectQuizOption(this, 1, 'intermediate')">
+            <div class="quiz-option-icon">&#9889;</div>
+            <div class="quiz-option-label">Intermediate</div>
+            <div class="quiz-option-sub">1–3 years consistent training</div>
+          </div>
+          <div class="quiz-option" onclick="selectQuizOption(this, 1, 'advanced')">
+            <div class="quiz-option-icon">&#127942;</div>
+            <div class="quiz-option-label">Advanced</div>
+            <div class="quiz-option-sub">3+ years, know the lifts</div>
+          </div>
+        </div>
+        <div class="quiz-nav">
+          <button class="quiz-btn-back" onclick="quizBack(1)">&#8592; Back</button>
+          <button class="quiz-btn-next" onclick="quizNext(1)">Next &rarr;</button>
+        </div>
+      </div>
+
+      <!-- Step 3: Equipment -->
+      <div class="quiz-step" id="qstep-2">
+        <div class="quiz-question">What equipment do you have access to?</div>
+        <div class="quiz-sub">We have programming for every setup.</div>
+        <div class="quiz-options">
+          <div class="quiz-option" onclick="selectQuizOption(this, 2, 'full-gym')">
+            <div class="quiz-option-icon">&#127963;&#65039;</div>
+            <div class="quiz-option-label">Full Gym</div>
+            <div class="quiz-option-sub">Barbells, cables, machines</div>
+          </div>
+          <div class="quiz-option" onclick="selectQuizOption(this, 2, 'home-gym')">
+            <div class="quiz-option-icon">&#127968;</div>
+            <div class="quiz-option-label">Home Gym</div>
+            <div class="quiz-option-sub">Dumbbells, bands, bench</div>
+          </div>
+          <div class="quiz-option" onclick="selectQuizOption(this, 2, 'minimal')">
+            <div class="quiz-option-icon">&#127752;</div>
+            <div class="quiz-option-label">Minimal</div>
+            <div class="quiz-option-sub">Bodyweight or bands only</div>
+          </div>
+        </div>
+        <div class="quiz-nav">
+          <button class="quiz-btn-back" onclick="quizBack(2)">&#8592; Back</button>
+          <button class="quiz-btn-next" onclick="quizNext(2)">Next &rarr;</button>
+        </div>
+      </div>
+
+      <!-- Step 4: Injuries -->
+      <div class="quiz-step" id="qstep-3">
+        <div class="quiz-question">Any injuries or limitations?</div>
+        <div class="quiz-sub">This helps us flag exercises to modify or avoid.</div>
+        <div class="quiz-options">
+          <div class="quiz-option" onclick="selectQuizOption(this, 3, 'none')">
+            <div class="quiz-option-icon">&#10003;</div>
+            <div class="quiz-option-label">None</div>
+            <div class="quiz-option-sub">All clear, ready to go</div>
+          </div>
+          <div class="quiz-option" onclick="selectQuizOption(this, 3, 'lower-back')">
+            <div class="quiz-option-icon">&#128134;</div>
+            <div class="quiz-option-label">Lower Back</div>
+            <div class="quiz-option-sub">Avoid heavy spinal loading</div>
+          </div>
+          <div class="quiz-option" onclick="selectQuizOption(this, 3, 'knee')">
+            <div class="quiz-option-icon">&#129461;</div>
+            <div class="quiz-option-label">Knee / Hip</div>
+            <div class="quiz-option-sub">Modify squats & lunges</div>
+          </div>
+          <div class="quiz-option" onclick="selectQuizOption(this, 3, 'shoulder')">
+            <div class="quiz-option-icon">&#129296;</div>
+            <div class="quiz-option-label">Shoulder / Upper</div>
+            <div class="quiz-option-sub">Modify pressing movements</div>
+          </div>
+        </div>
+        <div class="quiz-nav">
+          <button class="quiz-btn-back" onclick="quizBack(3)">&#8592; Back</button>
+          <button class="quiz-btn-next" onclick="quizSubmit()">See My Plan &rarr;</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Result -->
+    <div class="quiz-result" id="quizResult">
+      <div class="quiz-result-card">
+        <div class="quiz-result-badge" id="qr-badge">Recommended Plan</div>
+        <div class="quiz-result-title" id="qr-title">Coached Transformation</div>
+        <div class="quiz-result-desc" id="qr-desc">Based on your goals and experience, the Coached Transformation plan gives you the structure, accountability, and customization you need to hit your targets fast.</div>
+        <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+          <a href="#pricing" class="btn-primary">View Plan Details</a>
+          <button class="btn-outline" onclick="quizReset()" style="border:1px solid var(--border);color:var(--white);padding:0.875rem 2rem;border-radius:4px;background:transparent;cursor:pointer;font-weight:500;font-size:0.875rem;letter-spacing:0.05em;text-transform:uppercase;">Retake Quiz</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HABIT TRACKER -->
+<section id="tracker">
+  <div class="container">
+    <div class="section-label">Daily Habits</div>
+    <h2 class="section-title">Habit Tracker</h2>
+    <p class="section-sub">Track your daily habits, build streaks, and earn badges. Consistency is the key to transformation.</p>
+    <div class="divider"></div>
+
+    <div class="tracker-grid">
+
+      <!-- Daily Habits -->
+      <div class="tracker-panel">
+        <div class="tracker-panel-title">&#128197; Today's Habits — <span id="trackerDate"></span></div>
+
+        <div class="habit-row">
+          <div class="habit-info">
+            <div class="habit-icon">&#128167;</div>
+            <div>
+              <div class="habit-name">Water</div>
+              <div class="habit-target">Target: 8 glasses</div>
+            </div>
+          </div>
+          <div class="habit-controls">
+            <input class="habit-input" type="number" id="h-water" placeholder="0" min="0" max="20">
+            <span class="habit-unit">glasses</span>
+            <button class="habit-check-btn" id="hbtn-water" onclick="checkHabit('water', 8)">&#10003;</button>
+          </div>
+        </div>
+
+        <div class="habit-row">
+          <div class="habit-info">
+            <div class="habit-icon">&#128099;</div>
+            <div>
+              <div class="habit-name">Steps</div>
+              <div class="habit-target">Target: 8,000 steps</div>
+            </div>
+          </div>
+          <div class="habit-controls">
+            <input class="habit-input" type="number" id="h-steps" placeholder="0" min="0" style="width:85px;">
+            <span class="habit-unit">steps</span>
+            <button class="habit-check-btn" id="hbtn-steps" onclick="checkHabit('steps', 8000)">&#10003;</button>
+          </div>
+        </div>
+
+        <div class="habit-row">
+          <div class="habit-info">
+            <div class="habit-icon">&#127371;</div>
+            <div>
+              <div class="habit-name">Protein</div>
+              <div class="habit-target">Target: your calculated goal</div>
+            </div>
+          </div>
+          <div class="habit-controls">
+            <input class="habit-input" type="number" id="h-protein" placeholder="0" min="0">
+            <span class="habit-unit">g</span>
+            <button class="habit-check-btn" id="hbtn-protein" onclick="checkHabit('protein', 150)">&#10003;</button>
+          </div>
+        </div>
+
+        <div class="habit-row">
+          <div class="habit-info">
+            <div class="habit-icon">&#127947;</div>
+            <div>
+              <div class="habit-name">Workout</div>
+              <div class="habit-target">Complete today's session</div>
+            </div>
+          </div>
+          <div class="habit-controls">
+            <button class="habit-check-btn" id="hbtn-workout" onclick="toggleWorkout()" style="width:auto;border-radius:4px;padding:0.4rem 0.75rem;font-size:0.75rem;font-weight:700;letter-spacing:0.05em;color:var(--white-muted);border:1px solid var(--border);">Done</button>
+          </div>
+        </div>
+
+        <div class="week-dots" style="margin-top:1.5rem;">
+          <div class="week-dot-cell"><div class="week-dot" id="wdot-0" onclick="toggleWeekDot(0)">&#10003;</div><div class="week-dot-label">M</div></div>
+          <div class="week-dot-cell"><div class="week-dot" id="wdot-1" onclick="toggleWeekDot(1)">&#10003;</div><div class="week-dot-label">T</div></div>
+          <div class="week-dot-cell"><div class="week-dot" id="wdot-2" onclick="toggleWeekDot(2)">&#10003;</div><div class="week-dot-label">W</div></div>
+          <div class="week-dot-cell"><div class="week-dot" id="wdot-3" onclick="toggleWeekDot(3)">&#10003;</div><div class="week-dot-label">T</div></div>
+          <div class="week-dot-cell"><div class="week-dot" id="wdot-4" onclick="toggleWeekDot(4)">&#10003;</div><div class="week-dot-label">F</div></div>
+          <div class="week-dot-cell"><div class="week-dot" id="wdot-5" onclick="toggleWeekDot(5)">&#10003;</div><div class="week-dot-label">S</div></div>
+          <div class="week-dot-cell"><div class="week-dot" id="wdot-6" onclick="toggleWeekDot(6)">&#10003;</div><div class="week-dot-label">S</div></div>
+        </div>
+      </div>
+
+      <!-- Streak & Score -->
+      <div>
+        <!-- Streak -->
+        <div class="tracker-panel" style="margin-bottom:1.5rem;">
+          <div class="tracker-panel-title">&#128293; Streak &amp; Badges</div>
+          <div class="streak-row">
+            <div>
+              <div class="streak-num" id="streakCount">0</div>
+              <div class="streak-label">Day Streak</div>
+            </div>
+            <div class="streak-flame">&#128293;</div>
+          </div>
+          <div class="streak-badges">
+            <div class="streak-badge-row">
+              <span class="streak-badge-icon">&#127381;</span>
+              <span class="streak-badge-name">First Step</span>
+              <span class="streak-badge-status earned" id="badge-1">Earned</span>
+            </div>
+            <div class="streak-badge-row">
+              <span class="streak-badge-icon">&#128293;</span>
+              <span class="streak-badge-name">7-Day Streak</span>
+              <span class="streak-badge-status locked" id="badge-7">7 days</span>
+            </div>
+            <div class="streak-badge-row">
+              <span class="streak-badge-icon">&#9889;</span>
+              <span class="streak-badge-name">14-Day Grind</span>
+              <span class="streak-badge-status locked" id="badge-14">14 days</span>
+            </div>
+            <div class="streak-badge-row">
+              <span class="streak-badge-icon">&#127942;</span>
+              <span class="streak-badge-name">30-Day Champion</span>
+              <span class="streak-badge-status locked" id="badge-30">30 days</span>
+            </div>
+            <div class="streak-badge-row">
+              <span class="streak-badge-icon">&#128081;</span>
+              <span class="streak-badge-name">60-Day Legend</span>
+              <span class="streak-badge-status locked" id="badge-60">60 days</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Weekly Score -->
+        <div class="tracker-panel">
+          <div class="tracker-panel-title">&#128200; Weekly Compliance Score</div>
+          <div class="score-display">
+            <div class="score-ring">
+              <svg viewBox="0 0 100 100" width="100" height="100">
+                <circle cx="50" cy="50" r="42" fill="none" stroke="var(--border)" stroke-width="8"/>
+                <circle cx="50" cy="50" r="42" fill="none" stroke="var(--blue)" stroke-width="8"
+                  stroke-dasharray="264" stroke-dashoffset="264" id="scoreCircle"
+                  stroke-linecap="round" style="transition:stroke-dashoffset 1s cubic-bezier(0.16,1,0.3,1)"/>
+              </svg>
+              <div class="score-ring-num" id="scoreNum">0%</div>
+            </div>
+            <div class="score-label">This Week</div>
+          </div>
+          <div class="score-breakdown">
+            <div class="score-bar-row">
+              <span class="score-bar-label">Water</span>
+              <div class="score-bar-track"><div class="score-bar-fill" id="sb-water" style="width:0%"></div></div>
+              <span class="score-bar-pct" id="sp-water">0%</span>
+            </div>
+            <div class="score-bar-row">
+              <span class="score-bar-label">Steps</span>
+              <div class="score-bar-track"><div class="score-bar-fill" id="sb-steps" style="width:0%"></div></div>
+              <span class="score-bar-pct" id="sp-steps">0%</span>
+            </div>
+            <div class="score-bar-row">
+              <span class="score-bar-label">Protein</span>
+              <div class="score-bar-track"><div class="score-bar-fill" id="sb-protein" style="width:0%"></div></div>
+              <span class="score-bar-pct" id="sp-protein">0%</span>
+            </div>
+            <div class="score-bar-row">
+              <span class="score-bar-label">Workouts</span>
+              <div class="score-bar-track"><div class="score-bar-fill" id="sb-workout" style="width:0%"></div></div>
+              <span class="score-bar-pct" id="sp-workout">0%</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PROGRESS DASHBOARD -->
+<section id="progress">
+  <div class="container">
+    <div class="section-label">Progress</div>
+    <h2 class="section-title">Progress Dashboard</h2>
+    <p class="section-sub">Track your weight, measurements, photos, strength PRs, and weekly check-ins all in one place.</p>
+    <div class="divider"></div>
+
+    <div class="progress-tabs">
+      <button class="progress-tab active" onclick="showProgressTab('measurements', this)">Measurements</button>
+      <button class="progress-tab" onclick="showProgressTab('photos', this)">Photos</button>
+      <button class="progress-tab" onclick="showProgressTab('strength', this)">Strength Log</button>
+      <button class="progress-tab" onclick="showProgressTab('checkin', this)">Weekly Check-In</button>
+    </div>
+
+    <!-- MEASUREMENTS TAB -->
+    <div class="progress-panel active" id="ptab-measurements">
+      <div class="measurement-grid" id="measGrid">
+        <div class="measurement-card">
+          <div class="measurement-label">Weight</div>
+          <div class="measurement-val" id="mv-weight">—</div>
+          <div class="measurement-delta delta-neutral" id="md-weight">No data yet</div>
+        </div>
+        <div class="measurement-card">
+          <div class="measurement-label">Waist</div>
+          <div class="measurement-val" id="mv-waist">—</div>
+          <div class="measurement-delta delta-neutral" id="md-waist">No data yet</div>
+        </div>
+        <div class="measurement-card">
+          <div class="measurement-label">Hips</div>
+          <div class="measurement-val" id="mv-hips">—</div>
+          <div class="measurement-delta delta-neutral" id="md-hips">No data yet</div>
+        </div>
+        <div class="measurement-card">
+          <div class="measurement-label">Chest</div>
+          <div class="measurement-val" id="mv-chest">—</div>
+          <div class="measurement-delta delta-neutral" id="md-chest">No data yet</div>
+        </div>
+        <div class="measurement-card">
+          <div class="measurement-label">Arms</div>
+          <div class="measurement-val" id="mv-arms">—</div>
+          <div class="measurement-delta delta-neutral" id="md-arms">No data yet</div>
+        </div>
+        <div class="measurement-card">
+          <div class="measurement-label">Thighs</div>
+          <div class="measurement-val" id="mv-thighs">—</div>
+          <div class="measurement-delta delta-neutral" id="md-thighs">No data yet</div>
+        </div>
+      </div>
+
+      <div class="note-box" style="margin-bottom:1.5rem;"><strong>Log new entry:</strong> Enter today's measurements and click Save.</div>
+
+      <div class="measurement-input-row">
+        <div class="meas-field"><label>Weight (lbs)</label><input type="number" id="mi-weight" placeholder="e.g. 185"></div>
+        <div class="meas-field"><label>Waist (in)</label><input type="number" id="mi-waist" placeholder="e.g. 34"></div>
+        <div class="meas-field"><label>Hips (in)</label><input type="number" id="mi-hips" placeholder="e.g. 38"></div>
+        <div class="meas-field"><label>Chest (in)</label><input type="number" id="mi-chest" placeholder="e.g. 40"></div>
+        <div class="meas-field"><label>Arms (in)</label><input type="number" id="mi-arms" placeholder="e.g. 14"></div>
+        <div class="meas-field"><label>Thighs (in)</label><input type="number" id="mi-thighs" placeholder="e.g. 22"></div>
+      </div>
+      <button class="save-btn" onclick="saveMeasurements()">Save Measurements</button>
+      <div class="save-confirm" id="meas-confirm">&#10003; Measurements saved!</div>
+    </div>
+
+    <!-- PHOTOS TAB -->
+    <div class="progress-panel" id="ptab-photos">
+      <p style="color:var(--white-muted);font-size:0.9rem;margin-bottom:1.5rem;">Upload front, side, and back progress photos. Photos are stored locally in your browser.</p>
+      <div class="photo-grid">
+        <div class="photo-slot" onclick="triggerPhotoUpload('front')">
+          <input type="file" id="photo-front" accept="image/*" onchange="loadPhoto('front', this)">
+          <img id="photo-front-img" alt="Front">
+          <div class="photo-slot-icon">&#128247;</div>
+          <div class="photo-slot-label">Front</div>
+        </div>
+        <div class="photo-slot" onclick="triggerPhotoUpload('side')">
+          <input type="file" id="photo-side" accept="image/*" onchange="loadPhoto('side', this)">
+          <img id="photo-side-img" alt="Side">
+          <div class="photo-slot-icon">&#128247;</div>
+          <div class="photo-slot-label">Side</div>
+        </div>
+        <div class="photo-slot" onclick="triggerPhotoUpload('back')">
+          <input type="file" id="photo-back" accept="image/*" onchange="loadPhoto('back', this)">
+          <img id="photo-back-img" alt="Back">
+          <div class="photo-slot-icon">&#128247;</div>
+          <div class="photo-slot-label">Back</div>
+        </div>
+      </div>
+      <div class="note-box"><strong>Tip:</strong> Take photos weekly at the same time of day, same lighting, and same pose for the most accurate comparison.</div>
+    </div>
+
+    <!-- STRENGTH LOG TAB -->
+    <div class="progress-panel" id="ptab-strength">
+      <div class="strength-input-row" style="margin-bottom:1.25rem;">
+        <div><label style="display:block;font-size:0.65rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--white-muted);margin-bottom:0.35rem;">Exercise</label>
+          <input type="text" id="sl-exercise" placeholder="e.g. Bench Press" list="exerciseList">
+          <datalist id="exerciseList">
+            <option value="Bench Press"><option value="Squat"><option value="Deadlift">
+            <option value="Shoulder Press"><option value="Pull-Up"><option value="Barbell Row">
+            <option value="Romanian Deadlift"><option value="Leg Press"><option value="Hip Thrust">
+          </datalist>
+        </div>
+        <div><label style="display:block;font-size:0.65rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--white-muted);margin-bottom:0.35rem;">Weight (lbs)</label>
+          <input type="number" id="sl-weight" placeholder="e.g. 185">
+        </div>
+        <div><label style="display:block;font-size:0.65rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--white-muted);margin-bottom:0.35rem;">Reps</label>
+          <input type="number" id="sl-reps" placeholder="e.g. 5">
+        </div>
+        <div><label style="display:block;font-size:0.65rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--white-muted);margin-bottom:0.35rem;">Sets</label>
+          <input type="number" id="sl-sets" placeholder="e.g. 4">
+        </div>
+        <div><label style="display:block;font-size:0.65rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--white-muted);margin-bottom:0.35rem;">&nbsp;</label>
+          <button class="strength-add-btn" onclick="addStrengthEntry()">+ Log</button>
+        </div>
+      </div>
+
+      <table class="strength-log-table">
+        <thead>
+          <tr><th>Exercise</th><th>Weight</th><th>Reps</th><th>Sets</th><th>Date</th></tr>
+        </thead>
+        <tbody id="strengthLogBody">
+          <tr><td colspan="5" style="color:var(--white-muted);text-align:center;padding:2rem;">No entries yet. Log your first lift above.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- WEEKLY CHECK-IN TAB -->
+    <div class="progress-panel" id="ptab-checkin">
+      <div class="checkin-form">
+        <div class="note-box" style="margin-bottom:1.75rem;"><strong>Weekly Check-In</strong> — Complete this every Sunday to track your week and keep your coach updated.</div>
+
+        <div class="checkin-row">
+          <label class="checkin-label">Current Weight (lbs)</label>
+          <input type="number" class="checkin-input" id="ci-weight" placeholder="e.g. 183">
+        </div>
+
+        <div class="checkin-row">
+          <label class="checkin-label">Workouts Completed This Week</label>
+          <div class="rating-scale" id="rs-workouts">
+            <button class="rating-btn" onclick="selectRating('workouts',this)">0</button>
+            <button class="rating-btn" onclick="selectRating('workouts',this)">1</button>
+            <button class="rating-btn" onclick="selectRating('workouts',this)">2</button>
+            <button class="rating-btn" onclick="selectRating('workouts',this)">3</button>
+            <button class="rating-btn" onclick="selectRating('workouts',this)">4</button>
+            <button class="rating-btn" onclick="selectRating('workouts',this)">5+</button>
+          </div>
+        </div>
+
+        <div class="checkin-row">
+          <label class="checkin-label">Energy Level (1–10)</label>
+          <div class="rating-scale" id="rs-energy">
+            <button class="rating-btn" onclick="selectRating('energy',this)">1</button>
+            <button class="rating-btn" onclick="selectRating('energy',this)">2</button>
+            <button class="rating-btn" onclick="selectRating('energy',this)">3</button>
+            <button class="rating-btn" onclick="selectRating('energy',this)">4</button>
+            <button class="rating-btn" onclick="selectRating('energy',this)">5</button>
+            <button class="rating-btn" onclick="selectRating('energy',this)">6</button>
+            <button class="rating-btn" onclick="selectRating('energy',this)">7</button>
+            <button class="rating-btn" onclick="selectRating('energy',this)">8</button>
+            <button class="rating-btn" onclick="selectRating('energy',this)">9</button>
+            <button class="rating-btn" onclick="selectRating('energy',this)">10</button>
+          </div>
+        </div>
+
+        <div class="checkin-row">
+          <label class="checkin-label">Nutrition Adherence (1–10)</label>
+          <div class="rating-scale" id="rs-adherence">
+            <button class="rating-btn" onclick="selectRating('adherence',this)">1</button>
+            <button class="rating-btn" onclick="selectRating('adherence',this)">2</button>
+            <button class="rating-btn" onclick="selectRating('adherence',this)">3</button>
+            <button class="rating-btn" onclick="selectRating('adherence',this)">4</button>
+            <button class="rating-btn" onclick="selectRating('adherence',this)">5</button>
+            <button class="rating-btn" onclick="selectRating('adherence',this)">6</button>
+            <button class="rating-btn" onclick="selectRating('adherence',this)">7</button>
+            <button class="rating-btn" onclick="selectRating('adherence',this)">8</button>
+            <button class="rating-btn" onclick="selectRating('adherence',this)">9</button>
+            <button class="rating-btn" onclick="selectRating('adherence',this)">10</button>
+          </div>
+        </div>
+
+        <div class="checkin-row">
+          <label class="checkin-label">What workouts did you complete?</label>
+          <textarea class="checkin-textarea" id="ci-workouts" placeholder="e.g. Mon: Upper, Tue: Lower, Thu: Full Body..."></textarea>
+        </div>
+
+        <div class="checkin-row">
+          <label class="checkin-label">Notes / How are you feeling?</label>
+          <textarea class="checkin-textarea" id="ci-notes" placeholder="Any struggles, wins, questions for your coach..."></textarea>
+        </div>
+
+        <button class="save-btn" onclick="saveCheckin()">Submit Check-In</button>
+        <div class="save-confirm" id="checkin-confirm">&#10003; Check-in submitted! Your coach will review shortly.</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <img src="Logo.jpg" alt="Culture Fit" class="footer-logo">
+  <div class="footer-brand">Culture Fit</div>
+  <p>Strength &amp; Weight Loss Program</p>
+  <ul class="footer-links">
+    <li><a href="#pricing">Pricing</a></li>
+    <li><a href="#quiz">Quiz</a></li>
+    <li><a href="#program">Program</a></li>
+    <li><a href="#macros">Macros</a></li>
+    <li><a href="#tracker">Tracker</a></li>
+    <li><a href="#progress">Progress</a></li>
+  </ul>
+  <p class="footer-copy">&copy; 2025 Culture Fit. All rights reserved.</p>
+</footer>
+
+<script>
+// ── NAV ──
+function toggleNav() {
+  document.getElementById('navLinks').classList.toggle('open');
+}
+
+// Close nav on link click (mobile)
+document.querySelectorAll('.nav-links a').forEach(a => {
+  a.addEventListener('click', () => document.getElementById('navLinks').classList.remove('open'));
+});
+
+// ── WORKOUT DAYS ──
+function showDay(day) {
+  document.querySelectorAll('.day-pill').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.workout-panel').forEach(p => p.classList.remove('active'));
+  event.currentTarget.classList.add('active');
+  document.getElementById('day-' + day).classList.add('active');
+}
+
+function toggleEnv(btn, day, env) {
+  btn.closest('.toggle-group').querySelectorAll('.toggle-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById(day + '-gym').style.display = env === 'gym' ? 'block' : 'none';
+  document.getElementById(day + '-home').style.display = env === 'home' ? 'block' : 'none';
+}
+
+// ── CARDIO ──
+function showCardio1(type, btn) {
+  document.querySelectorAll('#day-cardio1 .cardio-option-btn').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('#day-cardio1 .cardio-detail').forEach(d => d.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('c1-' + type).classList.add('active');
+}
+
+function showCardio2(type, btn) {
+  document.querySelectorAll('#day-cardio2 .cardio-option-btn').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('#day-cardio2 .cardio-detail').forEach(d => d.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('c2-' + type).classList.add('active');
+}
+
+// ── MACRO CALCULATOR ──
+let gender = 'male';
+
+function setGender(g) {
+  gender = g;
+  document.getElementById('btn-male').classList.toggle('active', g === 'male');
+  document.getElementById('btn-female').classList.toggle('active', g === 'female');
+}
+
+function calculateMacros() {
+  const age = parseFloat(document.getElementById('m-age').value);
+  const feet = parseFloat(document.getElementById('m-feet').value) || 0;
+  const inches = parseFloat(document.getElementById('m-inches').value) || 0;
+  const weight = parseFloat(document.getElementById('m-weight').value);
+  const activity = parseFloat(document.getElementById('m-activity').value);
+  const goal = parseFloat(document.getElementById('m-goal').value);
+
+  if (!age || !weight || (feet === 0 && inches === 0)) {
+    alert('Please fill in all fields before calculating.');
+    return;
+  }
+
+  // Convert to metric
+  const weightKg = weight * 0.453592;
+  const heightCm = (feet * 12 + inches) * 2.54;
+
+  // Mifflin-St Jeor BMR
+  let bmr;
+  if (gender === 'male') {
+    bmr = 10 * weightKg + 6.25 * heightCm - 5 * age + 5;
+  } else {
+    bmr = 10 * weightKg + 6.25 * heightCm - 5 * age - 161;
+  }
+
+  const tdee = Math.round(bmr * activity);
+  const calories = Math.max(1200, tdee + goal);
+
+  // Macros
+  const protein = Math.round(weight * 0.9); // ~0.9g per lb
+  const fat = Math.round(weight * 0.4);     // ~0.4g per lb
+  const proteinCals = protein * 4;
+  const fatCals = fat * 9;
+  const carbCals = Math.max(0, calories - proteinCals - fatCals);
+  const carbs = Math.round(carbCals / 4);
+
+  // Update UI
+  document.getElementById('r-calories').textContent = calories.toLocaleString();
+  document.getElementById('r-tdee-note').textContent = 'Maintenance: ' + tdee.toLocaleString() + ' cal · ' + (goal < 0 ? goal : '+' + goal) + ' cal/day adjustment';
+  document.getElementById('r-protein').innerHTML = protein + '<span>g / day</span>';
+  document.getElementById('r-carbs').innerHTML = carbs + '<span>g / day</span>';
+  document.getElementById('r-fat').innerHTML = fat + '<span>g / day</span>';
+
+  // Bar widths
+  const total = protein * 4 + carbCals + fatCals;
+  setTimeout(() => {
+    document.getElementById('bar-protein').style.width = ((proteinCals / total) * 100) + '%';
+    document.getElementById('bar-carbs').style.width = ((carbCals / total) * 100) + '%';
+    document.getElementById('bar-fat').style.width = ((fatCals / total) * 100) + '%';
+  }, 50);
+
+  document.getElementById('resultsPlaceholder').style.display = 'none';
+  document.getElementById('resultsContent').classList.add('active');
+}
+
+// ── MEAL PLAN ──
+function showMealDay(day, btn) {
+  document.querySelectorAll('.meal-day-btn').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.meal-day-panel').forEach(p => p.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('meal-' + day).classList.add('active');
+}
+
+// ── GROCERY CHECKLIST ──
+function toggleGrocery(li) {
+  li.classList.toggle('checked');
+}
+
+// ── QUIZ ──
+const quizAnswers = {};
+
+function selectQuizOption(el, step, value) {
+  el.closest('.quiz-options').querySelectorAll('.quiz-option').forEach(o => o.classList.remove('selected'));
+  el.classList.add('selected');
+  quizAnswers[step] = value;
+}
+
+function quizNext(step) {
+  if (!quizAnswers[step]) { alert('Please select an option to continue.'); return; }
+  document.getElementById('qstep-' + step).classList.remove('active');
+  document.getElementById('qdot-' + step).classList.add('done');
+  const next = step + 1;
+  if (next < 4) {
+    document.getElementById('qstep-' + next).classList.add('active');
+    if (next < 4) document.getElementById('qdot-' + next).classList.add('done');
+  }
+}
+
+function quizBack(step) {
+  document.getElementById('qstep-' + step).classList.remove('active');
+  document.getElementById('qdot-' + (step)).classList.remove('done');
+  document.getElementById('qstep-' + (step - 1)).classList.add('active');
+}
+
+function quizSubmit() {
+  if (!quizAnswers[3]) { alert('Please select an option to continue.'); return; }
+  document.getElementById('quizSteps').style.display = 'none';
+
+  const goal = quizAnswers[0], exp = quizAnswers[1];
+  let title, desc, badge;
+
+  if (exp === 'beginner' || goal === 'fat-loss') {
+    title = 'Self-Guided Transformation'; badge = '&#36;39/month';
+    desc = 'As a ' + (exp || 'new') + ' member focused on ' + (goal || 'your goals').replace('-',' ') + ', the Self-Guided plan gives you everything you need to start strong — full programming, macros, meal plans, and habit tracking at an accessible price point.';
+  } else if (exp === 'advanced' || goal === 'strength') {
+    title = 'Elite Hybrid Coaching'; badge = '&#36;149/month';
+    desc = 'Your experience level and goals call for hands-on coaching. The Elite Hybrid plan combines 1-on-1 remote coaching with in-person training sessions — perfect for serious athletes who want accountability and technical feedback.';
+  } else {
+    title = 'Coached Transformation'; badge = '&#36;99/month';
+    desc = 'Based on your goals and experience, Coached Transformation is your ideal starting point. You get full accountability, weekly check-ins, nutrition adjustments, and direct coach access to keep you on track every week.';
+  }
+
+  document.getElementById('qr-badge').textContent = 'Recommended Plan';
+  document.getElementById('qr-title').textContent = title;
+  document.getElementById('qr-desc').textContent = desc;
+  document.getElementById('quizResult').classList.add('active');
+}
+
+function quizReset() {
+  Object.keys(quizAnswers).forEach(k => delete quizAnswers[k]);
+  document.getElementById('quizResult').classList.remove('active');
+  document.getElementById('quizSteps').style.display = 'block';
+  for (let i = 0; i < 4; i++) {
+    document.getElementById('qstep-' + i).classList.remove('active');
+    document.getElementById('qdot-' + i).classList.remove('done');
+  }
+  document.querySelectorAll('.quiz-option').forEach(o => o.classList.remove('selected'));
+  document.getElementById('qstep-0').classList.add('active');
+  document.getElementById('qdot-0').classList.add('done');
+}
+
+// ── HABIT TRACKER ──
+const habitState = { water: false, steps: false, protein: false, workout: false };
+const weekDots = [false, false, false, false, false, false, false];
+let streakDays = parseInt(localStorage.getItem('cf_streak') || '0');
+
+function initTracker() {
+  const d = new Date();
+  const days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+  const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  document.getElementById('trackerDate').textContent = days[d.getDay()] + ', ' + months[d.getMonth()] + ' ' + d.getDate();
+  document.getElementById('streakCount').textContent = streakDays;
+  updateBadges(streakDays);
+  updateWeeklyScore();
+}
+
+function checkHabit(habit, target) {
+  const val = parseFloat(document.getElementById('h-' + habit).value) || 0;
+  const met = val >= target;
+  habitState[habit] = met;
+  const btn = document.getElementById('hbtn-' + habit);
+  btn.classList.toggle('done', met);
+  if (!met) alert('Enter a value of at least ' + target.toLocaleString() + ' to mark this habit complete.');
+  updateWeeklyScore();
+}
+
+function toggleWorkout() {
+  habitState.workout = !habitState.workout;
+  const btn = document.getElementById('hbtn-workout');
+  btn.classList.toggle('done', habitState.workout);
+  btn.style.color = habitState.workout ? 'var(--white)' : 'var(--white-muted)';
+  btn.style.borderColor = habitState.workout ? 'var(--blue)' : 'var(--border)';
+  btn.style.background = habitState.workout ? 'var(--blue)' : 'transparent';
+  if (habitState.workout) {
+    streakDays++;
+    localStorage.setItem('cf_streak', streakDays);
+    document.getElementById('streakCount').textContent = streakDays;
+    updateBadges(streakDays);
+  }
+  updateWeeklyScore();
+}
+
+function toggleWeekDot(i) {
+  weekDots[i] = !weekDots[i];
+  const dot = document.getElementById('wdot-' + i);
+  dot.classList.toggle('complete', weekDots[i]);
+  updateWeeklyScore();
+}
+
+function updateBadges(streak) {
+  const milestones = [1, 7, 14, 30, 60];
+  milestones.forEach(m => {
+    const el = document.getElementById('badge-' + m);
+    if (!el) return;
+    if (streak >= m) {
+      el.textContent = 'Earned';
+      el.className = 'streak-badge-status earned';
+    } else {
+      el.textContent = m + ' days';
+      el.className = 'streak-badge-status locked';
+    }
+  });
+}
+
+function updateWeeklyScore() {
+  const habitsArr = Object.values(habitState);
+  const habitsScore = habitsArr.filter(Boolean).length / habitsArr.length;
+  const workoutsScore = weekDots.filter(Boolean).length / 5;
+
+  const waterPct = habitState.water ? 100 : 0;
+  const stepsPct = habitState.steps ? 100 : 0;
+  const proteinPct = habitState.protein ? 100 : 0;
+  const workoutPct = Math.round((weekDots.filter(Boolean).length / 5) * 100);
+  const overall = Math.round((waterPct + stepsPct + proteinPct + workoutPct) / 4);
+
+  document.getElementById('scoreNum').textContent = overall + '%';
+  const offset = 264 - (264 * overall / 100);
+  document.getElementById('scoreCircle').style.strokeDashoffset = offset;
+
+  [['water', waterPct], ['steps', stepsPct], ['protein', proteinPct], ['workout', workoutPct]].forEach(([k, v]) => {
+    document.getElementById('sb-' + k).style.width = v + '%';
+    document.getElementById('sp-' + k).textContent = v + '%';
+  });
+}
+
+// ── PROGRESS DASHBOARD ──
+function showProgressTab(tab, btn) {
+  document.querySelectorAll('.progress-tab').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.progress-panel').forEach(p => p.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('ptab-' + tab).classList.add('active');
+}
+
+// Measurements
+let measHistory = JSON.parse(localStorage.getItem('cf_measurements') || '[]');
+
+function saveMeasurements() {
+  const fields = ['weight','waist','hips','chest','arms','thighs'];
+  const entry = { date: new Date().toLocaleDateString() };
+  let hasData = false;
+  fields.forEach(f => {
+    const v = parseFloat(document.getElementById('mi-' + f).value);
+    if (v) { entry[f] = v; hasData = true; }
+  });
+  if (!hasData) { alert('Please enter at least one measurement.'); return; }
+  measHistory.push(entry);
+  localStorage.setItem('cf_measurements', JSON.stringify(measHistory));
+  updateMeasDisplay();
+  document.getElementById('meas-confirm').style.display = 'block';
+  setTimeout(() => document.getElementById('meas-confirm').style.display = 'none', 3000);
+}
+
+function updateMeasDisplay() {
+  if (measHistory.length === 0) return;
+  const latest = measHistory[measHistory.length - 1];
+  const prev = measHistory.length > 1 ? measHistory[measHistory.length - 2] : null;
+  const fields = ['weight','waist','hips','chest','arms','thighs'];
+  const units = { weight: 'lbs', waist: '"', hips: '"', chest: '"', arms: '"', thighs: '"' };
+  fields.forEach(f => {
+    if (!latest[f]) return;
+    document.getElementById('mv-' + f).textContent = latest[f] + (f === 'weight' ? '' : '"');
+    if (prev && prev[f]) {
+      const diff = (latest[f] - prev[f]).toFixed(1);
+      const el = document.getElementById('md-' + f);
+      el.textContent = (diff > 0 ? '+' : '') + diff + (f === 'weight' ? ' lbs' : '"');
+      const isGood = (f === 'weight' || f !== 'arms') ? diff <= 0 : diff >= 0;
+      el.className = 'measurement-delta ' + (diff == 0 ? 'delta-neutral' : isGood ? 'delta-down' : 'delta-up');
+    } else {
+      document.getElementById('md-' + f).textContent = 'First entry';
+    }
+  });
+}
+
+// Photos
+function triggerPhotoUpload(view) {
+  document.getElementById('photo-' + view).click();
+}
+
+function loadPhoto(view, input) {
+  if (!input.files || !input.files[0]) return;
+  const reader = new FileReader();
+  reader.onload = e => {
+    const img = document.getElementById('photo-' + view + '-img');
+    img.src = e.target.result;
+    img.style.display = 'block';
+    img.closest('.photo-slot').querySelector('.photo-slot-icon').style.display = 'none';
+    img.closest('.photo-slot').querySelector('.photo-slot-label').style.display = 'none';
+  };
+  reader.readAsDataURL(input.files[0]);
+}
+
+// Strength Log
+let strengthLog = JSON.parse(localStorage.getItem('cf_strength') || '[]');
+
+function addStrengthEntry() {
+  const ex = document.getElementById('sl-exercise').value.trim();
+  const wt = document.getElementById('sl-weight').value;
+  const rp = document.getElementById('sl-reps').value;
+  const st = document.getElementById('sl-sets').value;
+  if (!ex || !wt || !rp) { alert('Please fill in exercise, weight, and reps.'); return; }
+
+  const prevBest = strengthLog.filter(e => e.ex === ex).reduce((max, e) => Math.max(max, e.wt), 0);
+  const isPR = parseFloat(wt) > prevBest;
+  const entry = { ex, wt: parseFloat(wt), rp: parseInt(rp), st: parseInt(st) || 1, date: new Date().toLocaleDateString(), pr: isPR };
+  strengthLog.unshift(entry);
+  localStorage.setItem('cf_strength', JSON.stringify(strengthLog));
+  renderStrengthLog();
+  ['sl-exercise','sl-weight','sl-reps','sl-sets'].forEach(id => document.getElementById(id).value = '');
+}
+
+function renderStrengthLog() {
+  const tbody = document.getElementById('strengthLogBody');
+  if (strengthLog.length === 0) {
+    tbody.innerHTML = '<tr><td colspan="5" style="color:var(--white-muted);text-align:center;padding:2rem;">No entries yet. Log your first lift above.</td></tr>';
+    return;
+  }
+  tbody.innerHTML = strengthLog.map(e =>
+    `<tr><td>${e.ex}${e.pr ? '<span class="pr-badge">PR</span>' : ''}</td><td>${e.wt} lbs</td><td>${e.rp}</td><td>${e.st}</td><td>${e.date}</td></tr>`
+  ).join('');
+}
+
+// Check-in ratings
+const ratings = {};
+
+function selectRating(type, btn) {
+  btn.closest('.rating-scale').querySelectorAll('.rating-btn').forEach(b => b.classList.remove('selected'));
+  btn.classList.add('selected');
+  ratings[type] = btn.textContent;
+}
+
+function saveCheckin() {
+  const weight = document.getElementById('ci-weight').value;
+  const workouts = document.getElementById('ci-workouts').value;
+  const notes = document.getElementById('ci-notes').value;
+  if (!weight) { alert('Please enter your current weight.'); return; }
+  document.getElementById('checkin-confirm').style.display = 'block';
+  setTimeout(() => document.getElementById('checkin-confirm').style.display = 'none', 4000);
+}
+
+// Init on load
+window.addEventListener('load', () => {
+  initTracker();
+  updateMeasDisplay();
+  renderStrengthLog();
+});
+
+// ── NAV ACTIVE HIGHLIGHT ON SCROLL ──
+const sections = document.querySelectorAll('section[id]');
+const navItems = document.querySelectorAll('.nav-links a');
+
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(s => {
+    if (window.scrollY >= s.offsetTop - 120) current = s.id;
+  });
+  navItems.forEach(a => {
+    a.style.color = a.getAttribute('href') === '#' + current ? 'var(--white)' : '';
+  });
+});
+</script>
+
+</body>
+</html>
