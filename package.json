@@ -1,0 +1,10 @@
+{
+  "name": "culturefit-site",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "CultureFit website plus serverless functions for the automated weekly check-in.",
+  "dependencies": {
+    "stripe": "^17.5.0"
+  }
+}
