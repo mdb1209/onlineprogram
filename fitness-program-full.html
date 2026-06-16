@@ -1923,12 +1923,11 @@
     <span class="nav-brand">CultureFit</span>
   </a>
   <ul class="nav-links" id="navLinks">
-    <li><a href="#pricing">Pricing</a></li>
     <li><a href="#program">Program</a></li>
     <li><a href="#macros">Macros</a></li>
     <li><a href="#tracker">Tracker</a></li>
     <li><a href="#progress">Progress</a></li>
-    <li><a href="#quiz" class="nav-cta">Get Started</a></li>
+    <li><a href="#program" class="nav-cta">Start Training</a></li>
   </ul>
   <div class="hamburger" id="hamburger" onclick="toggleNav()">
     <span></span><span></span><span></span>
@@ -1950,8 +1949,7 @@
       <div class="hero-stat"><span class="hero-stat-num">100%</span><span class="hero-stat-label">Personalized</span></div>
     </div>
     <div class="hero-btns">
-      <a href="#quiz" class="btn-primary">Start Your Transformation &rarr;</a>
-      <a href="#pricing" class="btn-outline">View Plans</a>
+      <a href="#program" class="btn-primary">Start Training &rarr;</a>
     </div>
     <p class="hero-fine">No contracts. Cancel anytime. You bring the commitment, we bring the system.</p>
   </div>
@@ -2005,82 +2003,7 @@
   </div>
 </div>
 
-<!-- PRICING -->
-<section id="pricing">
-  <div class="container">
-    <div class="section-label">Investment</div>
-    <h2 class="section-title">Choose Your Path</h2>
-    <p class="section-sub">Every tier includes the full program. Upgrade for accountability and in-person coaching.</p>
-    <div class="divider"></div>
 
-    <div class="pricing-grid">
-
-      <!-- Self-Guided -->
-      <div class="pricing-card">
-        <div class="pricing-tier">Self-Guided Transformation</div>
-        <div class="pricing-price"><sup>$</sup>39</div>
-        <div class="pricing-period">per month</div>
-        <ul class="pricing-features">
-          <li><span class="check">&#10003;</span> Full 5-day workout program</li>
-          <li><span class="check">&#10003;</span> Home gym &amp; gym-friendly workouts</li>
-          <li><span class="check">&#10003;</span> Built-in macro calculator</li>
-          <li><span class="check">&#10003;</span> Weekly meal plan + grocery list</li>
-          <li><span class="check">&#10003;</span> 60-min cardio day guides</li>
-          <li><span class="check">&#10003;</span> Daily habit tracker + streaks</li>
-          <li><span class="check">&#10003;</span> Cancel anytime</li>
-        </ul>
-        <button class="pricing-btn pricing-btn-outline" onclick="document.getElementById('quiz').scrollIntoView({behavior:'smooth'})">Get Started</button>
-      </div>
-
-      <!-- Coached -->
-      <div class="pricing-card featured">
-        <div class="badge">&#11088; Best Seller</div>
-        <div class="pricing-tier">Coached Transformation</div>
-        <div class="pricing-price"><sup>$</sup>99</div>
-        <div class="pricing-period">per month</div>
-        <ul class="pricing-features">
-          <li><span class="check">&#10003;</span> Everything in Self-Guided</li>
-          <li><span class="check">&#10003;</span> 1-on-1 accountability coaching</li>
-          <li><span class="check">&#10003;</span> Weekly check-ins &amp; progress reviews</li>
-          <li><span class="check">&#10003;</span> Customized nutrition adjustments</li>
-          <li><span class="check">&#10003;</span> Direct coach messaging</li>
-          <li><span class="check">&#10003;</span> Priority response within 24 hrs</li>
-          <li><span class="check">&#10003;</span> Progress dashboard access</li>
-        </ul>
-        <button class="pricing-btn pricing-btn-primary" onclick="document.getElementById('quiz').scrollIntoView({behavior:'smooth'})">Get Started</button>
-      </div>
-
-      <!-- Elite Hybrid -->
-      <div class="pricing-card">
-        <div class="pricing-tier">Elite Hybrid Coaching</div>
-        <div class="pricing-price"><sup>$</sup>149</div>
-        <div class="pricing-period">per month</div>
-        <ul class="pricing-features">
-          <li><span class="check">&#10003;</span> Everything in Coached Transformation</li>
-          <li><span class="check">&#10003;</span> 4 in-person training sessions/mo</li>
-          <li><span class="check">&#10003;</span> Form coaching &amp; technique work</li>
-          <li><span class="check">&#10003;</span> Personalized program adjustments</li>
-          <li><span class="check">&#10003;</span> Body composition tracking</li>
-          <li><span class="check">&#10003;</span> Highest level of support</li>
-          <li><span class="check">&#10003;</span> Add-on sessions available ($65/session)</li>
-        </ul>
-        <button class="pricing-btn pricing-btn-outline" onclick="document.getElementById('quiz').scrollIntoView({behavior:'smooth'})">Get Started</button>
-      </div>
-
-    </div>
-
-    <!-- ADD-ONS -->
-    <div class="addon-bar">
-      <div class="addon-icon">&#43;</div>
-      <div class="addon-content">
-        <div class="addon-title">Elite Add-On: Extra In-Person Sessions</div>
-        <div class="addon-desc">Already on the Elite Hybrid plan? Book additional 1-on-1 training sessions with your coach at <strong>$65 per session</strong>. Available exclusively for Elite members.</div>
-      </div>
-      <button class="addon-btn" onclick="document.getElementById('quiz').scrollIntoView({behavior:'smooth'})">Add to Elite Plan</button>
-    </div>
-
-  </div>
-</section>
 
 <!-- PROGRAM -->
 <section id="program">
@@ -2943,149 +2866,7 @@
   </div>
 </section>
 
-<!-- ONBOARDING QUIZ -->
-<section id="quiz">
-  <div class="container">
-    <div class="section-label">Get Started</div>
-    <h2 class="section-title">Find Your Perfect Plan</h2>
-    <p class="section-sub">Answer 4 quick questions and we'll match you to the right program and tier.</p>
-    <div class="divider"></div>
 
-    <div class="quiz-steps" id="quizSteps">
-      <div class="quiz-progress" id="quizProgress">
-        <div class="quiz-dot done" id="qdot-0"></div>
-        <div class="quiz-dot" id="qdot-1"></div>
-        <div class="quiz-dot" id="qdot-2"></div>
-        <div class="quiz-dot" id="qdot-3"></div>
-      </div>
-
-      <!-- Step 1: Goal -->
-      <div class="quiz-step active" id="qstep-0">
-        <div class="quiz-question">What's your primary goal?</div>
-        <div class="quiz-sub">Choose the one that matters most right now.</div>
-        <div class="quiz-options">
-          <div class="quiz-option" onclick="selectQuizOption(this, 0, 'fat-loss')">
-            <div class="quiz-option-icon">&#128293;</div>
-            <div class="quiz-option-label">Fat Loss</div>
-            <div class="quiz-option-sub">Burn fat, get lean</div>
-          </div>
-          <div class="quiz-option" onclick="selectQuizOption(this, 0, 'recomposition')">
-            <div class="quiz-option-icon">&#9878;&#65039;</div>
-            <div class="quiz-option-label">Recomposition</div>
-            <div class="quiz-option-sub">Lose fat + build muscle</div>
-          </div>
-          <div class="quiz-option" onclick="selectQuizOption(this, 0, 'strength')">
-            <div class="quiz-option-icon">&#127947;</div>
-            <div class="quiz-option-label">Strength</div>
-            <div class="quiz-option-sub">Get stronger, build muscle</div>
-          </div>
-        </div>
-        <div class="quiz-nav">
-          <button class="quiz-btn-next" onclick="quizNext(0)">Next &rarr;</button>
-        </div>
-      </div>
-
-      <!-- Step 2: Experience -->
-      <div class="quiz-step" id="qstep-1">
-        <div class="quiz-question">What's your experience level?</div>
-        <div class="quiz-sub">Be honest - this helps us calibrate your program intensity.</div>
-        <div class="quiz-options">
-          <div class="quiz-option" onclick="selectQuizOption(this, 1, 'beginner')">
-            <div class="quiz-option-icon">&#127793;</div>
-            <div class="quiz-option-label">Beginner</div>
-            <div class="quiz-option-sub">Under 1 year training</div>
-          </div>
-          <div class="quiz-option" onclick="selectQuizOption(this, 1, 'intermediate')">
-            <div class="quiz-option-icon">&#9889;</div>
-            <div class="quiz-option-label">Intermediate</div>
-            <div class="quiz-option-sub">1–3 years consistent training</div>
-          </div>
-          <div class="quiz-option" onclick="selectQuizOption(this, 1, 'advanced')">
-            <div class="quiz-option-icon">&#127942;</div>
-            <div class="quiz-option-label">Advanced</div>
-            <div class="quiz-option-sub">3+ years, know the lifts</div>
-          </div>
-        </div>
-        <div class="quiz-nav">
-          <button class="quiz-btn-back" onclick="quizBack(1)">&#8592; Back</button>
-          <button class="quiz-btn-next" onclick="quizNext(1)">Next &rarr;</button>
-        </div>
-      </div>
-
-      <!-- Step 3: Equipment -->
-      <div class="quiz-step" id="qstep-2">
-        <div class="quiz-question">What equipment do you have access to?</div>
-        <div class="quiz-sub">We have programming for every setup.</div>
-        <div class="quiz-options">
-          <div class="quiz-option" onclick="selectQuizOption(this, 2, 'full-gym')">
-            <div class="quiz-option-icon">&#127963;&#65039;</div>
-            <div class="quiz-option-label">Full Gym</div>
-            <div class="quiz-option-sub">Barbells, cables, machines</div>
-          </div>
-          <div class="quiz-option" onclick="selectQuizOption(this, 2, 'home-gym')">
-            <div class="quiz-option-icon">&#127968;</div>
-            <div class="quiz-option-label">Home Gym</div>
-            <div class="quiz-option-sub">Dumbbells, bands, bench</div>
-          </div>
-          <div class="quiz-option" onclick="selectQuizOption(this, 2, 'minimal')">
-            <div class="quiz-option-icon">&#127752;</div>
-            <div class="quiz-option-label">Minimal</div>
-            <div class="quiz-option-sub">Bodyweight or bands only</div>
-          </div>
-        </div>
-        <div class="quiz-nav">
-          <button class="quiz-btn-back" onclick="quizBack(2)">&#8592; Back</button>
-          <button class="quiz-btn-next" onclick="quizNext(2)">Next &rarr;</button>
-        </div>
-      </div>
-
-      <!-- Step 4: Injuries -->
-      <div class="quiz-step" id="qstep-3">
-        <div class="quiz-question">Any injuries or limitations?</div>
-        <div class="quiz-sub">This helps us flag exercises to modify or avoid.</div>
-        <div class="quiz-options">
-          <div class="quiz-option" onclick="selectQuizOption(this, 3, 'none')">
-            <div class="quiz-option-icon">&#10003;</div>
-            <div class="quiz-option-label">None</div>
-            <div class="quiz-option-sub">All clear, ready to go</div>
-          </div>
-          <div class="quiz-option" onclick="selectQuizOption(this, 3, 'lower-back')">
-            <div class="quiz-option-icon">&#128134;</div>
-            <div class="quiz-option-label">Lower Back</div>
-            <div class="quiz-option-sub">Avoid heavy spinal loading</div>
-          </div>
-          <div class="quiz-option" onclick="selectQuizOption(this, 3, 'knee')">
-            <div class="quiz-option-icon">&#129461;</div>
-            <div class="quiz-option-label">Knee / Hip</div>
-            <div class="quiz-option-sub">Modify squats & lunges</div>
-          </div>
-          <div class="quiz-option" onclick="selectQuizOption(this, 3, 'shoulder')">
-            <div class="quiz-option-icon">&#129296;</div>
-            <div class="quiz-option-label">Shoulder / Upper</div>
-            <div class="quiz-option-sub">Modify pressing movements</div>
-          </div>
-        </div>
-        <div class="quiz-nav">
-          <button class="quiz-btn-back" onclick="quizBack(3)">&#8592; Back</button>
-          <button class="quiz-btn-next" onclick="quizSubmit()">See My Plan &rarr;</button>
-        </div>
-      </div>
-    </div>
-
-    <!-- Result -->
-    <div class="quiz-result" id="quizResult">
-      <div class="quiz-result-card">
-        <div class="quiz-result-badge" id="qr-badge">Recommended Plan</div>
-        <div class="quiz-result-title" id="qr-title">Coached Transformation</div>
-        <div class="quiz-result-desc" id="qr-desc">Based on your goals and experience, the Coached Transformation plan gives you the structure, accountability, and customization you need to hit your targets fast.</div>
-        <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
-          <a href="#pricing" class="btn-primary">View Plan Details</a>
-          <button class="btn-outline" onclick="quizReset()" style="border:1px solid var(--border);color:var(--white);padding:0.875rem 2rem;border-radius:4px;background:transparent;cursor:pointer;font-weight:500;font-size:0.875rem;letter-spacing:0.05em;text-transform:uppercase;">Retake Quiz</button>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- HABIT TRACKER -->
 <section id="tracker">
@@ -3458,8 +3239,6 @@
   <div class="footer-brand">CultureFit</div>
   <p>Strength &amp; Weight Loss Program</p>
   <ul class="footer-links">
-    <li><a href="#pricing">Pricing</a></li>
-    <li><a href="#quiz">Quiz</a></li>
     <li><a href="#program">Program</a></li>
     <li><a href="#macros">Macros</a></li>
     <li><a href="#tracker">Tracker</a></li>
