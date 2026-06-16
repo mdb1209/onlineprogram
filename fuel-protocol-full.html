@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CultureFit | The 90-Day Fuel Protocol</title>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  :root{
+    --black:#0A0A0A;
+    --bone:#F5EDE0;
+    --coral:#FF6B47;
+    --silver:#B4ADA0;
+    --gray:#6B6B6B;
+    --line:#E5DDD0;
+    --soft:#FAF5EC;
+  }
+  html{scroll-behavior:smooth}
+  body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bone);color:var(--black);line-height:1.55;font-size:16px}
+  .page{max-width:1180px;margin:0 auto;padding:80px 56px}
+  .page + .page{border-top:1px solid var(--line)}
+  h1,h2,h3,h4,.headline{font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;letter-spacing:1.5px;line-height:1}
+  h1{font-size:96px;letter-spacing:3px}
+  h2{font-size:56px;letter-spacing:2px;margin-bottom:28px}
+  h3{font-size:30px;letter-spacing:1.4px;margin-bottom:14px}
+  h4{font-size:18px;letter-spacing:1.5px;margin-bottom:10px}
+  p{margin-bottom:14px;max-width:760px}
+  .eyebrow{font-size:12px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--silver);margin-bottom:14px}
+  .lead{font-size:22px;line-height:1.45;max-width:780px;margin-bottom:36px;font-weight:500}
+  .hand{font-family:'Caveat',cursive;color:var(--coral);font-weight:600}
+  .accent{color:var(--coral)}
+  .pill{display:inline-block;padding:6px 14px;border-radius:999px;background:var(--black);color:var(--bone);font-size:11px;letter-spacing:2px;text-transform:uppercase;font-weight:700;margin-right:8px}
+  .pill.coral{background:var(--coral);color:var(--black)}
+  .pill.silver{background:var(--silver);color:var(--black)}
+  /* HERO */
+  .hero{background:var(--black);color:var(--bone);min-height:100vh;display:flex;flex-direction:column;justify-content:space-between;padding:64px 56px}
+  .hero-top{display:flex;justify-content:space-between;align-items:flex-start}
+  .hero h1{font-size:140px;line-height:.88;margin-top:60px}
+  .hero h1 span{color:var(--coral)}
+  .hero .tagline{font-family:'Caveat',cursive;font-size:54px;color:var(--coral);margin-top:18px;line-height:1}
+  .hero .meta{font-size:12px;letter-spacing:2px;text-transform:uppercase;opacity:.7}
+  .hero-cta{display:flex;justify-content:space-between;align-items:flex-end;margin-top:60px;flex-wrap:wrap;gap:24px}
+  .price-card{background:var(--coral);color:var(--black);padding:28px 36px;border-radius:12px;max-width:380px}
+  .price-card .num{font-family:'Anton',sans-serif;font-size:80px;line-height:.9;letter-spacing:2px}
+  .price-card .label{font-size:11px;letter-spacing:2.5px;text-transform:uppercase;font-weight:800;margin-bottom:6px}
+  .price-card .desc{font-size:14px;font-weight:600;margin-top:10px;line-height:1.4}
+  /* SECTION */
+  .section-eyebrow{font-family:'Anton',sans-serif;font-size:14px;letter-spacing:3px;text-transform:uppercase;color:var(--coral);margin-bottom:8px}
+  .number{font-family:'Anton',sans-serif;font-size:80px;line-height:1;color:var(--coral);margin-bottom:18px}
+  /* GRIDS */
+  .two-col{display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-top:36px}
+  .three-col{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:32px}
+  .four-col{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:32px}
+  /* CARDS */
+  .card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:28px;display:flex;flex-direction:column}
+  .card.dark{background:var(--black);color:var(--bone);border-color:var(--black)}
+  .card.coral{background:var(--coral);color:var(--black);border-color:var(--coral)}
+  .card.silver{background:var(--silver);color:var(--black);border-color:var(--silver)}
+  .card .label{font-family:'Anton',sans-serif;font-size:13px;letter-spacing:2px;text-transform:uppercase;margin-bottom:10px}
+  .card ul{list-style:none;padding:0}
+  .card li{padding:7px 0;font-weight:500;font-size:15px;border-bottom:1px solid rgba(0,0,0,.08)}
+  .card.dark li{border-bottom-color:rgba(255,255,255,.10)}
+  .card li:last-child{border-bottom:0}
+  /* PHASE BAR */
+  .phase-bar{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:32px;border-radius:12px;overflow:hidden;border:1px solid var(--line)}
+  .phase{padding:28px;background:#fff}
+  .phase + .phase{border-left:1px solid var(--line)}
+  .phase .ph-num{font-family:'Anton',sans-serif;font-size:48px;color:var(--coral);line-height:1}
+  .phase .ph-title{font-family:'Anton',sans-serif;font-size:22px;letter-spacing:1.5px;text-transform:uppercase;margin-top:6px}
+  .phase .ph-days{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--silver);font-weight:700;margin-top:4px}
+  .phase p{font-size:14px;margin-top:12px;color:var(--gray)}
+  /* CALCULATOR */
+  .calc{background:var(--black);color:var(--bone);border-radius:16px;padding:48px;margin-top:36px}
+  .calc h2{color:var(--bone)}
+  .calc .calc-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:32px}
+  .calc-form{display:flex;flex-direction:column;gap:18px}
+  .calc-row{display:flex;flex-direction:column;gap:6px}
+  .calc-row label{font-family:'Anton',sans-serif;font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--silver)}
+  .calc-row input,.calc-row select{background:transparent;border:1px solid rgba(255,255,255,.25);color:var(--bone);padding:12px 14px;border-radius:6px;font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;font-weight:600}
+  .calc-row input:focus,.calc-row select:focus{outline:none;border-color:var(--coral)}
+  .calc-row select option{background:var(--black);color:var(--bone)}
+  .calc-row.split{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .calc-row.split > div{display:flex;flex-direction:column;gap:6px}
+  .female-only{display:none}
+  .female-only.show{display:flex;flex-direction:column;gap:18px;padding:18px;border-left:3px solid var(--coral);background:rgba(255,107,71,.06);border-radius:0 8px 8px 0}
+  .calc-btn{background:var(--coral);color:var(--black);border:0;padding:16px;border-radius:8px;font-family:'Anton',sans-serif;font-size:18px;letter-spacing:2px;text-transform:uppercase;cursor:pointer;font-weight:400;margin-top:8px}
+  .calc-btn:hover{background:#ff5530}
+  .calc-results{background:rgba(245,237,224,.05);border:1px solid rgba(255,255,255,.12);border-radius:10px;padding:28px;min-height:400px}
+  .result-block{margin-bottom:22px;padding-bottom:22px;border-bottom:1px solid rgba(255,255,255,.10)}
+  .result-block:last-child{border-bottom:0;margin-bottom:0;padding-bottom:0}
+  .result-label{font-family:'Anton',sans-serif;font-size:12px;letter-spacing:2.5px;text-transform:uppercase;color:var(--coral)}
+  .result-num{font-family:'Anton',sans-serif;font-size:54px;line-height:1;letter-spacing:1.5px;margin-top:6px}
+  .result-num small{font-size:18px;color:var(--silver);letter-spacing:1px;margin-left:6px}
+  .result-explain{font-size:14px;line-height:1.55;color:rgba(245,237,224,.85);margin-top:10px;max-width:none}
+  .macro-row{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:14px}
+  .macro-tile{padding:16px;border-radius:8px;background:rgba(255,107,71,.10);border:1px solid rgba(255,107,71,.25)}
+  .macro-tile .mname{font-family:'Anton',sans-serif;font-size:13px;letter-spacing:2px;text-transform:uppercase;color:var(--coral)}
+  .macro-tile .mgrams{font-family:'Anton',sans-serif;font-size:34px;line-height:1;margin-top:6px}
+  .macro-tile .mcal{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--silver);margin-top:4px;font-weight:700}
+  .placeholder{color:var(--silver);font-style:italic;text-align:center;padding-top:120px}
+  /* SUBSTITUTIONS TABLE */
+  .sub-tabs{display:flex;flex-wrap:wrap;gap:8px;margin-top:28px;margin-bottom:24px}
+  .sub-tab{padding:10px 18px;border:1px solid var(--line);background:#fff;border-radius:999px;font-family:'Anton',sans-serif;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;cursor:pointer;color:var(--black)}
+  .sub-tab.active{background:var(--black);color:var(--bone);border-color:var(--black)}
+  .sub-panel{display:none;background:#fff;border:1px solid var(--line);border-radius:12px;padding:32px}
+  .sub-panel.active{display:block}
+  .sub-panel h4{margin-top:24px}
+  .sub-panel h4:first-of-type{margin-top:0}
+  .sub-table{width:100%;border-collapse:collapse;margin-top:14px;font-size:14px}
+  .sub-table th,.sub-table td{padding:12px 14px;text-align:left;border-bottom:1px solid var(--line)}
+  .sub-table th{font-family:'Anton',sans-serif;letter-spacing:1.5px;text-transform:uppercase;font-size:12px;color:var(--silver);font-weight:400;background:var(--soft)}
+  .sub-table tr:last-child td{border-bottom:0}
+  .sub-table td:first-child{font-weight:700}
+  /* GROCERY */
+  .grocery{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:32px}
+  .grocery-cat{background:#fff;border:1px solid var(--line);border-radius:10px;padding:22px}
+  .grocery-cat h4{color:var(--coral);font-size:15px}
+  .grocery-cat ul{list-style:none}
+  .grocery-cat li{padding:5px 0;font-size:14px;color:var(--black);font-weight:500;border-bottom:1px dashed var(--line)}
+  .grocery-cat li:last-child{border-bottom:0}
+  .grocery-cat li::before{content:"☐ ";color:var(--silver);font-weight:700;margin-right:4px}
+  /* DAY 1-7 */
+  .days{display:grid;grid-template-columns:repeat(7,1fr);gap:12px;margin-top:32px}
+  .day{background:#fff;border:1px solid var(--line);border-radius:10px;padding:18px;display:flex;flex-direction:column}
+  .day .dn{font-family:'Anton',sans-serif;font-size:14px;letter-spacing:1.5px;color:var(--silver)}
+  .day .dt{font-family:'Anton',sans-serif;font-size:18px;letter-spacing:1px;text-transform:uppercase;margin-top:4px;line-height:1.1;min-height:40px}
+  .day p{font-size:13px;color:var(--gray);margin-top:10px;line-height:1.5}
+  /* TIMELINE */
+  .timeline{margin-top:32px;display:flex;flex-direction:column;gap:0;border-left:3px solid var(--coral);padding-left:32px;margin-left:14px}
+  .tl-item{padding:18px 0;border-bottom:1px solid var(--line);position:relative}
+  .tl-item:last-child{border-bottom:0}
+  .tl-item::before{content:"";position:absolute;left:-44px;top:24px;width:18px;height:18px;background:var(--coral);border-radius:50%;border:4px solid var(--bone)}
+  .tl-when{font-family:'Anton',sans-serif;font-size:14px;letter-spacing:2px;text-transform:uppercase;color:var(--silver)}
+  .tl-title{font-family:'Anton',sans-serif;font-size:22px;letter-spacing:1.2px;text-transform:uppercase;margin-top:4px}
+  .tl-desc{font-size:15px;color:var(--gray);margin-top:8px;max-width:760px}
+  /* COACH NOTE */
+  .coach-note{background:var(--coral);color:var(--black);padding:36px 40px;border-radius:12px;margin-top:36px;display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:center}
+  .coach-note .ico{font-family:'Anton',sans-serif;font-size:80px;line-height:1}
+  .coach-note .ct{font-family:'Caveat',cursive;font-size:30px;line-height:1.2;font-weight:600}
+  .coach-note .cs{font-size:14px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-top:10px}
+  /* FOOTER */
+  .footer{background:var(--black);color:var(--bone);padding:64px 56px;text-align:center}
+  .footer h2{color:var(--bone)}
+  .footer .tag{font-family:'Caveat',cursive;color:var(--coral);font-size:42px;margin-top:14px}
+  .footer .meta{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--silver);margin-top:24px}
+  /* RESPONSIVE */
+  @media (max-width: 900px){
+    h1{font-size:64px}
+    .hero h1{font-size:88px}
+    h2{font-size:40px}
+    .page{padding:56px 28px}
+    .two-col,.three-col,.four-col,.calc-grid,.grocery,.days,.phase-bar{grid-template-columns:1fr}
+    .calc{padding:28px}
+  }
+  @media print{
+    body{background:#fff}
+    .page{page-break-after:always}
+    .calc-btn{display:none}
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-top">
+    <div style="display:flex;align-items:center;gap:14px">
+      <img src="Logos/Logo.svg" alt="CultureFit" style="width:64px;height:64px;display:block;border-radius:8px">
+      <span class="meta">CultureFit Nutrition</span>
+    </div>
+    <span class="meta">90-Day Protocol &middot; v1.0</span>
+  </div>
+
+  <div>
+    <div class="eyebrow" style="color:var(--coral)">The Fuel Protocol</div>
+    <h1>EAT LIKE<br>YOU <span>TRAIN.</span></h1>
+    <div class="tagline">Where sweat meets culture.</div>
+    <p class="lead" style="color:rgba(245,237,224,.85);margin-top:32px">A 90-day, fully personalized nutrition program built around your body, your hormones, your life. No fad diets. No guessing. Just food that works as hard as you do.</p>
+  </div>
+
+  <div class="hero-cta">
+    <div>
+      <span class="pill coral">Macro Calculator</span>
+      <span class="pill silver">Substitutions</span>
+      <span class="pill" style="background:#fff;color:var(--black)">Grocery List</span>
+      <span class="pill" style="background:rgba(255,255,255,.12);color:var(--bone)">In-Person Check-Ins</span>
+    </div>
+    <div class="price-card">
+      <div class="label">All-In Investment</div>
+      <div class="num">$199</div>
+      <div class="desc">90-day protocol + 3 in-person measurement sessions + custom adjustments at every check-in.</div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT YOU GET -->
+<section class="page">
+  <div class="section-eyebrow">01 / The Program</div>
+  <h2>NINETY DAYS.<br>THREE PHASES.<br>ONE STRONGER YOU.</h2>
+  <p class="lead">This isn't a meal plan you'll abandon by week two. It's a real protocol with measurement, accountability, and adjustment built in. You show up. We dial in the food. The body follows.</p>
+
+  <div class="phase-bar">
+    <div class="phase">
+      <div class="ph-num">01</div>
+      <div class="ph-days">Days 1 - 30</div>
+      <div class="ph-title">Foundation</div>
+      <p>Establish baseline macros, build the habit of eating to hit targets, master plate-building, and get through the hardest week (week one). Hydration, protein at every meal, sleep hygiene.</p>
+    </div>
+    <div class="phase">
+      <div class="ph-num">02</div>
+      <div class="ph-days">Days 31 - 60</div>
+      <div class="ph-title">Build</div>
+      <p>First in-person re-check at day 30. Macros adjusted to actual progress, not theory. Introduce strategic carb timing around training, refine portion intuition, and layer in flexibility (the 80/20 rule).</p>
+    </div>
+    <div class="phase">
+      <div class="ph-num">03</div>
+      <div class="ph-days">Days 61 - 90</div>
+      <div class="ph-title">Refine</div>
+      <p>Lock in what's working, troubleshoot plateaus, and build your "maintenance map" so the results stick after day 90. Final measurements, final macro adjustment, and a personalized off-ramp plan.</p>
+    </div>
+  </div>
+
+  <div class="two-col">
+    <div class="card">
+      <div class="label">What's Included in Your $199</div>
+      <ul>
+        <li>Custom macro targets calibrated to your sex, age, training, hormones, and goal</li>
+        <li>3 in-person measurement sessions: Day 0, Day 30, Day 90</li>
+        <li>Body weight, circumference (waist, hip, chest, thigh, arm), and visual progress shots</li>
+        <li>Macro recalibration at every check-in based on real-world results</li>
+        <li>Full food substitution library for restrictions, intolerances, gut issues, and busy life</li>
+        <li>Weekly rotating grocery list (4-week cycle)</li>
+        <li>First-7-Days survival kit + adherence playbook</li>
+        <li>Direct text access for questions during business hours</li>
+      </ul>
+    </div>
+    <div class="card dark">
+      <div class="label">What This Is NOT</div>
+      <ul>
+        <li>A crash diet, juice cleanse, or 1,200-calorie starvation plan</li>
+        <li>A keto / carnivore / one-size-fits-all template</li>
+        <li>A meal plan you can't eat in real life with kids, work, and travel</li>
+        <li>An app that texts you generic reminders</li>
+        <li>Medical nutrition therapy or a substitute for your physician's care</li>
+        <li>A guarantee of a specific pound or inch number - we guarantee the system, not the scale</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- MACRO CALCULATOR -->
+<section class="page">
+  <div class="section-eyebrow">02 / Your Numbers</div>
+  <h2>THE MACRO PROTOCOL.</h2>
+  <p class="lead">Most calculators spit out a number and walk away. This one teaches you what the numbers mean and why they're yours specifically. Adjust, recalculate, and read the explanations. Bring this in to your Day 0 session and we'll fine-tune in person.</p>
+
+  <div class="calc">
+    <h3 style="color:var(--bone)">Build Your Plan</h3>
+    <p style="color:rgba(245,237,224,.7);font-size:15px">Fill in your details. We'll calculate your BMR, TDEE, calorie target, and macro split, then explain every line in plain English.</p>
+
+    <div class="calc-grid">
+      <div class="calc-form">
+        <div class="calc-row">
+          <label>Biological sex</label>
+          <select id="sex">
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+          </select>
+        </div>
+        <div class="calc-row split">
+          <div>
+            <label>Age</label>
+            <input type="number" id="age" value="35" min="18" max="80">
+          </div>
+          <div>
+            <label>Height (in)</label>
+            <input type="number" id="height" value="68" min="48" max="84">
+          </div>
+        </div>
+        <div class="calc-row split">
+          <div>
+            <label>Weight (lb)</label>
+            <input type="number" id="weight" value="170" min="80" max="450">
+          </div>
+          <div>
+            <label>Body fat % (optional)</label>
+            <input type="number" id="bf" placeholder="leave blank if unknown" min="3" max="60">
+          </div>
+        </div>
+        <div class="calc-row">
+          <label>Activity level (outside training)</label>
+          <select id="activity">
+            <option value="1.2">Sedentary - desk job, little walking</option>
+            <option value="1.375" selected>Lightly active - some daily walking</option>
+            <option value="1.55">Moderately active - on feet most of day</option>
+            <option value="1.725">Very active - manual labor / chasing kids all day</option>
+          </select>
+        </div>
+        <div class="calc-row">
+          <label>Training (CultureFit + other)</label>
+          <select id="training">
+            <option value="0">0 - 1 sessions per week</option>
+            <option value="150">2 sessions per week</option>
+            <option value="225" selected>3 sessions per week</option>
+            <option value="300">4 sessions per week</option>
+            <option value="400">5+ sessions per week</option>
+          </select>
+        </div>
+        <div class="calc-row">
+          <label>Primary goal</label>
+          <select id="goal">
+            <option value="-0.20">Fat loss (aggressive: -20%)</option>
+            <option value="-0.15" selected>Fat loss (sustainable: -15%)</option>
+            <option value="-0.10">Recomposition (-10%)</option>
+            <option value="0">Maintenance (0%)</option>
+            <option value="0.10">Lean muscle gain (+10%)</option>
+          </select>
+        </div>
+
+        <div class="female-only" id="femaleBlock">
+          <div class="calc-row" style="margin-top:0">
+            <label>Hormonal phase</label>
+            <select id="hormone">
+              <option value="follicular">Cycling - Follicular phase (days 1-14, more carb tolerant)</option>
+              <option value="luteal">Cycling - Luteal phase (days 15-28, +5-10% calories, more fat & protein)</option>
+              <option value="perimenopause">Perimenopause (35-50, irregular cycles, insulin sensitivity changes)</option>
+              <option value="postmenopause">Post-menopause (higher protein, lower carbs, prioritize strength)</option>
+              <option value="pregnant">Pregnant / postpartum / breastfeeding (do not use this calc - we'll build separately)</option>
+              <option value="oncontraceptive">On hormonal contraceptive (treat as steady-state)</option>
+            </select>
+          </div>
+        </div>
+
+        <button class="calc-btn" onclick="calculateMacros()">Calculate My Macros</button>
+      </div>
+
+      <div class="calc-results" id="results">
+        <div class="placeholder">Your personalized numbers will appear here.</div>
+      </div>
+    </div>
+
+    <div style="margin-top:36px;padding-top:28px;border-top:1px solid rgba(255,255,255,.12)">
+      <h4 style="color:var(--coral)">How These Numbers Were Built</h4>
+      <p style="color:rgba(245,237,224,.8);font-size:14px;max-width:none">We use the <strong>Mifflin-St Jeor equation</strong> for BMR (your resting metabolism), multiply by your activity factor for TDEE (total daily energy expenditure), add training calories, then apply your goal adjustment. Protein is set by lean body mass (or weight if BF unknown) at <strong>0.8 - 1.0g per pound</strong>. Fat is set as a percent of calories based on hormonal needs (women generally need more fat). Carbs fill the rest. This is the same framework used by registered dietitians and sports nutrition coaches - we just apply it specifically to <em>you</em>.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SUBSTITUTIONS -->
+<section class="page">
+  <div class="section-eyebrow">03 / Real Life Eating</div>
+  <h2>FOOD SWAPS<br>FOR REAL HUMANS.</h2>
+  <p class="lead">Restrictions, intolerances, kids in the back seat, no time to cook. None of it has to derail your protocol. Click a tab and find your one-for-one swaps.</p>
+
+  <div class="sub-tabs">
+    <div class="sub-tab active" onclick="showSub('gluten')">Gluten-Free</div>
+    <div class="sub-tab" onclick="showSub('dairy')">Dairy-Free / Lactose</div>
+    <div class="sub-tab" onclick="showSub('gut')">Gut Issues / Low FODMAP</div>
+    <div class="sub-tab" onclick="showSub('veg')">Vegetarian / Plant-Forward</div>
+    <div class="sub-tab" onclick="showSub('mom')">Busy Mom Life</div>
+    <div class="sub-tab" onclick="showSub('travel')">On-the-Go / Travel</div>
+    <div class="sub-tab" onclick="showSub('insulin')">Insulin Resistance / PCOS</div>
+  </div>
+
+  <div class="sub-panel active" id="sub-gluten">
+    <h4>Gluten-Free Swaps</h4>
+    <p>Celiac, non-celiac sensitivity, or just feel better off it - these swaps keep macros nearly identical.</p>
+    <table class="sub-table">
+      <tr><th>Instead of</th><th>Use</th><th>Why</th></tr>
+      <tr><td>Whole wheat bread</td><td>Canyon Bakehouse or Schar GF bread, or sweet potato slices</td><td>Same carb count, no gluten</td></tr>
+      <tr><td>Pasta</td><td>Banza chickpea pasta, Jovial brown rice pasta</td><td>Banza adds 14g protein per serving</td></tr>
+      <tr><td>Wraps / tortillas</td><td>Siete almond flour or cassava tortillas, large lettuce leaves</td><td>Cleaner ingredients, fewer GI flares</td></tr>
+      <tr><td>Oatmeal</td><td>Certified GF rolled oats (Bob's Red Mill) or quinoa flakes</td><td>Cross-contamination is the issue, not oats themselves</td></tr>
+      <tr><td>Soy sauce</td><td>Coconut aminos or tamari</td><td>Identical flavor profile</td></tr>
+      <tr><td>Beer</td><td>Hard cider, GF beer, or skip altogether (most cost-effective fat loss move)</td><td>Liquid calories don't satiate</td></tr>
+    </table>
+  </div>
+
+  <div class="sub-panel" id="sub-dairy">
+    <h4>Dairy-Free / Lactose-Intolerant Swaps</h4>
+    <p>Hitting protein without dairy is harder but absolutely doable. Watch for hidden whey in protein powder.</p>
+    <table class="sub-table">
+      <tr><th>Instead of</th><th>Use</th><th>Why</th></tr>
+      <tr><td>Whey protein</td><td>Pea, beef, or egg white isolate (Naked Pea, Equip beef)</td><td>Same 20-25g protein per scoop, no lactose</td></tr>
+      <tr><td>Greek yogurt</td><td>Lactose-free Greek (Green Valley) or Kite Hill almond Greek</td><td>Real Greek if just lactose; coconut/almond if true allergy</td></tr>
+      <tr><td>Cottage cheese</td><td>Good Culture lactose-free, or silken tofu with sea salt</td><td>Tofu mimics texture and adds protein</td></tr>
+      <tr><td>Milk in coffee</td><td>Unsweetened almond, oat, or coconut milk</td><td>Choose unsweetened to keep carbs honest</td></tr>
+      <tr><td>Cheese</td><td>Nutritional yeast (savory dishes), Violife or Miyoko's (occasional)</td><td>Nooch adds B12 and umami</td></tr>
+      <tr><td>Butter</td><td>Ghee (lactose-free), grass-fed if tolerated, or olive oil</td><td>Ghee removes lactose; olive oil for cold uses</td></tr>
+    </table>
+  </div>
+
+  <div class="sub-panel" id="sub-gut">
+    <h4>Gut Issues / Low-FODMAP Swaps</h4>
+    <p>If you have IBS, SIBO, bloating, or known FODMAP sensitivities. This is short-term elimination, not forever.</p>
+    <table class="sub-table">
+      <tr><th>Instead of</th><th>Use</th><th>Why</th></tr>
+      <tr><td>Onion / garlic</td><td>Garlic-infused olive oil, green tops of scallions, chives</td><td>Flavor without the FODMAP load (fructans)</td></tr>
+      <tr><td>Apples, pears, mango</td><td>Strawberries, blueberries, kiwi, oranges, cantaloupe</td><td>Lower fructose</td></tr>
+      <tr><td>Broccoli, cauliflower, brussels</td><td>Spinach, zucchini, carrots, green beans, kale, bell pepper</td><td>Lower FODMAP, easier on the gut</td></tr>
+      <tr><td>Black beans, chickpeas</td><td>Canned lentils (rinsed, ½ cup), firm tofu, animal protein</td><td>Soaking and rinsing reduces galactans</td></tr>
+      <tr><td>Whey protein</td><td>Whey isolate or pea protein</td><td>Isolate is nearly lactose-free</td></tr>
+      <tr><td>Sugar alcohols (xylitol, sorbitol)</td><td>Stevia, monk fruit, or small amounts of real sugar/maple</td><td>Sugar alcohols are notorious gut triggers</td></tr>
+      <tr><td>Wheat bread</td><td>Sourdough (long-fermented) or true GF bread</td><td>Fermentation breaks down fructans</td></tr>
+    </table>
+  </div>
+
+  <div class="sub-panel" id="sub-veg">
+    <h4>Vegetarian / Plant-Forward Swaps</h4>
+    <p>Hitting 0.8-1.0g protein per pound on plants requires intention. These are your workhorses.</p>
+    <table class="sub-table">
+      <tr><th>Instead of</th><th>Use</th><th>Protein per serving</th></tr>
+      <tr><td>Chicken breast (4oz)</td><td>Tempeh (4oz)</td><td>Chicken: 26g / Tempeh: 22g</td></tr>
+      <tr><td>Ground beef</td><td>Lentils + walnut "meat", or Beyond/Impossible (occasional)</td><td>Lentils: 18g per cup</td></tr>
+      <tr><td>Greek yogurt</td><td>Skyr (if dairy ok) or soy yogurt (Forager)</td><td>Soy yogurt: 11g per cup</td></tr>
+      <tr><td>Eggs</td><td>Tofu scramble + nutritional yeast</td><td>Firm tofu: 20g per ½ block</td></tr>
+      <tr><td>Tuna salad</td><td>Chickpea "tuna" salad with vegan mayo</td><td>Chickpeas: 15g per cup</td></tr>
+      <tr><td>Whey protein</td><td>Pea-rice blend (Vega Sport, Naked Pea)</td><td>Same 20-25g, full amino profile when blended</td></tr>
+    </table>
+    <p style="margin-top:18px;font-size:14px;color:var(--gray)"><strong>Coach note:</strong> Plant proteins are typically lower in leucine. Aim higher on total daily protein (1.0g/lb instead of 0.8) and combine grains with legumes at most meals.</p>
+  </div>
+
+  <div class="sub-panel" id="sub-mom">
+    <h4>Busy Mom Life Swaps</h4>
+    <p>You don't have 90 minutes to meal prep on Sunday. Here's how to win on five.</p>
+    <table class="sub-table">
+      <tr><th>The trap</th><th>The swap</th><th>Why it works</th></tr>
+      <tr><td>Finishing the kids' chicken nuggets and mac</td><td>Pre-portioned protein in fridge: rotisserie chicken, hard-boiled eggs, jerky, Greek yogurt</td><td>You have to actually open the fridge before grabbing leftovers</td></tr>
+      <tr><td>"I'll just grab coffee" breakfast</td><td>Protein shake bottle pre-loaded the night before, just add water</td><td>30 seconds, 25g protein, blood sugar stable until lunch</td></tr>
+      <tr><td>Skipping lunch then snacking all afternoon</td><td>Big lunch salad jar prepped Sunday: greens, protein, fat, complex carb</td><td>One container, 5 minutes to eat, hits all macros</td></tr>
+      <tr><td>Carpool snacks defaulting to crackers</td><td>Mom-bag staples: jerky, RX bar, single-serve nut butter, apple, cheese stick</td><td>Real food in the bag = no gas station rescue</td></tr>
+      <tr><td>Cooking two dinners (kids vs you)</td><td>One protein, two assemblies (taco bowl for you, taco for kids)</td><td>Same prep, different vehicles</td></tr>
+      <tr><td>Forgetting to drink water</td><td>32oz bottle on the counter at wake-up, refill at lunch, refill at pickup</td><td>Visual anchors beat phone reminders</td></tr>
+    </table>
+  </div>
+
+  <div class="sub-panel" id="sub-travel">
+    <h4>On-the-Go / Travel Swaps</h4>
+    <p>Airports, road trips, hotel rooms, work travel. Don't try to be perfect. Try to be 80%.</p>
+    <table class="sub-table">
+      <tr><th>Situation</th><th>Best move</th><th>Backup move</th></tr>
+      <tr><td>Airport meal</td><td>Cava, Chipotle, sushi (sashimi + brown rice), grilled chicken bowl</td><td>Greek yogurt parfait + jerky</td></tr>
+      <tr><td>Gas station</td><td>Beef jerky + string cheese + apple + black coffee</td><td>Hard-boiled eggs + banana</td></tr>
+      <tr><td>Hotel breakfast buffet</td><td>Eggs (real, not powder), fruit, oatmeal, skip pastries</td><td>Greek yogurt + nuts + berries</td></tr>
+      <tr><td>Drive-thru</td><td>Grilled chicken sandwich, no cheese/mayo, side salad</td><td>Two plain hamburger patties (toss bun) + small fry</td></tr>
+      <tr><td>Conference / catered lunch</td><td>Double the protein, half the starch, all the salad</td><td>Eat half, save half for later</td></tr>
+      <tr><td>Late dinner with clients</td><td>Order first: protein + 2 vegetables + small starch</td><td>Sparkling water with lime instead of second drink</td></tr>
+    </table>
+    <p style="margin-top:18px;font-size:14px;color:var(--gray)"><strong>Travel kit:</strong> Quest or RX bars, single-serve protein powder packets, jerky, almonds, electrolyte packets (LMNT). Throw four of each in your bag.</p>
+  </div>
+
+  <div class="sub-panel" id="sub-insulin">
+    <h4>Insulin Resistance / PCOS Swaps</h4>
+    <p>Whole-food, lower-glycemic versions of common targets. Always pair carbs with protein and fat.</p>
+    <table class="sub-table">
+      <tr><th>Instead of</th><th>Use</th><th>Why</th></tr>
+      <tr><td>White rice</td><td>Wild rice, quinoa, lentils, or "half rice / half cauliflower rice"</td><td>Lower GI, more fiber, slower glucose curve</td></tr>
+      <tr><td>White potato</td><td>Sweet potato, butternut squash, parsnip</td><td>More fiber, more nutrients</td></tr>
+      <tr><td>Cereal / granola</td><td>Steel-cut oats with cinnamon, walnuts, berries</td><td>Cinnamon improves insulin response</td></tr>
+      <tr><td>Fruit juice / smoothies</td><td>Whole fruit + protein + greens (chew, don't drink)</td><td>Fiber blunts glucose spike</td></tr>
+      <tr><td>Snacking on carbs alone</td><td>Always pair: apple + almond butter, crackers + cheese, rice cake + turkey</td><td>Protein/fat slow absorption</td></tr>
+      <tr><td>Sugary coffee drinks</td><td>Coffee with cinnamon, splash of milk, stevia or monk fruit</td><td>200+ calorie hidden sugar bomb removed</td></tr>
+    </table>
+  </div>
+</section>
+
+<!-- GROCERY -->
+<section class="page" style="background:var(--soft)">
+  <div class="section-eyebrow">04 / The Cart</div>
+  <h2>YOUR WEEK<br>IN A BASKET.</h2>
+  <p class="lead">Shop once, eat all week. This is the master Week 1 list, calibrated for one adult on a moderate fat-loss protocol. Adjust portions to your household. Costs run $90 - $130 at HEB or Trader Joe's depending on what you have on hand.</p>
+
+  <div class="grocery">
+    <div class="grocery-cat">
+      <h4>Proteins</h4>
+      <ul>
+        <li>Chicken breast (3 lb)</li>
+        <li>93/7 ground beef or turkey (1.5 lb)</li>
+        <li>Wild salmon (1 lb)</li>
+        <li>Eggs (18 ct)</li>
+        <li>Greek yogurt (32 oz, 0% or 2%)</li>
+        <li>Cottage cheese (16 oz)</li>
+        <li>Tuna pouches (4)</li>
+        <li>Beef jerky (1 bag)</li>
+      </ul>
+    </div>
+    <div class="grocery-cat">
+      <h4>Carbs</h4>
+      <ul>
+        <li>Sweet potatoes (4)</li>
+        <li>Jasmine or basmati rice (1 lb)</li>
+        <li>Steel-cut or rolled oats (1 lb)</li>
+        <li>Ezekiel or sourdough bread (1 loaf)</li>
+        <li>Bananas (5)</li>
+        <li>Berries (2 lb mixed, fresh or frozen)</li>
+        <li>Apples (4)</li>
+        <li>Lemon / lime (3)</li>
+      </ul>
+    </div>
+    <div class="grocery-cat">
+      <h4>Vegetables</h4>
+      <ul>
+        <li>Spinach or spring mix (10 oz)</li>
+        <li>Broccoli (2 heads)</li>
+        <li>Bell peppers (4 mixed)</li>
+        <li>Zucchini (3)</li>
+        <li>Asparagus or green beans (1 lb)</li>
+        <li>Cherry tomatoes (1 pint)</li>
+        <li>Cucumber (2)</li>
+        <li>Avocados (3)</li>
+      </ul>
+    </div>
+    <div class="grocery-cat">
+      <h4>Fats &amp; Pantry</h4>
+      <ul>
+        <li>Extra virgin olive oil</li>
+        <li>Almonds, raw (1 cup)</li>
+        <li>Almond or peanut butter (natural)</li>
+        <li>Chia or hemp seeds</li>
+        <li>Sea salt, pepper, paprika, garlic powder</li>
+        <li>Coconut aminos or low-sodium soy sauce</li>
+        <li>Salsa (clean ingredients)</li>
+        <li>Sparkling water (case)</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="coach-note">
+    <div class="ico">$</div>
+    <div>
+      <div class="ct">"Buy the protein first. Build the rest of the cart around what protein is on sale."</div>
+      <div class="cs">- Your CultureFit nutrition coach</div>
+    </div>
+  </div>
+</section>
+
+<!-- FIRST 7 DAYS -->
+<section class="page">
+  <div class="section-eyebrow">05 / Survival Mode</div>
+  <h2>THE FIRST<br>SEVEN DAYS.</h2>
+  <p class="lead">Week one is the hardest week. Your body is recalibrating, your habits are screaming, and your willpower is finite. Here's exactly what to do each day so you don't have to think.</p>
+
+  <div class="days">
+    <div class="day">
+      <div class="dn">Day 01</div>
+      <div class="dt">Measure &amp; Stock</div>
+      <p>In-person measurement session. Photograph the empty fridge before you shop. Buy the full grocery list. Drink 80oz water today.</p>
+    </div>
+    <div class="day">
+      <div class="dn">Day 02</div>
+      <div class="dt">Hit Protein Only</div>
+      <p>Don't worry about anything except hitting your protein target today. Carbs and fats can be approximate. Protein is the foundation.</p>
+    </div>
+    <div class="day">
+      <div class="dn">Day 03</div>
+      <div class="dt">The Hunger Wave</div>
+      <p>This is when most people quit. Drink 16oz water, eat a high-protein snack, and walk for 10 minutes. The wave passes in 20 minutes.</p>
+    </div>
+    <div class="day">
+      <div class="dn">Day 04</div>
+      <div class="dt">Carb Day</div>
+      <p>Time your carbs around your training session. You should feel stronger in the gym today than day one. That's the protocol working.</p>
+    </div>
+    <div class="day">
+      <div class="dn">Day 05</div>
+      <div class="dt">The Social Test</div>
+      <p>Friday. Restaurant. Drinks. Order first. Protein + 2 vegetables + small starch. One drink, sparkling water in between. You're allowed to enjoy your life.</p>
+    </div>
+    <div class="day">
+      <div class="dn">Day 06</div>
+      <div class="dt">Recovery</div>
+      <p>Rest day from training. Don't compensate by eating less. Eat to your maintenance number. Sleep 8 hours. Walk after dinner.</p>
+    </div>
+    <div class="day">
+      <div class="dn">Day 07</div>
+      <div class="dt">Reset &amp; Prep</div>
+      <p>Sunday. 30 minutes of meal prep. Cook the week's protein in bulk. Wash and chop vegetables. Portion snacks. Set up week two for autopilot.</p>
+    </div>
+  </div>
+
+  <div class="three-col" style="margin-top:48px">
+    <div class="card coral">
+      <div class="label">If You're Hungry</div>
+      <ul>
+        <li>Drink 16 oz of water first</li>
+        <li>Wait 15 minutes</li>
+        <li>If still hungry, eat protein + fiber (eggs + spinach, cottage cheese + berries)</li>
+        <li>Real hunger doesn't go away. Cravings do.</li>
+      </ul>
+    </div>
+    <div class="card silver">
+      <div class="label">If You're Tired</div>
+      <ul>
+        <li>Check sleep first - aim for 7+ hours</li>
+        <li>Add 1 cup more carbs around training</li>
+        <li>Add electrolytes (LMNT, salt + lemon water)</li>
+        <li>Week 1 fatigue is normal and passes by day 10</li>
+      </ul>
+    </div>
+    <div class="card dark">
+      <div class="label">If You Slip</div>
+      <ul>
+        <li>Don't "make up for it" by skipping the next meal</li>
+        <li>Don't restart Monday - resume the next bite</li>
+        <li>One meal off plan is a meal. Three is a pattern.</li>
+        <li>Text your coach. We troubleshoot together.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ADHERENCE -->
+<section class="page">
+  <div class="section-eyebrow">06 / Stick the Landing</div>
+  <h2>HOW TO ACTUALLY<br>FOLLOW THROUGH.</h2>
+  <p class="lead">Adherence is the single biggest predictor of results. Not the perfect plan. Not the fanciest macros. The plan you follow most days for 90 days. Here's the system.</p>
+
+  <div class="two-col">
+    <div>
+      <h3>The Five Rules</h3>
+      <ol style="padding-left:20px;font-size:16px">
+        <li style="margin-bottom:14px"><strong>Protein at every meal.</strong> If you only do one thing, do this. Aim for 30-50g per meal. It anchors satiety, training, and hormonal balance.</li>
+        <li style="margin-bottom:14px"><strong>Plate before you sit.</strong> Every plate gets a visual: ½ vegetables, ¼ protein, ¼ starchy carb, thumb of fat. You don't need to weigh every meal forever.</li>
+        <li style="margin-bottom:14px"><strong>The 80/20 rule.</strong> 80% of meals on protocol, 20% flexible. Math it out: 21 meals/week, 4 are negotiable. That includes wine, a slice of birthday cake, the kids' fries.</li>
+        <li style="margin-bottom:14px"><strong>Hydrate before you eat.</strong> 16oz water 20 minutes before each meal. Hunger and thirst share the same signal. Most "hunger" at 3pm is dehydration.</li>
+        <li style="margin-bottom:14px"><strong>Sleep is nutrition.</strong> Under 6 hours of sleep raises cortisol, ghrelin, and cravings. The fastest way to crush week 2 is to sleep 7+ hours every night of week 1.</li>
+      </ol>
+    </div>
+
+    <div>
+      <h3>The Tracking Setup</h3>
+      <p>You don't have to track forever. Track for the first 30 days so you learn portions, then dial back to "spot checking" once intuition kicks in.</p>
+      <ul style="list-style:none;padding:0">
+        <li style="padding:14px 0;border-bottom:1px solid var(--line)"><strong style="color:var(--coral)">App:</strong> MacroFactor (paid, smartest) or MyFitnessPal (free)</li>
+        <li style="padding:14px 0;border-bottom:1px solid var(--line)"><strong style="color:var(--coral)">Scale:</strong> Cheap kitchen scale, $15. Weigh meat raw, oils always.</li>
+        <li style="padding:14px 0;border-bottom:1px solid var(--line)"><strong style="color:var(--coral)">Body weight:</strong> Same time, same conditions, 3x per week. Take the average.</li>
+        <li style="padding:14px 0;border-bottom:1px solid var(--line)"><strong style="color:var(--coral)">Photos:</strong> Same lighting, same outfit, every Sunday morning. Front, side, back.</li>
+        <li style="padding:14px 0"><strong style="color:var(--coral)">Energy/sleep:</strong> 1-10 score in your phone notes. We'll review at check-ins.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="coach-note" style="margin-top:48px">
+    <div class="ico">"</div>
+    <div>
+      <div class="ct">Nobody cares, work harder.</div>
+      <div class="cs">When motivation runs out, the system you built keeps you moving.</div>
+    </div>
+  </div>
+</section>
+
+<!-- IN-PERSON -->
+<section class="page" style="background:var(--soft)">
+  <div class="section-eyebrow">07 / Built-In Accountability</div>
+  <h2>THREE TIMES<br>FACE TO FACE.</h2>
+  <p class="lead">Apps don't change bodies. People do. Your $199 includes three in-person measurement sessions where we look at the data together and adjust the plan.</p>
+
+  <div class="timeline">
+    <div class="tl-item">
+      <div class="tl-when">Day 0 &middot; Onboarding</div>
+      <div class="tl-title">Baseline + Plan Build</div>
+      <div class="tl-desc">45 minutes. We measure body weight, waist, hips, chest, thigh, and arm. Take front/side/back photos. Review your macro calculator output and adjust based on training history, lifestyle, and goals. You walk out with your full 90-day protocol printed.</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-when">Day 30 &middot; First Adjust</div>
+      <div class="tl-title">Recalibrate</div>
+      <div class="tl-desc">30 minutes. Same measurements. Compare to baseline. If progress is on track, we maintain. If too aggressive (energy crashing, sleep suffering, training declining) we pull calories up. If stalled, we audit adherence first, then adjust calories. You walk out with updated targets.</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-when">Day 90 &middot; Final Read</div>
+      <div class="tl-title">Results + Maintenance Map</div>
+      <div class="tl-desc">45 minutes. Final measurements and photos. Side-by-side comparison to Day 0. We build your "maintenance protocol" - the new calorie and macro targets for life after the program, and the habits that proved most valuable for you specifically.</div>
+    </div>
+  </div>
+
+  <div class="two-col" style="margin-top:48px">
+    <div class="card">
+      <div class="label">What We Measure</div>
+      <ul>
+        <li>Body weight (same scale, same time of morning)</li>
+        <li>Circumference: waist (at navel), hips (widest), chest, mid-thigh, mid-bicep</li>
+        <li>Optional: body fat % via skinfold or bioimpedance</li>
+        <li>Progress photos (front, side, back, same lighting)</li>
+        <li>Strength benchmarks at CultureFit (deadlift, squat, bench / press)</li>
+        <li>Subjective markers: energy, sleep, cravings, mood</li>
+      </ul>
+    </div>
+    <div class="card dark">
+      <div class="label">What "Adjustment" Looks Like</div>
+      <ul>
+        <li>Lost weight too fast (more than 1% body weight per week)? +150-200 calories</li>
+        <li>Stalled for 2+ weeks with high adherence? -100-150 calories or +500 daily steps</li>
+        <li>Strength dropping? Add 25-50g carbs around training</li>
+        <li>Sleep suffering? Add carbs to dinner, push final meal earlier</li>
+        <li>Cycle changes / period missed (female)? We pull calories up immediately</li>
+        <li>Plateau with high stress? We address sleep and cortisol before food</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<section class="footer">
+  <div class="section-eyebrow" style="color:var(--coral)">Ready to start</div>
+  <h2>NINETY DAYS<br>FROM TODAY.</h2>
+  <div class="tag">Where sweat meets culture.</div>
+  <p style="color:rgba(245,237,224,.85);max-width:560px;margin:32px auto 0">Reach out at the front desk to book your Day 0 measurement and reserve your spot. Limited slots per month so we can give every client real attention.</p>
+  <div class="meta">CultureFit Nutrition &middot; The 90-Day Fuel Protocol &middot; v1.0 &middot; 2026</div>
+</section>
+
+<script>
+  // Toggle female-specific block
+  const sexEl = document.getElementById('sex');
+  const femaleBlock = document.getElementById('femaleBlock');
+  function toggleFemale(){
+    if(sexEl.value === 'female'){ femaleBlock.classList.add('show'); }
+    else { femaleBlock.classList.remove('show'); }
+  }
+  sexEl.addEventListener('change', toggleFemale);
+  toggleFemale();
+
+  // Substitution tabs
+  function showSub(id){
+    document.querySelectorAll('.sub-tab').forEach(t=>t.classList.remove('active'));
+    document.querySelectorAll('.sub-panel').forEach(p=>p.classList.remove('active'));
+    event.target.classList.add('active');
+    document.getElementById('sub-'+id).classList.add('active');
+  }
+
+  // Macro calculator
+  function calculateMacros(){
+    const sex = document.getElementById('sex').value;
+    const age = parseInt(document.getElementById('age').value);
+    const heightIn = parseFloat(document.getElementById('height').value);
+    const weightLb = parseFloat(document.getElementById('weight').value);
+    const bf = parseFloat(document.getElementById('bf').value);
+    const activity = parseFloat(document.getElementById('activity').value);
+    const trainingCals = parseFloat(document.getElementById('training').value);
+    const goalAdj = parseFloat(document.getElementById('goal').value);
+    const hormone = sex === 'female' ? document.getElementById('hormone').value : null;
+
+    const heightCm = heightIn * 2.54;
+    const weightKg = weightLb / 2.2046;
+
+    // Mifflin-St Jeor
+    let bmr;
+    if(sex === 'male'){
+      bmr = (10 * weightKg) + (6.25 * heightCm) - (5 * age) + 5;
+    } else {
+      bmr = (10 * weightKg) + (6.25 * heightCm) - (5 * age) - 161;
+    }
+
+    // TDEE = BMR x activity, plus weekly training averaged daily
+    const tdee = (bmr * activity) + (trainingCals);
+
+    // Goal adjustment
+    let calorieTarget = tdee * (1 + goalAdj);
+
+    // Female hormonal adjustments
+    let hormoneNote = '';
+    if(sex === 'female'){
+      if(hormone === 'luteal'){
+        calorieTarget = calorieTarget * 1.07;
+        hormoneNote = 'Luteal phase: calories nudged +7% to match the small but real metabolic uptick (your body burns slightly more in the second half of your cycle). Cravings are biology, not weakness.';
+      } else if(hormone === 'follicular'){
+        hormoneNote = 'Follicular phase: insulin sensitivity is highest here. You can place carbs more aggressively around training and tolerate the deficit better. This is your "PR week" both in the gym and on the protocol.';
+      } else if(hormone === 'perimenopause'){
+        hormoneNote = 'Perimenopause: protein bumped up and carbs slightly down to support muscle retention as estrogen fluctuates. Strength training matters more than ever - food alone will not maintain lean mass.';
+      } else if(hormone === 'postmenopause'){
+        hormoneNote = 'Post-menopause: protein set at 1.0g/lb, lower carbs, higher fat for hormonal support. Insulin sensitivity drops post-menopause; resistance training and protein-forward eating are non-negotiable.';
+      } else if(hormone === 'pregnant'){
+        document.getElementById('results').innerHTML = '<div class="placeholder" style="color:var(--coral);font-style:normal">For pregnancy, postpartum, or breastfeeding we build a separate protocol with your physician\'s OK. Do not use these numbers. Book a Day 0 session and we\'ll handle this together.</div>';
+        return;
+      } else if(hormone === 'oncontraceptive'){
+        hormoneNote = 'On hormonal contraceptive: cycle effects are largely flattened. Treat as steady-state. Some women experience appetite or water-retention changes - flag these at check-in and we adjust.';
+      }
+    }
+
+    // Protein: use lean body mass if BF given, else weight
+    let proteinPerLb = sex === 'female' ? 0.9 : 0.95;
+    if(hormone === 'postmenopause' || hormone === 'perimenopause') proteinPerLb = 1.0;
+    let proteinTargetLb = weightLb;
+    if(!isNaN(bf) && bf > 0){
+      proteinTargetLb = weightLb * (1 - bf/100); // lean body mass
+      proteinPerLb = proteinPerLb * 1.15; // bump slightly for LBM-based
+    }
+    const proteinG = Math.round(proteinTargetLb * proteinPerLb);
+    const proteinCal = proteinG * 4;
+
+    // Fat: women 30-35% of cal, men 25-30%; postmeno bump
+    let fatPct = 0.28;
+    if(sex === 'female') fatPct = 0.32;
+    if(hormone === 'postmenopause') fatPct = 0.36;
+    if(hormone === 'luteal') fatPct = 0.34;
+    const fatCal = calorieTarget * fatPct;
+    const fatG = Math.round(fatCal / 9);
+
+    // Carbs: remainder
+    const carbCal = calorieTarget - proteinCal - fatCal;
+    const carbG = Math.round(carbCal / 4);
+
+    calorieTarget = Math.round(calorieTarget);
+    const tdeeR = Math.round(tdee);
+    const bmrR = Math.round(bmr);
+
+    // Goal label
+    const goalLabels = {
+      '-0.20':'aggressive fat loss',
+      '-0.15':'sustainable fat loss',
+      '-0.10':'recomposition',
+      '0':'maintenance',
+      '0.10':'lean muscle gain'
+    };
+    const goalLabel = goalLabels[goalAdj.toString()] || 'custom';
+
+    const html = `
+      <div class="result-block">
+        <div class="result-label">Your BMR (resting metabolism)</div>
+        <div class="result-num">${bmrR}<small>cal/day</small></div>
+        <div class="result-explain">This is what your body burns just to keep you alive in bed all day - heart, lungs, brain, organs. It's a floor, not a target. Never eat below this number for more than a day or two.</div>
+      </div>
+
+      <div class="result-block">
+        <div class="result-label">Your TDEE (total daily burn)</div>
+        <div class="result-num">${tdeeR}<small>cal/day</small></div>
+        <div class="result-explain">BMR multiplied by your daily activity (${activity}x), plus the calories from your training sessions averaged across the week. This is what you'd eat to maintain your current body weight.</div>
+      </div>
+
+      <div class="result-block">
+        <div class="result-label">Your daily target (${goalLabel})</div>
+        <div class="result-num accent" style="color:var(--coral)">${calorieTarget}<small style="color:var(--coral);opacity:.7">cal/day</small></div>
+        <div class="result-explain">${
+          goalAdj < 0
+            ? 'A '+Math.abs(goalAdj*100)+'% deficit below maintenance. At this rate you should lose roughly '+(Math.abs(goalAdj)*0.6).toFixed(1)+'-'+(Math.abs(goalAdj)*1).toFixed(1)+' lb per week of mostly fat (some water in week 1). Faster than 1% of body weight per week and you start losing muscle.'
+            : goalAdj > 0
+              ? 'A '+(goalAdj*100)+'% surplus above maintenance for lean muscle gain. Expect ~0.25-0.5 lb per week. Slower than that means we adjust up; faster means we pull back to avoid unnecessary fat gain.'
+              : 'Maintenance calories. Used for recomposition, post-program transition, or holding a result. Body composition can still change at maintenance if training and protein are dialed.'
+        }</div>
+      </div>
+
+      <div class="result-block">
+        <div class="result-label">Macro split</div>
+        <div class="macro-row">
+          <div class="macro-tile">
+            <div class="mname">Protein</div>
+            <div class="mgrams">${proteinG}g</div>
+            <div class="mcal">${proteinCal} cal</div>
+          </div>
+          <div class="macro-tile">
+            <div class="mname">Carbs</div>
+            <div class="mgrams">${carbG}g</div>
+            <div class="mcal">${Math.round(carbCal)} cal</div>
+          </div>
+          <div class="macro-tile">
+            <div class="mname">Fat</div>
+            <div class="mgrams">${fatG}g</div>
+            <div class="mcal">${Math.round(fatCal)} cal</div>
+          </div>
+        </div>
+        <div class="result-explain" style="margin-top:14px">
+          <strong style="color:var(--coral)">Protein (${proteinG}g):</strong> Set at ${proteinPerLb.toFixed(2)}g per pound of ${!isNaN(bf) && bf > 0 ? 'lean body mass' : 'body weight'}. This protects muscle in a deficit, builds it in a surplus, and keeps you full. Spread across 3-4 meals (25-50g each).<br><br>
+          <strong style="color:var(--coral)">Fat (${fatG}g):</strong> Set at ${Math.round(fatPct*100)}% of total calories. Critical for hormones, vitamin absorption, satiety. Prioritize olive oil, avocado, nuts, fatty fish, eggs.<br><br>
+          <strong style="color:var(--coral)">Carbs (${carbG}g):</strong> The remainder. Place 60-70% of carbs around training. Choose whole sources first (rice, oats, sweet potato, fruit, beans).
+        </div>
+      </div>
+
+      ${hormoneNote ? '<div class="result-block"><div class="result-label">Hormonal note</div><div class="result-explain">'+hormoneNote+'</div></div>' : ''}
+
+      <div class="result-block" style="border-bottom:0">
+        <div class="result-label">Bottom line</div>
+        <div class="result-explain">Eat <strong style="color:var(--bone)">${calorieTarget} calories</strong> with <strong style="color:var(--bone)">${proteinG}g protein</strong>, <strong style="color:var(--bone)">${carbG}g carbs</strong>, <strong style="color:var(--bone)">${fatG}g fat</strong>. Bring this to your Day 0 session. We'll measure, double-check the math against your real life, and lock it in.</div>
+      </div>
+    `;
+    document.getElementById('results').innerHTML = html;
+  }
+</script>
+
+</body>
+</html>
